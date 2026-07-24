@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell($env:Path += \";C:\\\\Program Files\\\\nodejs\"; node --version; npm --version)"
+    ]
+  }
+}

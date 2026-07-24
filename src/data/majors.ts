@@ -1,0 +1,281 @@
+import { Major } from "@/lib/types";
+
+// Majors reflect actual undergraduate degree programs offered at
+// North Carolina Central University (nccu.edu/academics/undergraduate-programs).
+export const majors: Major[] = [
+  {
+    id: "computer-information-sciences",
+    name: "Computer and Information Sciences",
+    category: "STEM",
+    description:
+      "Build the software, systems, and algorithms behind everything from apps to AI.",
+    riasec: { R: 1, I: 3, A: 0, S: 0, E: 0, C: 1 },
+    valueTags: ["income", "flexibility"],
+    interestTags: ["technology", "numbers", "research"],
+    careerPaths: ["Software Developer", "Systems Analyst", "Data Scientist"],
+  },
+  {
+    id: "information-technology",
+    name: "Information Technology",
+    category: "Business",
+    description:
+      "Apply computing to real organizations — data analytics, cybersecurity, and information systems.",
+    riasec: { R: 1, I: 2, A: 0, S: 0, E: 1, C: 2 },
+    valueTags: ["income", "stability"],
+    interestTags: ["technology", "numbers", "business"],
+    careerPaths: ["Cybersecurity Analyst", "Data Analyst", "IT Consultant"],
+  },
+  {
+    id: "mathematics",
+    name: "Mathematics",
+    category: "STEM",
+    description:
+      "Master the logic and quantitative tools behind science, finance, and computing.",
+    riasec: { R: 0, I: 3, A: 0, S: 0, E: 0, C: 2 },
+    valueTags: ["stability", "income"],
+    interestTags: ["numbers", "research"],
+    careerPaths: ["Actuary", "Data Analyst", "Math Teacher"],
+  },
+  {
+    id: "biological-biomedical-sciences",
+    name: "Biological and Biomedical Sciences",
+    category: "STEM",
+    description:
+      "Study living systems in depth — a foundation for medicine and biomedical research.",
+    riasec: { R: 1, I: 3, A: 0, S: 1, E: 0, C: 0 },
+    valueTags: ["prestige", "stability"],
+    interestTags: ["science", "research"],
+    careerPaths: ["Physician", "Biomedical Researcher", "Physician Assistant"],
+  },
+  {
+    id: "chemistry-biochemistry",
+    name: "Chemistry and Biochemistry",
+    category: "STEM",
+    description:
+      "Study matter at the molecular level, with paths into forensic science, pre-med, and pre-pharmacy.",
+    riasec: { R: 1, I: 3, A: 0, S: 0, E: 0, C: 1 },
+    valueTags: ["prestige", "stability"],
+    interestTags: ["science", "research"],
+    careerPaths: ["Forensic Scientist", "Pharmacist", "Chemist"],
+  },
+  {
+    id: "pharmaceutical-sciences",
+    name: "Pharmaceutical Sciences",
+    category: "Health",
+    description:
+      "Study how drugs are developed and how they work in the body, on the path toward pharmacy or research.",
+    riasec: { R: 1, I: 2, A: 0, S: 0, E: 0, C: 2 },
+    valueTags: ["income", "stability"],
+    interestTags: ["science", "research"],
+    careerPaths: ["Pharmacist", "Pharmaceutical Researcher", "Clinical Scientist"],
+  },
+  {
+    id: "physics",
+    name: "Physics",
+    category: "STEM",
+    description:
+      "Understand the fundamental laws behind matter and energy, including engineering physics.",
+    riasec: { R: 2, I: 3, A: 0, S: 0, E: 0, C: 0 },
+    valueTags: ["prestige", "income"],
+    interestTags: ["science", "numbers"],
+    careerPaths: ["Engineer", "Physicist", "Data Scientist"],
+  },
+  {
+    id: "environmental-earth-geographic-science",
+    name: "Environmental, Earth and Geographic Science",
+    category: "STEM",
+    description:
+      "Study natural systems and help organizations understand and protect the environment.",
+    riasec: { R: 2, I: 2, A: 0, S: 1, E: 0, C: 0 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["science", "research"],
+    careerPaths: ["Environmental Scientist", "GIS Analyst", "Conservation Officer"],
+  },
+  {
+    id: "nursing",
+    name: "Nursing",
+    category: "Health",
+    description:
+      "Provide direct, hands-on patient care in fast-paced, high-impact environments.",
+    riasec: { R: 2, I: 1, A: 0, S: 3, E: 0, C: 0 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["people", "science"],
+    careerPaths: ["Registered Nurse", "Nurse Practitioner", "Healthcare Administrator"],
+  },
+  {
+    id: "public-health-education",
+    name: "Public Health Education",
+    category: "Health",
+    description:
+      "Design programs and policy that improve health outcomes for communities.",
+    riasec: { R: 0, I: 1, A: 0, S: 3, E: 1, C: 0 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["people", "science"],
+    careerPaths: ["Public Health Educator", "Community Health Worker", "Health Program Coordinator"],
+  },
+  {
+    id: "kinesiology-recreation-administration",
+    name: "Kinesiology and Recreation Administration",
+    category: "Health",
+    description:
+      "Study human movement and physical activity, and manage recreation and wellness programs.",
+    riasec: { R: 2, I: 0, A: 0, S: 2, E: 1, C: 0 },
+    valueTags: ["helping", "flexibility"],
+    interestTags: ["movement", "people"],
+    careerPaths: ["Athletic Trainer", "Recreation Director", "Fitness Program Coordinator"],
+  },
+  {
+    id: "psychology",
+    name: "Psychology",
+    category: "Social Science",
+    description:
+      "Study human behavior and the mind to help people and organizations understand themselves.",
+    riasec: { R: 0, I: 2, A: 1, S: 3, E: 0, C: 0 },
+    valueTags: ["helping", "flexibility"],
+    interestTags: ["people", "research"],
+    careerPaths: ["Clinical Psychologist", "HR Specialist", "Behavioral Researcher"],
+  },
+  {
+    id: "social-work",
+    name: "Social Work",
+    category: "Social Science",
+    description:
+      "Support individuals, families, and communities facing hardship, and advocate for systemic change.",
+    riasec: { R: 0, I: 0, A: 1, S: 3, E: 0, C: 0 },
+    valueTags: ["helping", "flexibility"],
+    interestTags: ["people", "communication"],
+    careerPaths: ["Social Worker", "Case Manager", "Community Outreach Coordinator"],
+  },
+  {
+    id: "criminal-justice",
+    name: "Criminal Justice",
+    category: "Social Science",
+    description:
+      "Study law enforcement, courts, and corrections — how society investigates and administers justice.",
+    riasec: { R: 0, I: 1, A: 0, S: 2, E: 2, C: 1 },
+    valueTags: ["prestige", "helping"],
+    interestTags: ["people", "leadership"],
+    careerPaths: ["Law Enforcement Officer", "Probation Officer", "Correctional Administrator"],
+  },
+  {
+    id: "political-science",
+    name: "Political Science",
+    category: "Social Science",
+    description:
+      "Study government, policy, and power — a common launch point toward law school.",
+    riasec: { R: 0, I: 1, A: 1, S: 1, E: 3, C: 0 },
+    valueTags: ["prestige", "helping"],
+    interestTags: ["communication", "leadership"],
+    careerPaths: ["Attorney", "Policy Analyst", "Legislative Aide"],
+  },
+  {
+    id: "mass-communication",
+    name: "Mass Communication",
+    category: "Media",
+    description:
+      "Report, produce, and tell stories across journalism, broadcast, film, and public relations.",
+    riasec: { R: 0, I: 0, A: 2, S: 1, E: 1, C: 0 },
+    valueTags: ["creativity", "flexibility"],
+    interestTags: ["writing", "communication"],
+    careerPaths: ["Journalist", "Public Relations Specialist", "Broadcast Producer"],
+  },
+  {
+    id: "art-and-design",
+    name: "Art and Design",
+    category: "Arts",
+    description:
+      "Turn ideas into visual experiences across studio art, visual communications, and design.",
+    riasec: { R: 1, I: 0, A: 3, S: 0, E: 1, C: 0 },
+    valueTags: ["creativity", "flexibility"],
+    interestTags: ["design", "technology"],
+    careerPaths: ["Graphic Designer", "Art Director", "Visual Communications Specialist"],
+  },
+  {
+    id: "music",
+    name: "Music",
+    category: "Arts",
+    description:
+      "Train as a performer, educator, or producer across instrumental, vocal, and jazz studies.",
+    riasec: { R: 0, I: 0, A: 3, S: 1, E: 0, C: 0 },
+    valueTags: ["creativity", "flexibility"],
+    interestTags: ["design", "communication"],
+    careerPaths: ["Performing Musician", "Music Educator", "Music Producer"],
+  },
+  {
+    id: "theatre",
+    name: "Theatre",
+    category: "Arts",
+    description:
+      "Bring stories to life on stage through performance, direction, and technical design.",
+    riasec: { R: 0, I: 0, A: 3, S: 1, E: 1, C: 0 },
+    valueTags: ["creativity", "flexibility"],
+    interestTags: ["design", "communication"],
+    careerPaths: ["Actor", "Theatre Director", "Technical Theatre Designer"],
+  },
+  {
+    id: "history",
+    name: "History",
+    category: "Humanities",
+    description:
+      "Investigate the past to understand the present, from research to public history.",
+    riasec: { R: 0, I: 1, A: 1, S: 1, E: 0, C: 0 },
+    valueTags: ["prestige", "flexibility"],
+    interestTags: ["research", "writing"],
+    careerPaths: ["Historian", "Archivist", "Museum Curator"],
+  },
+  {
+    id: "language-and-literature",
+    name: "Language and Literature",
+    category: "Humanities",
+    description:
+      "Study English or Spanish language, literature, and writing at an advanced level.",
+    riasec: { R: 0, I: 0, A: 2, S: 1, E: 0, C: 0 },
+    valueTags: ["creativity", "flexibility"],
+    interestTags: ["writing", "languages"],
+    careerPaths: ["Writer / Editor", "English Teacher", "Translator"],
+  },
+  {
+    id: "business-administration",
+    name: "Business Administration",
+    category: "Business",
+    description:
+      "Learn how organizations grow — entrepreneurship, management, HR, and marketing.",
+    riasec: { R: 0, I: 0, A: 0, S: 1, E: 3, C: 2 },
+    valueTags: ["income", "prestige"],
+    interestTags: ["business", "leadership", "communication"],
+    careerPaths: ["Marketing Manager", "Business Analyst", "Entrepreneur"],
+  },
+  {
+    id: "accounting",
+    name: "Accounting",
+    category: "Business",
+    description:
+      "Master the numbers behind every business decision, audit, and budget.",
+    riasec: { R: 0, I: 1, A: 0, S: 0, E: 2, C: 3 },
+    valueTags: ["income", "stability"],
+    interestTags: ["numbers", "business"],
+    careerPaths: ["Accountant", "Auditor", "Financial Analyst"],
+  },
+  {
+    id: "hospitality-tourism-administration",
+    name: "Hospitality and Tourism Administration",
+    category: "Business",
+    description:
+      "Manage hotels, events, and tourism experiences in a fast-paced, people-facing industry.",
+    riasec: { R: 0, I: 0, A: 0, S: 2, E: 2, C: 1 },
+    valueTags: ["flexibility", "income"],
+    interestTags: ["business", "people"],
+    careerPaths: ["Hotel Manager", "Event Planner", "Tourism Director"],
+  },
+  {
+    id: "education",
+    name: "Education",
+    category: "Education",
+    description:
+      "Shape how the next generation learns, from early childhood through secondary classrooms.",
+    riasec: { R: 0, I: 0, A: 1, S: 3, E: 0, C: 1 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["people", "communication"],
+    careerPaths: ["Teacher", "Curriculum Specialist", "School Administrator"],
+  },
+];

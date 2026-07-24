@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  /* Core surfaces */
+  --background: #fdfbff;
+  --foreground: #1a1523;
+
+  /* Brand: fresh & energetic */
+  --color-primary-50: #f2efff;
+  --color-primary-100: #e5e0ff;
+  --color-primary-300: #b3a3ff;
+  --color-primary-500: #6c4cf5;
+  --color-primary-600: #5b34ee;
+  --color-primary-700: #4924c4;
+
+  --color-coral-100: #ffe3da;
+  --color-coral-400: #ff8a65;
+  --color-coral-500: #ff6b47;
+
+  --color-sun-100: #fff4d6;
+  --color-sun-400: #ffc93c;
+  --color-sun-500: #ffb800;
+
+  --color-mint-100: #d9fbef;
+  --color-mint-400: #2ee6a6;
+  --color-mint-500: #17c98d;
+
+  --color-ink-900: #1a1523;
+  --color-ink-700: #3a3350;
+  --color-ink-500: #6b6280;
+  --color-ink-300: #a89fc0;
+  --color-ink-100: #ece7f7;
+
+  --color-surface: #ffffff;
+  --color-surface-soft: #f6f3ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+
+  --color-coral-100: var(--color-coral-100);
+  --color-coral-400: var(--color-coral-400);
+  --color-coral-500: var(--color-coral-500);
+
+  --color-sun-100: var(--color-sun-100);
+  --color-sun-400: var(--color-sun-400);
+  --color-sun-500: var(--color-sun-500);
+
+  --color-mint-100: var(--color-mint-100);
+  --color-mint-400: var(--color-mint-400);
+  --color-mint-500: var(--color-mint-500);
+
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-500: var(--color-ink-500);
+  --color-ink-300: var(--color-ink-300);
+  --color-ink-100: var(--color-ink-100);
+
+  --color-surface: var(--color-surface);
+  --color-surface-soft: var(--color-surface-soft);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), var(--font-body), sans-serif;
+  }
+
+  .bg-mesh {
+    background-image:
+      radial-gradient(circle at 12% 8%, var(--color-primary-100) 0%, transparent 42%),
+      radial-gradient(circle at 88% 0%, var(--color-sun-100) 0%, transparent 38%),
+      radial-gradient(circle at 90% 85%, var(--color-mint-100) 0%, transparent 40%),
+      radial-gradient(circle at 5% 90%, var(--color-coral-100) 0%, transparent 38%);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(95deg, var(--color-primary-600), var(--color-coral-500) 60%, var(--color-sun-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
