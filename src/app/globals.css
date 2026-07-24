@@ -2,37 +2,40 @@
 
 :root {
   /* Core surfaces */
-  --background: #fdfbff;
-  --foreground: #1a1523;
+  --background: #fdfcfc;
+  --foreground: #000000;
 
-  /* Brand: fresh & energetic */
-  --color-primary-50: #f2efff;
-  --color-primary-100: #e5e0ff;
-  --color-primary-300: #b3a3ff;
-  --color-primary-500: #6c4cf5;
-  --color-primary-600: #5b34ee;
-  --color-primary-700: #4924c4;
+  /* Brand: NCCU Maroon (Pantone 202 C / 8B2331, Athletics 880023) */
+  --color-primary-50: #fbe9ec;
+  --color-primary-100: #f2d2d8;
+  --color-primary-300: #c97e8b;
+  --color-primary-500: #a52f43;
+  --color-primary-600: #8b2331;
+  --color-primary-700: #880023;
 
-  --color-coral-100: #ffe3da;
-  --color-coral-400: #ff8a65;
-  --color-coral-500: #ff6b47;
+  /* Charcoal — a darker step of NCCU Black for secondary accents */
+  --color-coral-100: #e4e4e5;
+  --color-coral-400: #5c5e61;
+  --color-coral-500: #3a3b3d;
 
-  --color-sun-100: #fff4d6;
-  --color-sun-400: #ffc93c;
-  --color-sun-500: #ffb800;
+  /* NCCU Black */
+  --color-sun-100: #e8e8e8;
+  --color-sun-400: #1f1f1f;
+  --color-sun-500: #000000;
 
-  --color-mint-100: #d9fbef;
-  --color-mint-400: #2ee6a6;
-  --color-mint-500: #17c98d;
+  /* NCCU Gray (Athletics 8E9093, Pantone 423 C) */
+  --color-mint-100: #eceded;
+  --color-mint-400: #8e9093;
+  --color-mint-500: #6c6e71;
 
-  --color-ink-900: #1a1523;
-  --color-ink-700: #3a3350;
-  --color-ink-500: #6b6280;
-  --color-ink-300: #a89fc0;
-  --color-ink-100: #ece7f7;
+  --color-ink-900: #000000;
+  --color-ink-700: #2c2c2e;
+  --color-ink-500: #67686b;
+  --color-ink-300: #8e9093;
+  --color-ink-100: #ececec;
 
   --color-surface: #ffffff;
-  --color-surface-soft: #f6f3ff;
+  --color-surface-soft: #f7f2f3;
 }
 
 @theme inline {
