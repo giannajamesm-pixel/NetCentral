@@ -4,7 +4,8 @@
       "PowerShell(node --version)",
       "PowerShell(npm --version)",
       "PowerShell($env:Path += \";C:\\\\Program Files\\\\nodejs\"; node --version; npm --version)",
-      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/typescript/bin/tsc --noEmit)"
+      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/typescript/bin/tsc --noEmit)",
+      "Bash(curl -s -o /dev/null -w \"status: %{http_code}\\\\n\" http://localhost:3000/)"
     ]
   }
 }
