@@ -55,6 +55,12 @@ export interface Major {
   careerPaths: string[];
 }
 
+export interface StudentOrg {
+  name: string;
+  uri?: string;
+  url?: string;
+}
+
 export interface Career {
   id: string;
   title: string;
@@ -69,9 +75,10 @@ export interface Career {
   blsUrl?: string;
   employers: string[];
   strategies: string[];
-  // NCCU student organizations on Eagle Link (nccu.presence.io) related to
-  // this career, best fit first; `uri` is the slug in /organization/<uri>.
-  studentOrgs?: { name: string; uri: string }[];
+  // NCCU student organizations related to this career, best fit first. Give
+  // either `uri` (the slug of its Eagle Link page, nccu.presence.io/organization/<uri>)
+  // or `url` (a full link, for groups listed elsewhere such as the School of Business).
+  studentOrgs?: StudentOrg[];
   skills: string[];
   trajectory: string[];
 }

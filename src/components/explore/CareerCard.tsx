@@ -169,9 +169,9 @@ export default function CareerCard({ career }: { career: Career }) {
                 </h4>
                 <ul className="mt-2 flex flex-col gap-1">
                   {career.studentOrgs.map((org) => (
-                    <li key={org.uri}>
+                    <li key={org.name}>
                       <a
-                        href={`${ORG_BASE_URL}${org.uri}`}
+                        href={org.url ?? `${ORG_BASE_URL}${org.uri}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
@@ -182,7 +182,8 @@ export default function CareerCard({ career }: { career: Career }) {
                   ))}
                 </ul>
                 <p className="mt-2 text-xs text-ink-500">
-                  Student organizations on Eagle Link
+                  NCCU student organizations (Eagle Link and the School of
+                  Business)
                 </p>
               </div>
             )}
