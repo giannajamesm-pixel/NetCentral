@@ -162,21 +162,27 @@ export default function CareerCard({ career }: { career: Career }) {
               ))}
             </ul>
 
-            {career.studentOrg && (
+            {career.studentOrgs && career.studentOrgs.length > 0 && (
               <div className="mt-5 rounded-2xl bg-primary-50 p-4">
                 <h4 className="text-xs font-bold uppercase tracking-wide text-primary-700">
                   Get involved at NCCU
                 </h4>
-                <a
-                  href={`${ORG_BASE_URL}${career.studentOrg.uri}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-block text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
-                >
-                  {career.studentOrg.name} ↗
-                </a>
-                <p className="mt-0.5 text-xs text-ink-500">
-                  Student organization on Eagle Link
+                <ul className="mt-2 flex flex-col gap-1">
+                  {career.studentOrgs.map((org) => (
+                    <li key={org.uri}>
+                      <a
+                        href={`${ORG_BASE_URL}${org.uri}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
+                      >
+                        {org.name} ↗
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-xs text-ink-500">
+                  Student organizations on Eagle Link
                 </p>
               </div>
             )}
