@@ -60,11 +60,15 @@ export interface Career {
   title: string;
   majorIds: string[];
   summary: string;
-  // Approximate U.S. annual pay (low ≈ 10th percentile, high ≈ 90th).
-  // Omitted for careers with no reliable BLS equivalent.
+  // U.S. annual pay (low ≈ 10th percentile, high ≈ 90th percentile).
+  // Omitted for careers with no reliable annual figure (e.g. gig work).
   salary?: { low: number; median: number; high: number };
-  // Projected 10-year employment growth, percent. Omitted with salary.
+  // Projected 10-year employment growth, percent.
   growthPct?: number;
+  // Bureau of Labor Statistics Occupational Outlook Handbook page for the figures.
+  blsUrl?: string;
+  employers: string[];
+  strategies: string[];
   skills: string[];
   trajectory: string[];
 }

@@ -126,9 +126,11 @@ export default function ExploreClient({
             </div>
 
             <p className="mt-6 text-xs text-ink-500">
-              Salary and growth figures are rounded U.S. national estimates
-              based on Bureau of Labor Statistics data (bls.gov/ooh). Actual
-              pay varies by location, employer, and experience.
+              Pay is the U.S. median with a 10th–90th percentile range, and
+              growth is the 2025–35 projection, both from the Bureau of Labor
+              Statistics Occupational Outlook Handbook. Figures are national
+              and may describe a broader occupation than the career shown.
+              Actual pay varies by location, employer, and experience.
             </p>
           </>
         )}

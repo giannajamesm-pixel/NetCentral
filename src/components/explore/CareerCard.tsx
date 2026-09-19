@@ -103,6 +103,17 @@ export default function CareerCard({ career }: { career: Career }) {
 
             <section>
               <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
+                Who hires
+              </h4>
+              <ul className="mt-2 list-disc pl-5 text-sm text-ink-700">
+                {career.employers.map((e) => (
+                  <li key={e}>{e}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
                 Skills you&apos;ll use
               </h4>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -139,6 +150,26 @@ export default function CareerCard({ career }: { career: Career }) {
                 </li>
               ))}
             </ol>
+
+            <h4 className="mt-2 text-xs font-bold uppercase tracking-wide text-ink-500">
+              How to stand out
+            </h4>
+            <ul className="mt-2 list-disc pl-5 text-sm text-ink-700">
+              {career.strategies.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
+
+            {career.blsUrl && (
+              <a
+                href={career.blsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-block text-xs font-semibold text-primary-600 hover:text-primary-700 hover:underline"
+              >
+                Source: U.S. Bureau of Labor Statistics ↗
+              </a>
+            )}
           </section>
         </div>
       )}
