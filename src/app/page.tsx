@@ -14,18 +14,6 @@ const features = [
     title: "Career Path Explorer",
     body: "Already know your field? See real trajectories, salary ranges, required skills, and where the job market is heading.",
   },
-  {
-    tag: "Extra Income",
-    color: "bg-sun-100 text-sun-500",
-    title: "Side Income Ideas",
-    body: "Field-specific ways to earn beyond the day job — tutoring, freelancing, consulting, content, licensing, and more.",
-  },
-  {
-    tag: "Community",
-    color: "bg-mint-100 text-mint-500",
-    title: "Alumni Connect",
-    body: "Get matched with alumni who walked your path. See their story, then request a quick chat or intro.",
-  },
 ];
 
 export default function Home() {
@@ -70,7 +58,7 @@ export default function Home() {
               Everything you need to choose with confidence
             </h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
             {features.map((f) => (
               <div
                 key={f.title}

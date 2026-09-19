@@ -19,7 +19,9 @@ NetCentral is a web app for North Carolina Central University students: a short 
 - `src/lib/types.ts` — shared types for the data model below.
 - `src/lib/matching.ts` — scoring and matching logic (`scoreAnswers`, `matchMajors`).
 
-The Navbar and home page already link to `/explore` (Career Path Explorer) and `/alumni` (Alumni Connect) — **these routes don't exist yet**. Only `/` and `/quiz` are built. Don't assume those pages exist.
+- `src/app/explore/page.tsx` — the Career Path Explorer: pick a major (`?major=<id>` deep link) to see its careers as expandable cards (`src/components/explore/`). Career data lives in `src/data/careers.ts` (BLS-sourced pay/outlook, employers, strategies, and related NCCU student organizations).
+
+Only `/`, `/quiz`, and `/explore` are built. There is no alumni or side-income feature; don't link to routes that don't exist.
 
 ## Data model & scoring (read before editing quiz.ts, majors.ts, or matching.ts)
 

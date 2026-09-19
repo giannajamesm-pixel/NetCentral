@@ -3,7 +3,6 @@ import Link from "next/link";
 const links = [
   { href: "/quiz", label: "Find My Path" },
   { href: "/explore", label: "Career Explorer" },
-  { href: "/alumni", label: "Alumni Connect" },
 ];
 
 export default function Navbar() {
