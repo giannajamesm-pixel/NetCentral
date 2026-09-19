@@ -69,6 +69,9 @@ export interface Career {
   blsUrl?: string;
   employers: string[];
   strategies: string[];
+  // An NCCU student organization on Eagle Link (nccu.presence.io) related to
+  // this career; `uri` is its slug in /organization/<uri>.
+  studentOrg?: { name: string; uri: string };
   skills: string[];
   trajectory: string[];
 }

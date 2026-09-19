@@ -4,7 +4,9 @@ import { useState } from "react";
 import { outlookLabel } from "@/data/careers";
 import { Career } from "@/lib/types";
 
-const formatK = (n: number) => `$${Math.round(n / 1000)}k`;
+const ORG_BASE_URL = "https://nccu.presence.io/organization/";
+
+const formatK =(n: number) => `$${Math.round(n / 1000)}k`;
 
 export default function CareerCard({ career }: { career: Career }) {
   const [open, setOpen] = useState(false);
@@ -159,6 +161,25 @@ export default function CareerCard({ career }: { career: Career }) {
                 <li key={s}>{s}</li>
               ))}
             </ul>
+
+            {career.studentOrg && (
+              <div className="mt-5 rounded-2xl bg-primary-50 p-4">
+                <h4 className="text-xs font-bold uppercase tracking-wide text-primary-700">
+                  Get involved at NCCU
+                </h4>
+                <a
+                  href={`${ORG_BASE_URL}${career.studentOrg.uri}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
+                >
+                  {career.studentOrg.name} ↗
+                </a>
+                <p className="mt-0.5 text-xs text-ink-500">
+                  Student organization on Eagle Link
+                </p>
+              </div>
+            )}
 
             {career.blsUrl && (
               <a
