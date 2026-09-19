@@ -55,6 +55,20 @@ export interface Major {
   careerPaths: string[];
 }
 
+export interface Career {
+  id: string;
+  title: string;
+  majorIds: string[];
+  summary: string;
+  // Approximate U.S. annual pay (low ≈ 10th percentile, high ≈ 90th).
+  // Omitted for careers with no reliable BLS equivalent.
+  salary?: { low: number; median: number; high: number };
+  // Projected 10-year employment growth, percent. Omitted with salary.
+  growthPct?: number;
+  skills: string[];
+  trajectory: string[];
+}
+
 export interface MajorMatch {
   major: Major;
   score: number;
