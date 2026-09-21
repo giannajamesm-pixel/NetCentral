@@ -55,6 +55,34 @@ export interface Major {
   careerPaths: string[];
 }
 
+export interface StudentOrg {
+  name: string;
+  uri?: string;
+  url?: string;
+}
+
+export interface Career {
+  id: string;
+  title: string;
+  majorIds: string[];
+  summary: string;
+  // U.S. annual pay (low ≈ 10th percentile, high ≈ 90th percentile).
+  // Omitted for careers with no reliable annual figure (e.g. gig work).
+  salary?: { low: number; median: number; high: number };
+  // Projected 10-year employment growth, percent.
+  growthPct?: number;
+  // Bureau of Labor Statistics Occupational Outlook Handbook page for the figures.
+  blsUrl?: string;
+  employers: string[];
+  strategies: string[];
+  // NCCU student organizations related to this career, best fit first. Give
+  // either `uri` (the slug of its Eagle Link page, nccu.presence.io/organization/<uri>)
+  // or `url` (a full link, for groups listed elsewhere such as the School of Business).
+  studentOrgs?: StudentOrg[];
+  skills: string[];
+  trajectory: string[];
+}
+
 export interface MajorMatch {
   major: Major;
   score: number;

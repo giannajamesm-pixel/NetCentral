@@ -8,7 +8,10 @@
       "Bash(curl -s -o /dev/null -w \"status: %{http_code}\\\\n\" http://localhost:3000/)",
       "WebFetch(domain:whatcanidowiththismajor.com)",
       "WebSearch",
-      "WebFetch(domain:studentsuccess.utk.edu)"
+      "WebFetch(domain:studentsuccess.utk.edu)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/eslint/bin/eslint.js src)"
     ]
   }
 }

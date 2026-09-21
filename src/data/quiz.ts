@@ -233,6 +233,8 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "a1-7", label: "Business / Economics", weights: { E: 2 }, interestTags: ["business"] },
       { id: "a1-8", label: "Foreign Languages", weights: { S: 1, A: 1 }, interestTags: ["languages"] },
       { id: "a1-9", label: "Psychology / Sociology", weights: { S: 2 }, interestTags: ["people"] },
+      { id: "a1-10", label: "Philosophy / Ethics / Religious Studies", weights: { A: 1, I: 1 }, interestTags: ["research", "writing"] },
+      { id: "a1-11", label: "African American / Cultural Studies", weights: { S: 1, A: 1 }, interestTags: ["research", "people"] },
     ],
   },
   {
@@ -251,6 +253,10 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "a2-6", label: "Public speaking or debate", weights: { E: 2 }, interestTags: ["communication", "leadership"] },
       { id: "a2-7", label: "Physical education or health class", weights: { R: 1, S: 1 }, interestTags: ["movement"] },
       { id: "a2-8", label: "Government or civics", weights: { E: 1, I: 1 }, interestTags: ["research", "leadership"] },
+      { id: "a2-9", label: "U.S. or world history", weights: { I: 1, A: 1 }, interestTags: ["research", "writing"] },
+      { id: "a2-10", label: "Literature or literary analysis", weights: { A: 2 }, interestTags: ["writing", "research"] },
+      { id: "a2-11", label: "Philosophy or ethics", weights: { I: 1, A: 1 }, interestTags: ["research", "writing"] },
+      { id: "a2-12", label: "A world language or linguistics", weights: { A: 1, S: 1 }, interestTags: ["languages", "communication"] },
     ],
   },
   {
@@ -269,6 +275,9 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "a3-6", label: "A music theory or performance class", weights: { A: 2 }, interestTags: ["design", "communication"] },
       { id: "a3-7", label: "An entrepreneurship or marketing class", weights: { E: 2 }, interestTags: ["business"] },
       { id: "a3-8", label: "A sociology or social work class", weights: { S: 2 }, interestTags: ["people"] },
+      { id: "a3-9", label: "A history or African American studies class", weights: { I: 1, S: 1 }, interestTags: ["research", "writing"] },
+      { id: "a3-10", label: "A philosophy or ethics class", weights: { I: 1, A: 1 }, interestTags: ["research", "writing"] },
+      { id: "a3-11", label: "A foreign language or linguistics class", weights: { A: 1, S: 1 }, interestTags: ["languages", "communication"] },
     ],
   },
   {
@@ -282,6 +291,7 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "a4-3", label: "I'd rather write, create, or talk through ideas than crunch numbers", weights: { A: 1 }, interestTags: ["writing"] },
       { id: "a4-4", label: "I like numbers when they connect to real money or business", weights: { E: 1, C: 1 }, interestTags: ["numbers", "business"] },
       { id: "a4-5", label: "I like numbers when they explain something scientific", weights: { I: 2 }, interestTags: ["science", "numbers"] },
+      { id: "a4-6", label: "I'd rather analyze texts, sources, or arguments than numbers", weights: { A: 1, I: 1 }, interestTags: ["research", "writing"] },
     ],
   },
   {
@@ -295,6 +305,8 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "a5-3", label: "Visually — through design, art, or media", weights: { A: 2 }, interestTags: ["design"] },
       { id: "a5-4", label: "One-on-one conversation", weights: { S: 2 }, interestTags: ["people", "communication"] },
       { id: "a5-5", label: "Through data, charts, or technical documentation", weights: { C: 2, I: 1 }, interestTags: ["numbers", "technology"] },
+      { id: "a5-6", label: "By building an argument from research and evidence", weights: { I: 1, A: 1 }, interestTags: ["research", "writing"] },
+      { id: "a5-7", label: "Through storytelling — narrative, poetry, or spoken word", weights: { A: 2 }, interestTags: ["writing", "communication"] },
     ],
   },
 

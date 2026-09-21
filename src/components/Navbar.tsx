@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
   { href: "/quiz", label: "Find My Path" },
   { href: "/explore", label: "Career Explorer" },
-  { href: "/alumni", label: "Alumni Connect" },
 ];
 
 export default function Navbar() {
@@ -11,9 +11,14 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-ink-100 bg-surface/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-primary-500 to-coral-500 font-display text-sm font-bold text-white">
-            NC
-          </span>
+          <Image
+            src="/nccu-logo.jpg"
+            alt="NCCU IAIER logo"
+            width={48}
+            height={48}
+            priority
+            className="h-12 w-12 object-contain"
+          />
           <span className="font-display text-lg font-bold tracking-tight">
             NetCentral
           </span>
