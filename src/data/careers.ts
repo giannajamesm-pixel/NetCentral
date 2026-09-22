@@ -1590,3 +1590,27 @@ export function outlookLabel(growthPct: number): string {
   if (growthPct === 0) return "Little or no change";
   return "Declining";
 }
+
+// Plain-language explanation of what an outlookLabel actually means for a
+// student, shown as a hover tooltip on the growth badge. "Average" here is
+// the typical growth rate across all U.S. occupations (roughly 3-4%), which
+// is the same baseline BLS uses for its own outlook wording.
+export function outlookDescription(growthPct: number): string {
+  const pct = `${growthPct > 0 ? "+" : ""}${growthPct}%`;
+  if (growthPct >= 7) {
+    return `${pct} over the next 10 years — much faster than the average U.S. job. Expect strong demand and plenty of openings.`;
+  }
+  if (growthPct >= 5) {
+    return `${pct} over the next 10 years — faster than the average U.S. job. Demand should keep growing at a healthy pace.`;
+  }
+  if (growthPct >= 3) {
+    return `${pct} over the next 10 years — about the same pace as the average U.S. job. Demand should stay steady, neither booming nor shrinking.`;
+  }
+  if (growthPct >= 1) {
+    return `${pct} over the next 10 years — slower than the average U.S. job, but the number of jobs is still growing.`;
+  }
+  if (growthPct === 0) {
+    return "Little to no change expected over the next 10 years — the number of jobs should stay about the same.";
+  }
+  return `${pct} over the next 10 years — this field is expected to shrink, so openings may be more competitive.`;
+}

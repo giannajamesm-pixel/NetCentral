@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { outlookLabel } from "@/data/careers";
+import { outlookDescription, outlookLabel } from "@/data/careers";
 import { Career } from "@/lib/types";
 
 const ORG_BASE_URL = "https://nccu.presence.io/organization/";
@@ -42,8 +42,16 @@ export default function CareerCard({ career }: { career: Career }) {
               </span>
             )}
             {growthPct !== undefined && (
-              <span className="rounded-full bg-mint-100 px-3 py-1 text-xs font-bold text-mint-500">
-                {outlookLabel(growthPct)}
+              <span className="group relative inline-flex">
+                <span className="cursor-help rounded-full bg-mint-100 px-3 py-1 text-xs font-bold text-mint-500 underline decoration-dotted decoration-mint-500/50 underline-offset-2">
+                  {outlookLabel(growthPct)}
+                </span>
+                <span
+                  role="tooltip"
+                  className="pointer-events-none absolute top-full left-1/2 z-20 mt-2 w-56 -translate-x-1/2 rounded-2xl border border-ink-100 bg-surface p-3 text-xs font-normal normal-case text-ink-700 opacity-0 shadow-lg transition group-hover:opacity-100"
+                >
+                  {outlookDescription(growthPct)}
+                </span>
               </span>
             )}
           </div>
