@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MajorMatch, RiasecKey, RiasecScores } from "@/lib/types";
 
 const RIASEC_NAMES: Record<RiasecKey, string> = {
@@ -47,9 +48,10 @@ export default function ResultsView({ matches, riasec, onRestart }: ResultsViewP
           const matchPct = Math.round(60 + (m.score / maxScore) * 36);
 
           return (
-          <div
+          <Link
             key={m.major.id}
-            className="rounded-3xl border border-ink-100 bg-surface p-7 shadow-sm transition hover:shadow-lg"
+            href={`/explore?major=${m.major.id}`}
+            className="group block rounded-3xl border border-ink-100 bg-surface p-7 shadow-sm transition hover:border-primary-200 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -82,15 +84,20 @@ export default function ResultsView({ matches, riasec, onRestart }: ResultsViewP
                 </span>
               ))}
             </div>
-          </div>
+
+            <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary-600">
+              Explore careers for {m.major.name}
+              <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+            </span>
+          </Link>
           );
         })}
       </div>
 
       <div className="mt-12 flex flex-col items-center gap-3 text-center">
         <p className="text-sm text-ink-500">
-          Curious about the details? Career paths, salaries, and alumni are up
-          next.
+          Tap any match to see its careers, salaries, and job outlook in the
+          Career Explorer.
         </p>
         <button
           type="button"

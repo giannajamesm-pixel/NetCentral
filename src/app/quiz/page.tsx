@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Navbar from "@/components/Navbar";
 import OptionCard from "@/components/quiz/OptionCard";
 import ProgressBar from "@/components/quiz/ProgressBar";
@@ -8,10 +8,35 @@ import ResultsView from "@/components/quiz/ResultsView";
 import { quizQuestions } from "@/data/quiz";
 import { matchMajors, QuizAnswers, scoreAnswers } from "@/lib/matching";
 
+// Persist results for the browser session so "Back" from the Career Explorer
+// returns to the student's matches instead of a blank quiz.
+const STORAGE_KEY = "netcentral-quiz";
+
 export default function QuizPage() {
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved) as { answers: QuizAnswers };
+        setAnswers(parsed.answers);
+        setSubmitted(true);
+      }
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      if (submitted) {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ answers }));
+      } else {
+        sessionStorage.removeItem(STORAGE_KEY);
+      }
+    } catch {}
+  }, [submitted, answers]);
 
   const question = quizQuestions[stepIndex];
   const isLast = stepIndex === quizQuestions.length - 1;

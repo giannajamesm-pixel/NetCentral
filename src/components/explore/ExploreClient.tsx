@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import CareerCard from "@/components/explore/CareerCard";
 import { careersForMajor } from "@/data/careers";
 import { majors } from "@/data/majors";
@@ -14,6 +14,14 @@ export default function ExploreClient({
     majors.some((m) => m.id === initialMajorId) ? initialMajorId : undefined
   );
   const [query, setQuery] = useState("");
+  const careersRef = useRef<HTMLDivElement>(null);
+
+  // Deep links (e.g. from quiz results) jump straight to the careers.
+  useEffect(() => {
+    if (majors.some((m) => m.id === initialMajorId)) {
+      careersRef.current?.scrollIntoView({ block: "start" });
+    }
+  }, [initialMajorId]);
 
   const selected = majors.find((m) => m.id === majorId);
   const careers = useMemo(
@@ -100,7 +108,7 @@ export default function ExploreClient({
         </div>
       </div>
 
-      <div className="mt-10" aria-live="polite">
+      <div ref={careersRef} className="mt-10 scroll-mt-24" aria-live="polite">
         {!selected && (
           <p className="text-center text-ink-500">
             Choose a major above to see its career paths.
