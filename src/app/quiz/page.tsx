@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import Navbar from "@/components/Navbar";
 import OptionCard from "@/components/quiz/OptionCard";
 import ProgressBar from "@/components/quiz/ProgressBar";
@@ -11,38 +11,50 @@ import { matchMajors, QuizAnswers, scoreAnswers } from "@/lib/matching";
 // Persist results for the browser session so "Back" from the Career Explorer
 // returns to the student's matches instead of a blank quiz.
 const STORAGE_KEY = "netcentral-quiz";
+const listeners = new Set<() => void>();
+
+function subscribeSaved(listener: () => void) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function readSaved() {
+  try {
+    return sessionStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function writeSaved(answers: QuizAnswers | null) {
+  try {
+    if (answers) sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ answers }));
+    else sessionStorage.removeItem(STORAGE_KEY);
+  } catch {}
+  listeners.forEach((l) => l());
+}
 
 export default function QuizPage() {
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
+  const savedJson = useSyncExternalStore(subscribeSaved, readSaved, () => null);
+  const savedAnswers = useMemo(() => {
     try {
-      const saved = sessionStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved) as { answers: QuizAnswers };
-        setAnswers(parsed.answers);
-        setSubmitted(true);
-      }
-    } catch {}
-  }, []);
-
-  useEffect(() => {
-    try {
-      if (submitted) {
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ answers }));
-      } else {
-        sessionStorage.removeItem(STORAGE_KEY);
-      }
-    } catch {}
-  }, [submitted, answers]);
+      return savedJson ? (JSON.parse(savedJson) as { answers: QuizAnswers }).answers : null;
+    } catch {
+      return null;
+    }
+  }, [savedJson]);
+  const showResults = submitted || savedAnswers !== null;
+  const resultAnswers = submitted ? answers : savedAnswers ?? answers;
 
   const question = quizQuestions[stepIndex];
   const isLast = stepIndex === quizQuestions.length - 1;
   const selected = answers[question?.id] ?? [];
 
-  const scores = useMemo(() => scoreAnswers(answers), [answers]);
+  const scores = useMemo(() => scoreAnswers(resultAnswers), [resultAnswers]);
   const matches = useMemo(() => matchMajors(scores, undefined, 4), [scores]);
 
   function toggleOption(optionId: string) {
@@ -68,6 +80,7 @@ export default function QuizPage() {
   function goNext() {
     if (isLast) {
       setSubmitted(true);
+      writeSaved(answers);
       return;
     }
     setStepIndex((i) => Math.min(i + 1, quizQuestions.length - 1));
@@ -78,12 +91,13 @@ export default function QuizPage() {
   }
 
   function restart() {
+    writeSaved(null);
     setAnswers({});
     setStepIndex(0);
     setSubmitted(false);
   }
 
-  if (submitted) {
+  if (showResults) {
     return (
       <>
         <Navbar />

@@ -51,7 +51,7 @@ export default function ResultsView({ matches, riasec, onRestart }: ResultsViewP
           <Link
             key={m.major.id}
             href={`/explore?major=${m.major.id}`}
-            className="group block rounded-3xl border border-ink-100 bg-surface p-7 shadow-sm transition hover:border-primary-200 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+            className="group block rounded-3xl border border-ink-100 bg-surface p-7 shadow-sm transition hover:border-primary-300 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
