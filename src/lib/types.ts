@@ -67,8 +67,9 @@ export interface Career {
   majorIds: string[];
   summary: string;
   // U.S. annual pay (low ≈ 10th percentile, high ≈ 90th percentile).
-  // Omitted for careers with no reliable annual figure (e.g. gig work).
-  salary?: { low: number; median: number; high: number };
+  // Omitted for careers with no reliable annual figure (e.g. gig work);
+  // low/high are omitted when only a median is published.
+  salary?: { low?: number; median: number; high?: number };
   // Projected 10-year employment growth, percent.
   growthPct?: number;
   // Bureau of Labor Statistics Occupational Outlook Handbook page for the figures.

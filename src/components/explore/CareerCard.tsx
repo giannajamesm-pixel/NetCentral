@@ -13,9 +13,14 @@ export default function CareerCard({ career }: { career: Career }) {
   const { salary, growthPct } = career;
   const panelId = `career-${career.id}`;
 
-  const medianPos = salary
-    ? ((salary.median - salary.low) / (salary.high - salary.low)) * 100
-    : 0;
+  const range =
+    salary?.low !== undefined && salary.high !== undefined
+      ? { low: salary.low, high: salary.high }
+      : null;
+  const medianPos =
+    salary && range
+      ? ((salary.median - range.low) / (range.high - range.low)) * 100
+      : 0;
 
   return (
     <div className="rounded-3xl border border-ink-100 bg-surface shadow-sm transition hover:shadow-lg">
@@ -76,7 +81,7 @@ export default function CareerCard({ career }: { career: Career }) {
               <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
                 Salary range
               </h4>
-              {salary ? (
+              {salary && range ? (
                 <>
                   <div className="relative mt-4 h-2 rounded-full bg-primary-100">
                     <span
@@ -86,13 +91,20 @@ export default function CareerCard({ career }: { career: Career }) {
                     />
                   </div>
                   <div className="mt-2 flex justify-between text-xs text-ink-500">
-                    <span>{formatK(salary.low)}</span>
+                    <span>{formatK(range.low)}</span>
                     <span className="font-semibold text-ink-900">
                       {formatK(salary.median)} median
                     </span>
-                    <span>{formatK(salary.high)}</span>
+                    <span>{formatK(range.high)}</span>
                   </div>
                 </>
+              ) : salary ? (
+                <p className="mt-2 text-sm text-ink-700">
+                  <span className="font-semibold text-ink-900">
+                    {formatK(salary.median)} median
+                  </span>{" "}
+                  (a full pay range isn&apos;t published for this role)
+                </p>
               ) : (
                 <p className="mt-2 text-sm text-ink-500">
                   No single reliable figure — income depends heavily on the
