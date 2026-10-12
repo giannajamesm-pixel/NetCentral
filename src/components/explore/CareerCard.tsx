@@ -196,6 +196,28 @@ export default function CareerCard({ career }: { career: Career }) {
               </div>
             )}
 
+            {career.resources && career.resources.length > 0 && (
+              <div className="mt-5 rounded-2xl border border-ink-100 p-4">
+                <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
+                  Professional organizations
+                </h4>
+                <ul className="mt-2 flex flex-col gap-1">
+                  {career.resources.map((r) => (
+                    <li key={r.url}>
+                      <a
+                        href={r.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-ink-900 hover:text-primary-700 hover:underline"
+                      >
+                        {r.name} ↗
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {career.blsUrl && (
               <a
                 href={career.blsUrl}

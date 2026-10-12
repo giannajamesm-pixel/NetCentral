@@ -79,6 +79,9 @@ export interface Career {
   // either `uri` (the slug of its Eagle Link page, nccu.presence.io/organization/<uri>)
   // or `url` (a full link, for groups listed elsewhere such as the School of Business).
   studentOrgs?: StudentOrg[];
+  // National professional organizations for the career (certifications,
+  // student memberships, job boards), shown as links in the expanded card.
+  resources?: { name: string; url: string }[];
   skills: string[];
   trajectory: string[];
 }
