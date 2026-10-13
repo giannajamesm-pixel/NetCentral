@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import { useState } from "react";
 import { outlookDescription, outlookLabel } from "@/data/careers";
 import { Career } from "@/lib/types";
@@ -249,18 +250,18 @@ export default function CareerCard({
             )}
           </section>
 
-          <div className="flex flex-col items-start gap-3 rounded-2xl bg-surface-soft p-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-ink-700">
-              <span className="font-semibold text-ink-900">Want this job?</span>{" "}
-              See the classes, projects, certifications, and internships to aim
-              for each year of college.
+          <div className="flex flex-col items-start gap-3 border-t border-ink-100 pt-5 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-ink-500">
+              Plan your path: classes, projects, certifications, and
+              internships for each year of college.
             </p>
             <Link
               href={`/explore/${career.id}${majorId ? `?major=${majorId}` : ""}`}
-              className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-ink-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-primary-600"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-primary-600 px-4 py-2 text-sm font-semibold text-primary-700 transition hover:bg-primary-600 hover:text-white"
             >
-              <span aria-hidden>🛣️</span> See the 4-year roadmap
-              <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
+              <Icon name="route" className="h-4 w-4" />
+              View 4-year roadmap
+              <Icon name="arrowRight" className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </Link>
           </div>
         </div>

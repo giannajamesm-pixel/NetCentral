@@ -1,27 +1,31 @@
 import Link from "next/link";
+import Icon, { IconName } from "@/components/Icon";
 import { Roadmap, RoadmapStep, StepType } from "@/lib/roadmap";
 
-export const STEP_STYLES: Record<StepType, { icon: string; label: string; badge: string }> = {
-  class: { icon: "📚", label: "Class / skill", badge: "bg-mint-100 text-mint-500" },
-  project: { icon: "🛠️", label: "Project", badge: "bg-coral-100 text-coral-500" },
-  cert: { icon: "🏅", label: "Certification / exam", badge: "bg-primary-50 text-primary-700" },
-  experience: { icon: "💼", label: "Experience", badge: "bg-sun-100 text-sun-500" },
-  org: { icon: "🤝", label: "Get involved", badge: "bg-ink-100 text-ink-700" },
-  milestone: { icon: "🎯", label: "Milestone", badge: "bg-primary-600 text-white" },
+// One quiet neutral style for every step type; milestones are filled in
+// maroon so the big moments stand out along the road.
+const NEUTRAL = "border border-ink-100 bg-surface text-primary-700";
+export const STEP_STYLES: Record<StepType, { icon: IconName; label: string; badge: string }> = {
+  class: { icon: "book", label: "Class / skill", badge: NEUTRAL },
+  project: { icon: "tool", label: "Project", badge: NEUTRAL },
+  cert: { icon: "award", label: "Certification / exam", badge: NEUTRAL },
+  experience: { icon: "briefcase", label: "Experience", badge: NEUTRAL },
+  org: { icon: "users", label: "Get involved", badge: NEUTRAL },
+  milestone: { icon: "flag", label: "Milestone", badge: "bg-primary-600 text-white" },
 };
 
 function StepLink({ step }: { step: RoadmapStep }) {
   if (!step.href) return null;
   const internal = step.href.startsWith("/");
   const className =
-    "mt-1 inline-flex text-xs font-semibold text-primary-600 hover:text-primary-700 hover:underline";
+    "mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-700";
   return internal ? (
     <Link href={step.href} className={className}>
-      Open in NetCentral →
+      Open in NetCentral <Icon name="arrowRight" className="h-3 w-3" />
     </Link>
   ) : (
     <a href={step.href} target="_blank" rel="noopener noreferrer" className={className}>
-      Learn more ↗
+      Learn more <Icon name="arrowUpRight" className="h-3 w-3" />
     </a>
   );
 }
@@ -89,9 +93,9 @@ export default function RoadmapRoad({
                       <li key={`${step.type}-${step.title}`} className="flex gap-3">
                         <span
                           aria-hidden
-                          className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-sm ${s.badge}`}
+                          className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${s.badge}`}
                         >
-                          {s.icon}
+                          <Icon name={s.icon} className="h-4 w-4" />
                         </span>
                         <div className="min-w-0">
                           <p className="text-[11px] font-bold uppercase tracking-wide text-ink-500">
@@ -116,8 +120,13 @@ export default function RoadmapRoad({
       {/* Destination */}
       <div className="relative mt-10 flex justify-start md:justify-center">
         <div className="ml-20 w-full max-w-md rounded-3xl border-2 border-primary-500 bg-surface p-6 text-center shadow-lg md:ml-0">
-          <p aria-hidden className="text-3xl">🏁</p>
-          <p className="mt-1 text-xs font-bold uppercase tracking-wide text-primary-600">
+          <span
+            aria-hidden
+            className="mx-auto grid h-11 w-11 place-items-center rounded-full bg-primary-600 text-white"
+          >
+            <Icon name="pin" className="h-5 w-5" />
+          </span>
+          <p className="mt-3 text-xs font-bold uppercase tracking-wide text-primary-600">
             Destination
           </p>
           <h3 className="font-display mt-1 text-2xl font-bold text-ink-900">{careerTitle}</h3>

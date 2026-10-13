@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import Icon from "@/components/Icon";
 import RoadmapRoad, { STEP_STYLES } from "@/components/roadmap/RoadmapRoad";
 import { careers, outlookLabel } from "@/data/careers";
 import { majors } from "@/data/majors";
@@ -87,7 +88,7 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
                 key={s.label}
                 className="flex items-center gap-1.5 rounded-full border border-ink-100 bg-surface px-3 py-1 text-xs font-semibold text-ink-700"
               >
-                <span aria-hidden>{s.icon}</span>
+                <Icon name={s.icon} className="h-3.5 w-3.5 text-primary-700" />
                 {s.label}
               </li>
             ))}
