@@ -170,7 +170,7 @@ export const careers: Career[] = [
   },
   {
     id: "pharmacist", title: "Pharmacist",
-    majorIds: ["chemistry-biochemistry", "pharmaceutical-sciences"],
+    majorIds: ["pharmaceutical-sciences", "chemistry-biochemistry"],
     summary: "Dispense medications and advise patients and providers on their safe use (PharmD required).",
     salary: { low: 99290, median: 140910, high: 174230 },
     growthPct: 5,
@@ -2341,8 +2341,15 @@ export const careers: Career[] = [
   },
 ];
 
+// A career's first majorId is the major it's primarily built around. List those
+// careers first, then ones the major shares with other majors (e.g. Software
+// Developer under Mathematics), keeping file order within each group.
 export function careersForMajor(majorId: string): Career[] {
-  return careers.filter((c) => c.majorIds.includes(majorId));
+  const matches = careers.filter((c) => c.majorIds.includes(majorId));
+  return [
+    ...matches.filter((c) => c.majorIds[0] === majorId),
+    ...matches.filter((c) => c.majorIds[0] !== majorId),
+  ];
 }
 
 // Labels match the BLS "job outlook" wording for the 2025–35 projections.
