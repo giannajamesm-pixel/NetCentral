@@ -17,8 +17,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg text-ink-500">
               NetCentral turns who you are — your interests, strengths, values,
-              and work style — into majors and careers worth exploring. Plus
-              real alumni to talk to along the way.
+              and work style — into majors and careers worth exploring.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link

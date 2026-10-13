@@ -15,7 +15,7 @@ const displayFont = Space_Grotesk({
 export const metadata: Metadata = {
   title: "NetCentral — Find Your Path",
   description:
-    "NetCentral helps students discover majors and careers that fit who they are, explore real career paths, and connect with alumni who've been there.",
+    "NetCentral helps students discover majors and careers that fit who they are, explore real career paths, and get career-ready with resume tools and campus events.",
 };
 
 export default function RootLayout({
