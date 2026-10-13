@@ -129,7 +129,7 @@ export default function ExploreClient({
 
             <div className="flex flex-col gap-4">
               {careers.map((c) => (
-                <CareerCard key={c.id} career={c} />
+                <CareerCard key={c.id} career={c} majorId={majorId} />
               ))}
             </div>
 

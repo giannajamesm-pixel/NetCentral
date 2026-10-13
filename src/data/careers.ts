@@ -176,7 +176,7 @@ export const careers: Career[] = [
     growthPct: 5,
     blsUrl: "https://www.bls.gov/ooh/healthcare/pharmacists.htm",
     employers: ["Retail pharmacies", "Hospitals and clinics", "Pharmaceutical companies", "Long-term care and government"],
-    strategies: ["Plan early for a PharmD program and the PCAT/admissions requirements", "Work as a pharmacy technician", "Build leadership through pre-pharmacy organizations"],
+    strategies: ["Plan early for PharmD program prerequisites and admission requirements", "Work as a pharmacy technician", "Build leadership through pre-pharmacy organizations"],
     studentOrgs: [{ name: "International Society of Pharmaceutical Engineering", uri: "international-society-of-pharmaceutical-engineering" }, { name: "American Chemical Society (NCCU Chapter)", uri: "american-chemical-society-nccu-chapter" }, { name: "NOBCChE (Black Chemists and Chemical Engineers), NCCU", uri: "nccu_nobcche-national-organization-for-the-professional-advancement-of-black-chemists-and-chemical-engineers" }],
     skills: ["Pharmacology", "Accuracy", "Patient counseling", "Regulatory knowledge"],
     trajectory: ["PharmD Student", "Staff Pharmacist", "Clinical / Lead Pharmacist", "Pharmacy Manager"],

@@ -23,7 +23,9 @@ NetCentral is a web app for North Carolina Central University students: a short 
 
 - `src/app/bizprep/page.tsx` — BizPrep: campus career events and career fair employers (`src/data/bizprep.ts`, edited by hand from Handshake), plus an application toolkit dropdown (Resume / Cover Letter / Portfolio) in `src/components/bizprep/`. Resume offers upload-and-review (rule-based, runs client-side in `src/lib/resumeReview.ts`; files are never uploaded) or Google Docs/Slides `/copy` templates and a Word download in `public/templates/`. Cover Letter and Portfolio are placeholders.
 
-Only `/`, `/quiz`, `/explore`, and `/bizprep` are built. There is no alumni or side-income feature; don't link to routes that don't exist.
+- `src/app/explore/[careerId]/page.tsx` — a career's 4-year roadmap, drawn as a road (`src/components/roadmap/`). Roadmaps are generated, not hand-written: `src/lib/roadmap.ts` picks a track (nursing, teaching, tech, cyber, engineering, analytics, prehealth, research, health, business, creative, social) for the year-by-year skeleton, then slots in the career's own strategies, skills, orgs, resources, and employers. Improve a career's roadmap by editing its `strategies` in `careers.ts`.
+
+Only `/`, `/quiz`, `/explore` (plus `/explore/<careerId>`), and `/bizprep` are built. There is no alumni or side-income feature; don't link to routes that don't exist.
 
 ## Data model & scoring (read before editing quiz.ts, majors.ts, or matching.ts)
 
