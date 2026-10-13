@@ -78,16 +78,6 @@ export default function CareerCard({
         </span>
       </button>
 
-      <div className="-mt-2 px-6 pb-5">
-        <Link
-          href={`/explore/${career.id}${majorId ? `?major=${majorId}` : ""}`}
-          className="group inline-flex items-center gap-1.5 rounded-full bg-ink-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-primary-600"
-        >
-          <span aria-hidden>🛣️</span> See the 4-year roadmap
-          <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
-        </Link>
-      </div>
-
       {open && (
         <div
           id={panelId}
@@ -258,6 +248,21 @@ export default function CareerCard({
               </a>
             )}
           </section>
+
+          <div className="flex flex-col items-start gap-3 rounded-2xl bg-surface-soft p-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-ink-700">
+              <span className="font-semibold text-ink-900">Want this job?</span>{" "}
+              See the classes, projects, certifications, and internships to aim
+              for each year of college.
+            </p>
+            <Link
+              href={`/explore/${career.id}${majorId ? `?major=${majorId}` : ""}`}
+              className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-ink-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-primary-600"
+            >
+              <span aria-hidden>🛣️</span> See the 4-year roadmap
+              <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
+            </Link>
+          </div>
         </div>
       )}
     </div>
