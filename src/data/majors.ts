@@ -5,10 +5,10 @@ import { Major } from "@/lib/types";
 export const majors: Major[] = [
   {
     id: "computer-information-sciences",
-    name: "Computer and Information Sciences",
+    name: "Computer Science and Business",
     category: "STEM",
     description:
-      "Build the software, systems, and algorithms behind everything from apps to AI.",
+      "Build the software, systems, and algorithms behind everything from apps to AI, with a grounding in business.",
     riasec: { R: 1, I: 3, A: 0, S: 0, E: 0, C: 1 },
     valueTags: ["income", "flexibility"],
     interestTags: ["technology", "numbers", "research"],
@@ -108,7 +108,7 @@ export const majors: Major[] = [
     category: "Health",
     description:
       "Design programs and policy that improve health outcomes for communities.",
-    riasec: { R: 0, I: 1, A: 0, S: 3, E: 1, C: 0 },
+    riasec: { R: 0, I: 1, A: 0, S: 3, E: 1, C: 1 },
     valueTags: ["helping", "stability"],
     interestTags: ["people", "science"],
     careerPaths: ["Public Health Educator", "Community Health Worker", "Health Program Coordinator"],
@@ -123,6 +123,28 @@ export const majors: Major[] = [
     valueTags: ["helping", "flexibility"],
     interestTags: ["movement", "people"],
     careerPaths: ["Athletic Trainer", "Recreation Director", "Fitness Program Coordinator"],
+  },
+  {
+    id: "health-administration",
+    name: "Health Administration",
+    category: "Health",
+    description:
+      "Learn to manage the business side of healthcare: operations, finance, policy, and health information (offered online).",
+    riasec: { R: 0, I: 1, A: 0, S: 2, E: 2, C: 1 },
+    valueTags: ["stability", "income"],
+    interestTags: ["business", "people", "leadership"],
+    careerPaths: ["Healthcare Administrator", "Medical Records Specialist", "Health Program Coordinator"],
+  },
+  {
+    id: "nutrition-dietetics",
+    name: "Nutrition and Dietetics",
+    category: "Health",
+    description:
+      "Study food, nutrition science, and how diet shapes health, preparing for dietetics and community nutrition careers (offered online).",
+    riasec: { R: 1, I: 2, A: 0, S: 3, E: 0, C: 0 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["science", "people"],
+    careerPaths: ["Registered Dietitian", "Food Service Manager", "Public Health Educator"],
   },
   {
     id: "psychology",
@@ -213,6 +235,28 @@ export const majors: Major[] = [
     careerPaths: ["Actor", "Theatre Director", "Technical Theatre Designer"],
   },
   {
+    id: "behavioral-social-sciences",
+    name: "Behavioral and Social Sciences",
+    category: "Social Science",
+    description:
+      "Combine psychology, sociology, and other social sciences to understand people, communities, and social problems.",
+    riasec: { R: 0, I: 2, A: 0, S: 3, E: 1, C: 0 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["people", "research"],
+    careerPaths: ["Social and Community Service Manager", "Case Manager", "Behavioral Researcher"],
+  },
+  {
+    id: "interdisciplinary-studies",
+    name: "Interdisciplinary Studies",
+    category: "Humanities",
+    description:
+      "Design a broad degree across fields, with concentrations in Communication Arts, Humanities, or Race, Gender, and Class.",
+    riasec: { R: 0, I: 1, A: 2, S: 2, E: 1, C: 0 },
+    valueTags: ["creativity", "flexibility"],
+    interestTags: ["writing", "communication", "people"],
+    careerPaths: ["Writer / Editor", "Community Outreach Coordinator", "Policy Analyst"],
+  },
+  {
     id: "history",
     name: "History",
     category: "Humanities",
@@ -268,14 +312,36 @@ export const majors: Major[] = [
     careerPaths: ["Hotel Manager", "Event Planner", "Tourism Director"],
   },
   {
-    id: "education",
-    name: "Education",
+    id: "early-childhood-education",
+    name: "Early Childhood Education",
     category: "Education",
     description:
-      "Shape how the next generation learns, from early childhood through secondary classrooms.",
-    riasec: { R: 0, I: 0, A: 1, S: 3, E: 0, C: 1 },
+      "Teach and care for young children from birth through kindergarten, with a focus on child development and families.",
+    riasec: { R: 0, I: 0, A: 2, S: 3, E: 0, C: 1 },
     valueTags: ["helping", "stability"],
     interestTags: ["people", "communication"],
-    careerPaths: ["Teacher", "Curriculum Specialist", "School Administrator"],
+    careerPaths: ["Preschool Teacher", "Childcare Center Director", "Elementary School Teacher"],
+  },
+  {
+    id: "elementary-education",
+    name: "Elementary Education",
+    category: "Education",
+    description:
+      "Prepare to teach grades K–6, building strong foundations in reading, math, science, and social studies.",
+    riasec: { R: 0, I: 1, A: 1, S: 3, E: 0, C: 1 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["people", "communication"],
+    careerPaths: ["Elementary School Teacher", "Curriculum Specialist", "School Administrator"],
+  },
+  {
+    id: "middle-grades-education",
+    name: "Middle Grades Education",
+    category: "Education",
+    description:
+      "Prepare to teach grades 6–9 in two subject areas, such as language arts, math, science, or social studies.",
+    riasec: { R: 0, I: 1, A: 0, S: 3, E: 1, C: 1 },
+    valueTags: ["helping", "stability"],
+    interestTags: ["people", "communication"],
+    careerPaths: ["Middle School Teacher", "Curriculum Specialist", "School Administrator"],
   },
 ];

@@ -62,8 +62,8 @@ const RESEARCH_MAJORS = [
 const TECH_MAJORS = ["computer-information-sciences", "information-technology"];
 const BUSINESS_MAJORS = ["business-administration", "accounting", "hospitality-tourism-administration"];
 const CREATIVE_MAJORS = ["mass-communication", "art-and-design", "music", "theatre", "language-and-literature"];
-const SOCIAL_MAJORS = ["psychology", "social-work", "criminal-justice", "political-science", "history"];
-const HEALTH_MAJORS = ["kinesiology-recreation-administration", "public-health-education"];
+const SOCIAL_MAJORS = ["psychology", "social-work", "criminal-justice", "political-science", "history", "behavioral-social-sciences", "interdisciplinary-studies"];
+const HEALTH_MAJORS = ["kinesiology-recreation-administration", "public-health-education", "health-administration", "nutrition-dietetics"];
 
 // Health careers that need a professional degree after college.
 const PREHEALTH_IDS = ["physician", "physician-assistant", "pharmacist", "physical-therapist", "occupational-therapist", "chiropractor"];
@@ -94,7 +94,7 @@ function trackFor(career: Career): Track {
   if (BUSINESS_MAJORS.includes(primary)) return "business";
   if (CREATIVE_MAJORS.includes(primary)) return "creative";
   if (SOCIAL_MAJORS.includes(primary)) return "social";
-  if (primary === "education") return "teaching";
+  if (["early-childhood-education", "elementary-education", "middle-grades-education"].includes(primary)) return "teaching";
   return "general";
 }
 

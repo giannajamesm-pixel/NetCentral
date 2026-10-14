@@ -73,7 +73,7 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
               )}
               {roadmap.gradSchool && (
                 <span className="rounded-full bg-sun-100 px-3 py-1 text-xs font-bold text-sun-500">
-                  Requires {roadmap.gradSchool.school}
+                  Next step: {roadmap.gradSchool.school}
                 </span>
               )}
             </div>
