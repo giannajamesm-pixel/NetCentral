@@ -218,7 +218,7 @@ export const majors: Major[] = [
     category: "Humanities",
     description:
       "Investigate the past to understand the present, from research to public history.",
-    riasec: { R: 0, I: 1, A: 1, S: 1, E: 0, C: 0 },
+    riasec: { R: 0, I: 3, A: 2, S: 1, E: 0, C: 0 },
     valueTags: ["prestige", "flexibility"],
     interestTags: ["research", "writing"],
     careerPaths: ["Historian", "Archivist", "Museum Curator"],
@@ -229,7 +229,7 @@ export const majors: Major[] = [
     category: "Humanities",
     description:
       "Study English or Spanish language, literature, and writing at an advanced level.",
-    riasec: { R: 0, I: 0, A: 2, S: 1, E: 0, C: 0 },
+    riasec: { R: 0, I: 2, A: 2, S: 2, E: 0, C: 0 },
     valueTags: ["creativity", "flexibility"],
     interestTags: ["writing", "languages"],
     careerPaths: ["Writer / Editor", "English Teacher", "Translator"],
