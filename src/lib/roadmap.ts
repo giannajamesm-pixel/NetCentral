@@ -66,10 +66,19 @@ const SOCIAL_MAJORS = ["psychology", "social-work", "criminal-justice", "politic
 const HEALTH_MAJORS = ["kinesiology-recreation-administration", "public-health-education", "health-administration", "nutrition-dietetics"];
 
 // Health careers that need a professional degree after college.
-const PREHEALTH_IDS = ["physician", "physician-assistant", "pharmacist", "physical-therapist", "occupational-therapist", "chiropractor"];
-// Careers in science majors that are really business or communication roles.
-const BUSINESS_IDS = ["pharmaceutical-sales-representative", "regulatory-affairs-specialist"];
-const CREATIVE_IDS = ["technical-writer"];
+const PREHEALTH_IDS = [
+  "physician", "physician-assistant", "pharmacist", "physical-therapist", "occupational-therapist", "chiropractor",
+  "anesthesiologist-assistant", "genetic-counselor", "perfusionist", "speech-language-pathologist", "orthotist-prosthetist", "forensic-pathologist",
+];
+// Careers in science majors that are really business, communication,
+// hands-on health, or public-facing roles.
+const BUSINESS_IDS = ["pharmaceutical-sales-representative", "regulatory-affairs-specialist", "medical-device-sales-representative", "product-specialist", "ecotourism-specialist"];
+const CREATIVE_IDS = ["technical-writer", "medical-illustrator", "science-writer"];
+const HEALTH_IDS = [
+  "paramedic", "respiratory-therapist", "radiation-therapist", "nuclear-medicine-technologist",
+  "clinical-laboratory-technician", "medical-laboratory-scientist", "blood-bank-technologist", "cytotechnologist", "cytogenetic-technologist",
+];
+const SOCIAL_IDS = ["park-ranger", "museum-technician", "environmental-lobbyist"];
 
 function trackFor(career: Career): Track {
   const primary = career.majorIds[0];
@@ -80,6 +89,8 @@ function trackFor(career: Career): Track {
   if (PREHEALTH_IDS.includes(career.id)) return "prehealth";
   if (BUSINESS_IDS.includes(career.id)) return "business";
   if (CREATIVE_IDS.includes(career.id)) return "creative";
+  if (HEALTH_IDS.includes(career.id)) return "health";
+  if (SOCIAL_IDS.includes(career.id)) return "social";
   if (TECH_MAJORS.includes(primary)) return "tech";
   if (/engineer\b|engineering technician/.test(text) && !/software|machine learning|financial/.test(text)) return "engineering";
   if (
