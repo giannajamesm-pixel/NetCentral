@@ -72,7 +72,7 @@ const PREHEALTH_IDS = [
 ];
 // Careers in science majors that are really business, communication,
 // hands-on health, or public-facing roles.
-const BUSINESS_IDS = ["pharmaceutical-sales-representative", "regulatory-affairs-specialist", "medical-device-sales-representative", "product-specialist", "ecotourism-specialist"];
+const BUSINESS_IDS = ["pharmaceutical-sales-representative", "regulatory-affairs-specialist", "medical-device-sales-representative", "product-specialist", "ecotourism-specialist", "technical-consultant"];
 const CREATIVE_IDS = ["technical-writer", "medical-illustrator", "science-writer"];
 const HEALTH_IDS = [
   "paramedic", "respiratory-therapist", "radiation-therapist", "nuclear-medicine-technologist",
