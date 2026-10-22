@@ -90,7 +90,7 @@ export const careers: Career[] = [
   },
   {
     id: "actuary", title: "Actuary",
-    majorIds: ["mathematics", "business-administration"],
+    majorIds: ["mathematics", "business-administration", "accounting"],
     summary: "Use math and statistics to measure financial risk for insurers and pension plans.",
     salary: { low: 78570, median: 130000, high: 215100 },
     growthPct: 9,
@@ -3587,15 +3587,15 @@ export const careers: Career[] = [
   {
     id: "tax-preparer", title: "Tax Preparer",
     majorIds: ["accounting"],
-    summary: "Calculate, file, and sign income tax returns for people and businesses.",
+    summary: "Calculate, file, and sign income tax returns for people and businesses. The work is often flexible or remote, and there's demand year-round.",
     employers: ["Tax preparation companies", "Accounting firms", "Self-employment", "Community tax programs"],
-    strategies: ["Take individual and business tax courses", "Volunteer with a free tax-prep program such as IRS VITA", "Look into getting an IRS PTIN to prepare returns for pay"],
+    strategies: ["Take individual and business tax courses", "Volunteer with a free tax-prep program such as IRS VITA", "Look into getting an IRS PTIN to prepare returns for pay", "Look into becoming an Enrolled Agent (EA) or CPA later, since only they (or attorneys) can represent clients before the IRS"],
     studentOrgs: [{ name: "NABA (National Association of Black Accountants), NCCU", uri: "naba-inc-nccu" }, { name: "Financial Management Society", url: "https://www.nccu.edu/business/student-professional-development-and-career-management/student-organizations#financial-management-society" }],
     skills: ["Tax law", "Accuracy", "Client service", "Tax software"],
     trajectory: ["Seasonal Tax Preparer", "Tax Preparer", "Senior Tax Preparer / Enrolled Agent", "Tax Practice Owner"],
   },
   {
-    id: "management-accountant", title: "Management Accountant",
+    id: "management-accountant", title: "Management Accountant (CMA)",
     majorIds: ["accounting"],
     summary: "Analyze data from across a company to strengthen its finances, cut costs, find investment opportunities, and help put improvements in place.",
     salary: { low: 56020, median: 83680, high: 144090 },
@@ -3661,6 +3661,35 @@ export const careers: Career[] = [
     studentOrgs: [{ name: "NABA (National Association of Black Accountants), NCCU", uri: "naba-inc-nccu" }, { name: "IT Eagles", uri: "it-eagles" }],
     skills: ["Accounting systems", "Data management", "Internal controls", "Problem solving"],
     trajectory: ["Staff Accountant / IT Audit Associate", "IT Accountant", "Senior Systems Accountant", "Financial Systems Manager"],
+  },
+  // More accounting pathways from Intuit's "What jobs can you get with an
+  // accounting degree?" (intuit.com/blog/life-at-intuit/intuit-experts/
+  // accounting-degree). The rest of its list already exists above.
+  {
+    id: "investment-advisor", title: "Investment Advisor",
+    majorIds: ["accounting"],
+    summary: "Guide clients' investment decisions: assess their goals and risk tolerance, recommend strategies, and monitor and rebalance their portfolios.",
+    salary: { low: 50190, median: 105070, high: 357020 },
+    growthPct: 1,
+    blsUrl: "https://www.bls.gov/ooh/business-and-financial/personal-financial-advisors.htm",
+    employers: ["Investment advisory firms", "Banks and brokerages", "Wealth management firms", "Your own advisory practice"],
+    strategies: ["Take investments, financial planning, and tax courses", "Intern with a wealth management or brokerage firm", "Prepare for the securities licensing exam that advisors typically need", "Look into registering as an investment advisor with the SEC or your state once you're licensed"],
+    studentOrgs: [{ name: "The NCCU Wealth Management Club", uri: "the-nccu-wealth-management-club" }, { name: "Financial Management Society", url: "https://www.nccu.edu/business/student-professional-development-and-career-management/student-organizations#financial-management-society" }],
+    skills: ["Market analysis", "Financial planning", "Client relationships", "Reading financial statements"],
+    trajectory: ["Client Service Associate", "Associate Advisor", "Investment Advisor", "Senior Advisor / Practice Owner"],
+  },
+  {
+    id: "financial-modeler", title: "Financial Modeler",
+    majorIds: ["accounting"],
+    summary: "Build detailed financial models and forecasts of a company, its investments, or its deals to guide big decisions like mergers and acquisitions.",
+    salary: { low: 63720, median: 103570, high: 180860 },
+    growthPct: 7,
+    blsUrl: "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm",
+    employers: ["Investment banks", "Corporate finance teams", "Private equity and consulting firms", "Accounting firms' advisory practices"],
+    strategies: ["Build advanced Excel skills, including scenario and sensitivity analysis", "Build a model of a public company's financial statements for your portfolio", "Land a corporate finance or investment banking internship"],
+    studentOrgs: [{ name: "Financial Management Society", url: "https://www.nccu.edu/business/student-professional-development-and-career-management/student-organizations#financial-management-society" }, { name: "The NCCU Wealth Management Club", uri: "the-nccu-wealth-management-club" }],
+    skills: ["Advanced Excel", "Forecasting", "Valuation", "Dashboards"],
+    trajectory: ["Financial Analyst", "Financial Modeler", "Senior Modeler / Associate", "Head of FP&A or Valuation"],
   },
 ];
 
