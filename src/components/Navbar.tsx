@@ -10,15 +10,15 @@ const links = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink-100 bg-surface/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link href="/" aria-label="NetCentral home" className="flex shrink-0 items-center gap-2">
           <Image
-            src="/nccu-logo.jpg"
+            src="/nccu-logo.png"
             alt="NCCU IAIER logo"
-            width={48}
-            height={48}
+            width={72}
+            height={72}
             priority
-            className="h-10 w-10 object-contain sm:h-12 sm:w-12"
+            className="h-14 w-14 object-contain sm:h-[72px] sm:w-[72px]"
           />
           <span className="font-display hidden text-lg font-bold tracking-tight sm:inline">
             NetCentral
