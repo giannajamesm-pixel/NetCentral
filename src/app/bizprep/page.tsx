@@ -27,9 +27,29 @@ export default function BizPrepPage() {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-col gap-6">
+           <div className="mt-10 flex flex-col gap-6">
             <EventsSection />
             <BizPrepClient />
+
+            <section className="rounded-2xl border border-gray-200 bg-white p-6">
+              <h2 className="text-2xl font-bold text-gray-900">
+                Explore Careers with Forage
+              </h2>
+
+              <p className="mt-3 text-gray-600">
+                Explore Forage for career preparation resources and
+                job simulations.
+              </p>
+
+              <a
+                href="https://www.theforage.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-lg bg-primary-700 px-5 py-3 font-semibold text-white hover:underline"
+              >
+                Visit Forage
+              </a>
+            </section>
           </div>
         </div>
       </main>
