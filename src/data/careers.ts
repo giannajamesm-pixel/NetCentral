@@ -718,7 +718,7 @@ export const careers: Career[] = [
   },
   {
     id: "social-community-service-manager", title: "Social and Community Service Manager",
-    majorIds: ["behavioral-social-sciences", "psychology"],
+    majorIds: ["behavioral-social-sciences", "psychology", "social-work"],
     summary: "Lead programs and organizations that support people and communities, like youth, housing, or family services.",
     salary: { low: 53150, median: 80390, high: 132260 },
     growthPct: 7,
@@ -1003,7 +1003,7 @@ export const careers: Career[] = [
   },
   {
     id: "public-health-educator", title: "Public Health Educator",
-    majorIds: ["public-health-education", "nutrition-dietetics", "psychology"],
+    majorIds: ["public-health-education", "nutrition-dietetics", "psychology", "social-work"],
     summary: "Teach communities about health topics and design programs that change behavior.",
     salary: { low: 42990, median: 64070, high: 118200 },
     growthPct: 6,
@@ -1029,7 +1029,7 @@ export const careers: Career[] = [
   },
   {
     id: "health-program-coordinator", title: "Health Program Coordinator",
-    majorIds: ["public-health-education", "health-administration"],
+    majorIds: ["public-health-education", "health-administration", "social-work"],
     summary: "Plan, run, and evaluate health programs for nonprofits and public agencies.",
     salary: { low: 53150, median: 80390, high: 132260 },
     growthPct: 7,
@@ -1130,7 +1130,7 @@ export const careers: Career[] = [
   },
   {
     id: "recreational-therapist", title: "Recreational Therapist",
-    majorIds: ["kinesiology-recreation-administration"],
+    majorIds: ["kinesiology-recreation-administration", "social-work"],
     summary: "Use sports, games, arts, and outdoor activities to improve the health and well-being of people with illnesses or disabilities.",
     salary: { low: 40990, median: 61960, high: 100420 },
     growthPct: 5,
@@ -1296,7 +1296,7 @@ export const careers: Career[] = [
   },
   {
     id: "behavioral-researcher", title: "Behavioral Researcher",
-    majorIds: ["psychology", "behavioral-social-sciences"],
+    majorIds: ["psychology", "behavioral-social-sciences", "social-work"],
     summary: "Study how people think and act to inform products, policy, and health programs.",
     salary: { low: 59080, median: 99110, high: 163380 },
     growthPct: 6,
@@ -1362,7 +1362,7 @@ export const careers: Career[] = [
   },
   {
     id: "probation-officer", title: "Probation Officer",
-    majorIds: ["criminal-justice", "psychology"],
+    majorIds: ["criminal-justice", "psychology", "social-work"],
     summary: "Supervise people on probation or parole and help them reintegrate.",
     salary: { low: 46840, median: 66270, high: 107790 },
     growthPct: 3,
@@ -4258,7 +4258,7 @@ export const careers: Career[] = [
   },
   {
     id: "mental-health-counselor", title: "Mental Health Counselor",
-    majorIds: ["psychology"],
+    majorIds: ["psychology", "social-work"],
     summary: "Help people work through mental health, substance use, and behavior problems (master's degree and license required).",
     salary: { low: 38940, median: 59350, high: 97590 },
     growthPct: 18,
@@ -4322,7 +4322,7 @@ export const careers: Career[] = [
   },
   {
     id: "psychiatric-technician", title: "Psychiatric / Behavioral Health Technician",
-    majorIds: ["psychology"],
+    majorIds: ["psychology", "social-work"],
     summary: "Care for people with mental illness or developmental disabilities, helping with daily activities, therapy programs, and monitoring.",
     salary: { low: 32090, median: 45100, high: 60440 },
     growthPct: 18,
@@ -4762,6 +4762,65 @@ export const careers: Career[] = [
     resources: [{ name: "Employee Assistance Professionals Association", url: "https://www.eapassn.org/" }, { name: "National Association of Social Workers (NASW)", url: "https://www.socialworkers.org/" }],
     skills: ["Short-term counseling", "Referral networks", "Wellness training", "Consultation"],
     trajectory: ["EAP Intake Coordinator", "Employee Assistance Social Worker", "EAP Account Manager", "EAP Program Director"],
+  },
+
+  // Bachelor's-level social work jobs from Indeed's "Jobs You Can Get With a
+  // Degree in Social Work" that weren't already above. Careers it lists that
+  // already exist carry social-work as an extra majorId. Pay and growth use
+  // current BLS figures for the closest occupation.
+  {
+    id: "social-human-service-assistant", title: "Social and Human Service Assistant",
+    majorIds: ["social-work", "behavioral-social-sciences", "psychology"],
+    summary: "Help people find and apply for the services they need, such as housing, food, and health care, working under social workers and other professionals.",
+    salary: { low: 34200, median: 45930, high: 63290 },
+    growthPct: 7,
+    blsUrl: "https://www.bls.gov/ooh/community-and-social-service/social-and-human-service-assistants.htm",
+    employers: ["Homeless shelters and housing programs", "Social-service nonprofits", "Government human-service departments", "Group homes and residential programs"],
+    strategies: ["Volunteer at a shelter, food pantry, or community center", "Learn how local benefit programs and applications work", "Use your field placement to practice referrals and intake"],
+    studentOrgs: [{ name: "Social Work Society", uri: "social-work-society-2" }, { name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }],
+    resources: [{ name: "National Organization for Human Services", url: "https://www.nationalhumanservices.org/" }],
+    skills: ["Referrals", "Intake interviews", "Resource knowledge", "Empathy"],
+    trajectory: ["Social Services Assistant", "Caseworker", "Case Manager", "Program Coordinator"],
+  },
+  {
+    id: "habilitation-specialist", title: "Habilitation Specialist",
+    majorIds: ["social-work", "psychology"],
+    summary: "Help people with disabilities build social and daily living skills so they can live more independently, through one-on-one and group sessions.",
+    salary: { low: 34200, median: 45930, high: 63290 },
+    growthPct: 7,
+    blsUrl: "https://www.bls.gov/ooh/community-and-social-service/social-and-human-service-assistants.htm",
+    employers: ["Disability service agencies", "Group homes and residential programs", "Day programs", "Home and community-based service providers"],
+    strategies: ["Volunteer with Special Olympics or a disability day program", "Take courses on developmental disabilities and behavior support", "Get CPR and crisis intervention training"],
+    studentOrgs: [{ name: "Social Work Society", uri: "social-work-society-2" }, { name: "NAMI Eagles", uri: "nami-eagles-national-alliance-on-mental-illness-at-north-carolina-central-university" }],
+    resources: [{ name: "The Arc", url: "https://thearc.org/" }],
+    skills: ["Skill building", "Behavior support", "Group facilitation", "Patience"],
+    trajectory: ["Direct Support Professional", "Habilitation Specialist", "Qualified Professional (QP)", "Program Manager"],
+  },
+  {
+    id: "eligibility-worker", title: "Eligibility Worker",
+    majorIds: ["social-work", "behavioral-social-sciences"],
+    summary: "Decide whether people qualify for programs like food assistance, Medicaid, housing help, or unemployment, check their information, and keep them enrolled.",
+    salary: { median: 54210 },
+    growthPct: 2,
+    blsUrl: "https://www.bls.gov/ooh/office-and-administrative-support/information-clerks.htm",
+    employers: ["County departments of social services", "State benefit agencies", "Housing authorities", "Hospitals (financial counseling)"],
+    strategies: ["Learn how SNAP, Medicaid, and other benefit programs work", "Request a field placement with a county department of social services", "Practice careful, accurate data entry and record keeping"],
+    studentOrgs: [{ name: "Social Work Society", uri: "social-work-society-2" }, { name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }],
+    skills: ["Interviewing", "Attention to detail", "Program rules", "Customer service"],
+    trajectory: ["Eligibility Worker", "Senior Eligibility Specialist", "Eligibility Supervisor", "Program Administrator"],
+  },
+  {
+    id: "correctional-treatment-specialist", title: "Correctional Treatment Specialist",
+    majorIds: ["social-work", "criminal-justice", "psychology"],
+    summary: "Counsel people in prison or on probation and parole, assess their needs, and build rehabilitation and release plans covering treatment, jobs, and housing.",
+    salary: { low: 46840, median: 66270, high: 107790 },
+    growthPct: 3,
+    blsUrl: "https://www.bls.gov/ooh/community-and-social-service/probation-officers-and-correctional-treatment-specialists.htm",
+    employers: ["State prison systems", "Federal Bureau of Prisons", "County jails", "Juvenile justice and reentry programs"],
+    strategies: ["Add criminal justice courses or a minor", "Request a field placement in corrections, juvenile court, or reentry services", "Check your state's hiring exams and background requirements"],
+    studentOrgs: [{ name: "Social Work Society", uri: "social-work-society-2" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }, { name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }],
+    skills: ["Risk assessment", "Counseling", "Release planning", "Report writing"],
+    trajectory: ["Correctional Case Manager", "Correctional Treatment Specialist", "Senior Specialist", "Treatment Program Supervisor"],
   },
 ];
 
