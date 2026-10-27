@@ -1498,7 +1498,7 @@ export const careers: Career[] = [
   {
     id: "youth-correctional-counselor", title: "Youth Correctional Counselor",
     majorIds: ["criminal-justice", "psychology", "social-work"],
-    summary: "Counsel young people in juvenile detention and youth programs, one-on-one and in groups, addressing their emotional and mental health needs.",
+    summary: "Counsel young people in juvenile detention, schools, and youth programs, one-on-one and in groups, addressing their emotional and mental health needs and connecting their families to resources.",
     salary: { low: 46840, median: 66270, high: 107790 },
     growthPct: 3,
     blsUrl: "https://www.bls.gov/ooh/community-and-social-service/probation-officers-and-correctional-treatment-specialists.htm",
@@ -1521,7 +1521,7 @@ export const careers: Career[] = [
     growthPct: 0,
     blsUrl: "https://www.bls.gov/ooh/protective-service/police-and-detectives.htm",
     employers: ["City police departments", "County sheriff's offices", "State Bureau of Investigation", "Federal agencies (FBI, DHS, Postal Inspection Service)"],
-    strategies: ["Plan to start on patrol, since most detectives are promoted from uniformed officers", "Study criminal procedure and evidence", "Build strong interviewing and report-writing skills"],
+    strategies: ["Plan to start on patrol, since most detectives are promoted from uniformed officers", "Study criminal procedure and evidence", "Build strong interviewing and report-writing skills", "A bachelor's or master's in criminal justice gives you a head start for promotion"],
     studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }],
     skills: ["Investigation", "Interviewing", "Evidence handling", "Report writing"],
     trajectory: ["Patrol Officer", "Detective", "Senior Detective", "Detective Sergeant / Lieutenant"],
@@ -1592,6 +1592,21 @@ export const careers: Career[] = [
     studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }],
     skills: ["Courtroom security", "De-escalation", "Attention to detail", "Professionalism"],
     trajectory: ["Detention Officer", "Bailiff / Court Deputy", "Court Security Supervisor", "Court Services Commander"],
+  },
+
+  // From Monroe University's "What Can You Do With a Criminal Justice
+  // Degree?". The other careers it lists already exist; Cyber Crime
+  // Investigator and Forensic Accountant carry criminal-justice as an extra
+  // majorId. BLS has no profiler occupation, so pay is omitted.
+  {
+    id: "criminal-profiler", title: "Criminal Profiler",
+    majorIds: ["criminal-justice", "psychology"],
+    summary: "Use crime scene evidence to estimate a suspect's age, background, and motives, and help investigators reconstruct how a crime happened.",
+    employers: ["FBI Behavioral Analysis Unit", "State Bureau of Investigation", "Large police departments", "Investigative consulting firms"],
+    strategies: ["Take forensic psychology and abnormal psychology courses", "Plan to build years of investigative experience first, since most profilers start as detectives or agents", "Consider a master's in criminal justice or forensic psychology"],
+    studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }],
+    skills: ["Behavioral analysis", "Crime reconstruction", "Critical thinking", "Report writing"],
+    trajectory: ["Patrol Officer or Analyst", "Detective / Special Agent", "Behavioral Analyst", "Senior Profiler"],
   },
   {
     id: "attorney", title: "Attorney",
@@ -2640,7 +2655,7 @@ export const careers: Career[] = [
   },
   {
     id: "cyber-crime-investigator", title: "Cyber Crime Investigator",
-    majorIds: ["information-technology", "computer-information-sciences"],
+    majorIds: ["information-technology", "computer-information-sciences", "criminal-justice"],
     summary: "Investigate suspected cybercrimes — from scene documentation through evidence collection and prosecution support.",
     salary: { low: 52000, median: 80000, high: 135000 }, growthPct: 6,
     employers: ["Law enforcement agencies", "Federal investigative agencies", "Corporate fraud-investigation teams", "Digital forensics firms"],
@@ -3857,7 +3872,7 @@ export const careers: Career[] = [
   },
   {
     id: "forensic-accountant", title: "Forensic Accountant",
-    majorIds: ["accounting"],
+    majorIds: ["accounting", "criminal-justice"],
     summary: "Investigate suspicious financial activity to find where missing money went and how to recover it, sometimes testifying as an expert witness.",
     salary: { low: 56020, median: 83680, high: 144090 },
     growthPct: 5,
