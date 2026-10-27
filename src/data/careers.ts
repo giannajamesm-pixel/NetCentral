@@ -1368,7 +1368,7 @@ export const careers: Career[] = [
     growthPct: 3,
     blsUrl: "https://www.bls.gov/ooh/community-and-social-service/probation-officers-and-correctional-treatment-specialists.htm",
     employers: ["State and county corrections agencies", "Federal court system", "Juvenile justice programs", "Community supervision programs"],
-    strategies: ["Intern at a courthouse or probation office", "Study casework and counseling techniques", "Check agency degree and exam requirements", "Expect a trainee period and certification test after you're hired"],
+    strategies: ["Intern at a courthouse or probation office", "Study casework and counseling techniques", "Check agency degree and exam requirements", "Expect a trainee period and certification test after you're hired", "Plan on a master's and several years of experience to become a probation supervisor"],
     studentOrgs: [{ name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }, { name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }],
     skills: ["Case management", "Interviewing", "Report writing", "Boundary setting"],
     trajectory: ["Probation Officer", "Senior Officer", "Supervisor", "Chief Probation Officer"],
@@ -1626,6 +1626,22 @@ export const careers: Career[] = [
     resources: [{ name: "International Association of Arson Investigators", url: "https://www.firearson.com/" }],
     skills: ["Evidence collection", "Fire science", "Interviewing", "Report writing"],
     trajectory: ["Firefighter or Officer", "Fire Investigator", "Senior Investigator", "Fire Marshal"],
+  },
+
+  // From Southeast Missouri State's "Criminal Justice Career Paths". The
+  // other careers it lists already exist; Emergency Management Director
+  // carries criminal-justice as an extra majorId. BLS has no handbook page
+  // for police chiefs, so pay is omitted.
+  {
+    id: "police-chief", title: "Police Chief",
+    majorIds: ["criminal-justice"],
+    summary: "Lead a police department: plan its operations, set and enforce policies, supervise officers, and represent the department to the community.",
+    employers: ["City police departments", "Campus police departments", "County police departments", "Town and village departments"],
+    strategies: ["Plan on many years of experience moving up through the ranks", "Earn a master's in criminal justice or public administration", "Take leadership training such as the FBI National Academy once you're a supervisor"],
+    studentOrgs: [{ name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }, { name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }],
+    resources: [{ name: "International Association of Chiefs of Police", url: "https://www.theiacp.org/" }, { name: "NOBLE (National Organization of Black Law Enforcement Executives)", url: "https://noblenational.org/" }],
+    skills: ["Leadership", "Policy making", "Budgeting", "Community relations"],
+    trajectory: ["Patrol Officer", "Sergeant / Lieutenant", "Captain / Deputy Chief", "Police Chief"],
   },
   {
     id: "criminal-justice-professor", title: "Criminal Justice Professor",
@@ -5183,7 +5199,7 @@ export const careers: Career[] = [
   },
   {
     id: "emergency-management-director", title: "Emergency Management Director",
-    majorIds: ["social-work", "political-science", "public-health-education"],
+    majorIds: ["social-work", "political-science", "public-health-education", "criminal-justice"],
     summary: "Plan how communities respond to disasters and emergencies, and lead the response and recovery when they happen.",
     salary: { low: 54210, median: 93330, high: 166430 },
     growthPct: 4,
