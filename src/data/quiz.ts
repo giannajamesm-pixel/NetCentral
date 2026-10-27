@@ -1,7 +1,7 @@
 import { QuizQuestion } from "@/lib/types";
 
 export const quizQuestions: QuizQuestion[] = [
-  // Personality (RIASEC) — 10 questions, each rotates which trait is left out
+  // Personality (RIASEC) — 7 questions, each rotates which trait is left out
   // so every trait gets picked up across multiple questions.
   {
     id: "p1",
@@ -44,19 +44,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
-    id: "p4",
-    section: "Personality",
-    prompt: "You have a totally free Saturday. What sounds most appealing?",
-    type: "single",
-    options: [
-      { id: "p4-1", label: "Working on a hands-on project — car, garden, DIY, sport", weights: { R: 2 } },
-      { id: "p4-2", label: "Falling down a research rabbit hole on something that interests you", weights: { I: 2 } },
-      { id: "p4-3", label: "Making something — art, music, writing, content", weights: { A: 2 } },
-      { id: "p4-4", label: "Networking, side-hustling, or planning your next big move", weights: { E: 2 } },
-      { id: "p4-5", label: "Organizing your space, finances, or getting ahead on tasks", weights: { C: 2 } },
-    ],
-  },
-  {
     id: "p5",
     section: "Personality",
     prompt: "A professor asks for a volunteer to present extra material to the class. Your gut reaction?",
@@ -70,19 +57,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
-    id: "p6",
-    section: "Personality",
-    prompt: "Pick the internship you'd be most excited to tell people about:",
-    type: "single",
-    options: [
-      { id: "p6-1", label: "Working on-site building or repairing real systems", weights: { R: 2 } },
-      { id: "p6-2", label: "Running experiments or analyzing data in a lab", weights: { I: 2 } },
-      { id: "p6-3", label: "Creating content, design, or media for a brand", weights: { A: 2 } },
-      { id: "p6-4", label: "Working directly with clients, patients, or students", weights: { S: 2 } },
-      { id: "p6-5", label: "Pitching, selling, or growing a business", weights: { E: 2 } },
-    ],
-  },
-  {
     id: "p7",
     section: "Personality",
     prompt: "When a problem doesn't have an obvious answer, you tend to...",
@@ -93,19 +67,6 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "p7-3", label: "Talk it through with other people to see their perspective", weights: { S: 2 } },
       { id: "p7-4", label: "Make a decision and adjust as you go", weights: { E: 2 } },
       { id: "p7-5", label: "Follow a proven process or checklist", weights: { C: 2 } },
-    ],
-  },
-  {
-    id: "p8",
-    section: "Personality",
-    prompt: "Your ideal Friday night before a big week involves...",
-    type: "single",
-    options: [
-      { id: "p8-1", label: "Being active — sports, working out, being outside", weights: { R: 2 } },
-      { id: "p8-2", label: "A creative outlet — music, art, a show, writing", weights: { A: 2 } },
-      { id: "p8-3", label: "Quality time with close friends or family", weights: { S: 2 } },
-      { id: "p8-4", label: "A networking event, party, or something high-energy", weights: { E: 2 } },
-      { id: "p8-5", label: "Getting fully prepped and organized for the week ahead", weights: { C: 2 } },
     ],
   },
   {
@@ -196,24 +157,6 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "h3-9", label: "Writing for a blog, school paper, or social media", weights: { A: 1, I: 1 }, interestTags: ["writing"] },
     ],
   },
-  {
-    id: "h4",
-    section: "Hobbies & Interests",
-    prompt: "If you had to run a YouTube channel, which type would it be?",
-    helper: "Pick up to 3.",
-    type: "multi",
-    maxSelect: 3,
-    options: [
-      { id: "h4-1", label: "A science or tech explainer channel", weights: { I: 2 }, interestTags: ["science", "research"] },
-      { id: "h4-2", label: "A comedy, entertainment, or vlog channel", weights: { A: 2 }, interestTags: ["design", "communication"] },
-      { id: "h4-3", label: "A fitness or sports channel", weights: { R: 1 }, interestTags: ["movement"] },
-      { id: "h4-4", label: "A business or entrepreneurship channel", weights: { E: 2 }, interestTags: ["business", "leadership"] },
-      { id: "h4-5", label: "A true-crime, law, or politics channel", weights: { E: 1, S: 1 }, interestTags: ["communication", "leadership"] },
-      { id: "h4-6", label: "A mental health or self-improvement channel", weights: { S: 2 }, interestTags: ["people"] },
-      { id: "h4-7", label: "A DIY, how-to, or build channel", weights: { R: 2 }, interestTags: ["building"] },
-      { id: "h4-8", label: "A travel, food, or culture channel", weights: { S: 1 }, interestTags: ["languages", "people"] },
-    ],
-  },
 
   // Academic Strengths
   {
@@ -257,27 +200,6 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "a2-10", label: "Literature or literary analysis", weights: { A: 2 }, interestTags: ["writing", "research"] },
       { id: "a2-11", label: "Philosophy or ethics", weights: { I: 1, A: 1 }, interestTags: ["research", "writing"] },
       { id: "a2-12", label: "A world language or linguistics", weights: { A: 1, S: 1 }, interestTags: ["languages", "communication"] },
-    ],
-  },
-  {
-    id: "a3",
-    section: "Academic Strengths",
-    prompt: "Which of these would you actively choose as an elective if you could?",
-    helper: "Pick up to 3.",
-    type: "multi",
-    maxSelect: 3,
-    options: [
-      { id: "a3-1", label: "A coding or programming class", weights: { I: 2 }, interestTags: ["technology"] },
-      { id: "a3-2", label: "A creative writing or literature class", weights: { A: 2 }, interestTags: ["writing"] },
-      { id: "a3-3", label: "A public health or nutrition class", weights: { S: 2 }, interestTags: ["science", "people"] },
-      { id: "a3-4", label: "A criminal justice or law class", weights: { E: 1, S: 1 }, interestTags: ["leadership", "people"] },
-      { id: "a3-5", label: "A studio art or graphic design class", weights: { A: 2 }, interestTags: ["design"] },
-      { id: "a3-6", label: "A music theory or performance class", weights: { A: 2 }, interestTags: ["design", "communication"] },
-      { id: "a3-7", label: "An entrepreneurship or marketing class", weights: { E: 2 }, interestTags: ["business"] },
-      { id: "a3-8", label: "A sociology or social work class", weights: { S: 2 }, interestTags: ["people"] },
-      { id: "a3-9", label: "A history or African American studies class", weights: { I: 1, S: 1 }, interestTags: ["research", "writing"] },
-      { id: "a3-10", label: "A philosophy or ethics class", weights: { I: 1, A: 1 }, interestTags: ["research", "writing"] },
-      { id: "a3-11", label: "A foreign language or linguistics class", weights: { A: 1, S: 1 }, interestTags: ["languages", "communication"] },
     ],
   },
   {
@@ -361,21 +283,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
-    id: "v4",
-    section: "Family & Values",
-    prompt: "Picture yourself 10 years from now, genuinely happy in your career. What's true in that picture?",
-    type: "single",
-    weightMultiplier: 2,
-    options: [
-      { id: "v4-1", label: "I have total job security and a solid retirement plan", valueTags: ["stability"] },
-      { id: "v4-2", label: "I'm making great money and living comfortably", valueTags: ["income"] },
-      { id: "v4-3", label: "People introduce me by my title and take me seriously", valueTags: ["prestige"] },
-      { id: "v4-4", label: "I've changed someone's life for the better", valueTags: ["helping"] },
-      { id: "v4-5", label: "I set my own hours and answer to myself", valueTags: ["flexibility"] },
-      { id: "v4-6", label: "I get to make something new that didn't exist before", valueTags: ["creativity"] },
-    ],
-  },
-  {
     id: "v5",
     section: "Family & Values",
     prompt: "How much does staying close to home or your community influence your plans?",
@@ -421,16 +328,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
   },
   {
-    id: "w4",
-    section: "Work Style",
-    prompt: "Indoors or outdoors?",
-    type: "single",
-    options: [
-      { id: "w4-1", label: "I'd rather be outside or out in the field", weights: { R: 2 }, interestTags: ["movement"] },
-      { id: "w4-2", label: "I'm happiest indoors, at a desk or in a controlled environment", weights: { C: 1, I: 1 } },
-    ],
-  },
-  {
     id: "w5",
     section: "Work Style",
     prompt: "Leading or supporting?",
@@ -438,16 +335,6 @@ export const quizQuestions: QuizQuestion[] = [
     options: [
       { id: "w5-1", label: "I like being the one in charge, making the final call", weights: { E: 2 }, interestTags: ["leadership"] },
       { id: "w5-2", label: "I like supporting a strong leader and doing excellent work behind the scenes", weights: { S: 1, C: 1 } },
-    ],
-  },
-  {
-    id: "w6",
-    section: "Work Style",
-    prompt: "Fast-paced chaos or steady predictability?",
-    type: "single",
-    options: [
-      { id: "w6-1", label: "I thrive when things are fast, unpredictable, and high-energy", weights: { E: 2, R: 1 } },
-      { id: "w6-2", label: "I do my best work when things are calm, steady, and predictable", weights: { C: 2 } },
     ],
   },
   {
@@ -468,39 +355,6 @@ export const quizQuestions: QuizQuestion[] = [
     options: [
       { id: "w8-1", label: "I care most about getting the technical details exactly right", weights: { C: 2, I: 1 } },
       { id: "w8-2", label: "I care most about expressing something meaningful or original", weights: { A: 2 } },
-    ],
-  },
-  {
-    id: "w9",
-    section: "Work Style",
-    prompt: "How do you feel about public speaking or being the center of attention?",
-    type: "single",
-    options: [
-      { id: "w9-1", label: "I genuinely enjoy it — put me in front of people", weights: { E: 2 }, interestTags: ["communication", "leadership"] },
-      { id: "w9-2", label: "I can do it if I have to, but I'd rather not", weights: { C: 1 } },
-      { id: "w9-3", label: "I'd much rather work quietly and let the work speak for itself", weights: { I: 1, R: 1 } },
-    ],
-  },
-  {
-    id: "w10",
-    section: "Work Style",
-    prompt: "Which pace of learning fits you best?",
-    type: "single",
-    options: [
-      { id: "w10-1", label: "I like mastering one deep, technical skill really well", weights: { I: 2 }, interestTags: ["research"] },
-      { id: "w10-2", label: "I like understanding a bit of everything and connecting the dots", weights: { A: 1, E: 1 } },
-      { id: "w10-3", label: "I like a hands-on trade or skill I can apply immediately", weights: { R: 2 }, interestTags: ["building"] },
-    ],
-  },
-  {
-    id: "w11",
-    section: "Work Style",
-    prompt: "How physically active do you want your future daily routine to be?",
-    type: "single",
-    options: [
-      { id: "w11-1", label: "Very active — I don't want to sit still all day", weights: { R: 2 }, interestTags: ["movement"] },
-      { id: "w11-2", label: "A healthy mix of movement and desk work", weights: { S: 1 } },
-      { id: "w11-3", label: "Mostly seated — I'm fine at a desk or computer all day", weights: { C: 1, I: 1 }, interestTags: ["technology"] },
     ],
   },
   {
