@@ -6,6 +6,7 @@ import OptionCard from "@/components/quiz/OptionCard";
 import ProgressBar from "@/components/quiz/ProgressBar";
 import ResultsView from "@/components/quiz/ResultsView";
 import { quizQuestions } from "@/data/quiz";
+import { INCOME_QUESTION_ID, REGION_QUESTION_ID } from "@/data/quizContext";
 import { matchMajors, QuizAnswers, scoreAnswers } from "@/lib/matching";
 
 // Persist results for the browser session so "Back" from the Career Explorer
@@ -102,7 +103,13 @@ export default function QuizPage() {
       <>
         <Navbar />
         <main className="bg-mesh flex-1">
-          <ResultsView matches={matches} riasec={scores.riasec} onRestart={restart} />
+          <ResultsView
+            matches={matches}
+            riasec={scores.riasec}
+            regionId={resultAnswers[REGION_QUESTION_ID]?.[0]}
+            incomeId={resultAnswers[INCOME_QUESTION_ID]?.[0]}
+            onRestart={restart}
+          />
         </main>
       </>
     );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { aidLinksFor, regionNotes } from "@/data/quizContext";
 import { MajorMatch, RiasecKey, RiasecScores } from "@/lib/types";
 
 const RIASEC_NAMES: Record<RiasecKey, string> = {
@@ -13,10 +14,22 @@ const RIASEC_NAMES: Record<RiasecKey, string> = {
 interface ResultsViewProps {
   matches: MajorMatch[];
   riasec: RiasecScores;
+  // Selected option ids for the region and household income questions.
+  regionId?: string;
+  incomeId?: string;
   onRestart: () => void;
 }
 
-export default function ResultsView({ matches, riasec, onRestart }: ResultsViewProps) {
+export default function ResultsView({
+  matches,
+  riasec,
+  regionId,
+  incomeId,
+  onRestart,
+}: ResultsViewProps) {
+  const regionNote = regionId ? regionNotes[regionId] : undefined;
+  const aidLinks = aidLinksFor(regionId, incomeId);
+
   const topLetters = (Object.keys(riasec) as RiasecKey[])
     .filter((k) => riasec[k] > 0)
     .sort((a, b) => riasec[b] - riasec[a])
@@ -93,6 +106,40 @@ export default function ResultsView({ matches, riasec, onRestart }: ResultsViewP
           );
         })}
       </div>
+
+      <section className="mt-12 rounded-3xl border border-ink-100 bg-surface p-7 shadow-sm">
+        <h2 className="font-display text-2xl font-bold">Next steps for you</h2>
+
+        {regionNote && (
+          <div className="mt-5">
+            <h3 className="text-xs font-bold uppercase tracking-wide text-primary-600">
+              Near home
+            </h3>
+            <p className="mt-2 text-ink-700">{regionNote}</p>
+          </div>
+        )}
+
+        <div className="mt-5">
+          <h3 className="text-xs font-bold uppercase tracking-wide text-primary-600">
+            Paying for college
+          </h3>
+          <ul className="mt-3 flex flex-col gap-3">
+            {aidLinks.map((link) => (
+              <li key={link.url} className="rounded-2xl bg-surface-soft p-4 text-sm">
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary-600 hover:underline"
+                >
+                  {link.name} ↗
+                </a>
+                <p className="mt-1 text-ink-700">{link.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <div className="mt-12 flex flex-col items-center gap-3 text-center">
         <p className="text-sm text-ink-500">

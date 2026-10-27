@@ -234,23 +234,6 @@ export const quizQuestions: QuizQuestion[] = [
 
   // Family & Values
   {
-    id: "v1",
-    section: "Family & Values",
-    prompt: "When your family talks about your future career, what matters most to them?",
-    helper: "Pick up to 3.",
-    type: "multi",
-    maxSelect: 3,
-    weightMultiplier: 1,
-    options: [
-      { id: "v1-1", label: "Financial stability / a reliable paycheck", valueTags: ["stability"] },
-      { id: "v1-2", label: "Making good money / high earning potential", valueTags: ["income"] },
-      { id: "v1-3", label: "Prestige — a career people respect", valueTags: ["prestige"] },
-      { id: "v1-4", label: "Helping others or giving back", valueTags: ["helping"] },
-      { id: "v1-5", label: "Flexibility to balance family and life", valueTags: ["flexibility"] },
-      { id: "v1-6", label: "That you follow what makes you happy", valueTags: ["creativity"] },
-    ],
-  },
-  {
     id: "v2",
     section: "Family & Values",
     prompt: "What matters most to YOU, honestly?",
@@ -293,6 +276,40 @@ export const quizQuestions: QuizQuestion[] = [
       { id: "v5-2", label: "Somewhat — I'd like to stay connected but I'm open to the right opportunity", valueTags: ["flexibility"] },
       { id: "v5-3", label: "Not much — I'll go wherever the best opportunity is", valueTags: ["income", "prestige"] },
       { id: "v5-4", label: "I actually want to explore somewhere completely new", valueTags: ["flexibility", "creativity"] },
+    ],
+  },
+  // Region and household income carry no weights or tags on purpose: they
+  // never change which majors rank highest. ResultsView reads them to tailor
+  // the "Next steps" card (see src/data/quizContext.ts).
+  {
+    id: "v6",
+    section: "Family & Values",
+    prompt: "Where do you call home?",
+    type: "single",
+    options: [
+      { id: "v6-1", label: "The Triangle — Durham, Raleigh, Chapel Hill" },
+      { id: "v6-2", label: "Charlotte and the surrounding area" },
+      { id: "v6-3", label: "The Triad — Greensboro, Winston-Salem, High Point" },
+      { id: "v6-4", label: "Eastern North Carolina" },
+      { id: "v6-5", label: "Western North Carolina" },
+      { id: "v6-6", label: "Another U.S. state" },
+      { id: "v6-7", label: "Outside the U.S." },
+    ],
+  },
+  {
+    id: "v7",
+    section: "Family & Values",
+    prompt: "Roughly what is your household's yearly income?",
+    helper: "This only helps us point you to financial aid. It doesn't change your matches and never leaves your browser.",
+    type: "single",
+    options: [
+      { id: "v7-1", label: "Under $30,000" },
+      { id: "v7-2", label: "$30,000 – $60,000" },
+      { id: "v7-3", label: "$60,000 – $80,000" },
+      { id: "v7-4", label: "$80,000 – $150,000" },
+      { id: "v7-5", label: "Over $150,000" },
+      { id: "v7-6", label: "Not sure" },
+      { id: "v7-7", label: "Prefer not to say" },
     ],
   },
 
@@ -345,16 +362,6 @@ export const quizQuestions: QuizQuestion[] = [
     options: [
       { id: "w7-1", label: "I'd rather help one person or a small group deeply", weights: { S: 2 }, interestTags: ["people"] },
       { id: "w7-2", label: "I'd rather fix a problem that affects thousands of people at once", weights: { I: 1, E: 1 }, interestTags: ["research"] },
-    ],
-  },
-  {
-    id: "w8",
-    section: "Work Style",
-    prompt: "Precision or expression?",
-    type: "single",
-    options: [
-      { id: "w8-1", label: "I care most about getting the technical details exactly right", weights: { C: 2, I: 1 } },
-      { id: "w8-2", label: "I care most about expressing something meaningful or original", weights: { A: 2 } },
     ],
   },
   {
