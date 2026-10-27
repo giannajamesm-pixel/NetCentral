@@ -431,7 +431,7 @@ export const careers: Career[] = [
   },
   {
     id: "conservation-officer", title: "Conservation Officer",
-    majorIds: ["environmental-earth-geographic-science"],
+    majorIds: ["environmental-earth-geographic-science", "criminal-justice"],
     summary: "Manage and protect natural resources and enforce wildlife and land-use laws.",
     salary: { low: 47550, median: 73920, high: 110410 },
     growthPct: 4,
@@ -1461,7 +1461,7 @@ export const careers: Career[] = [
     id: "intelligence-analyst", title: "Intelligence Analyst",
     majorIds: ["criminal-justice", "political-science"],
     summary: "Collect and interpret data on crime patterns and security threats to help agencies prevent crimes and plan operations.",
-    employers: ["Police and sheriff's crime analysis units", "State fusion centers", "Federal agencies (FBI, DHS)", "Defense contractors"],
+    employers: ["Police and sheriff's crime analysis units", "State fusion centers", "Federal agencies (FBI, CIA, DHS)", "Defense contractors"],
     strategies: ["Take statistics, data analysis, and mapping (GIS) courses", "Practice clear, concise report writing", "Intern with a police crime analysis unit"],
     studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }],
     resources: [{ name: "International Association of Law Enforcement Intelligence Analysts", url: "https://www.ialeia.org/" }],
@@ -1488,7 +1488,7 @@ export const careers: Career[] = [
     salary: { low: 48850, median: 78000, high: 117040 },
     growthPct: -5,
     blsUrl: "https://www.bls.gov/ooh/business-and-financial/claims-adjusters-appraisers-examiners-and-investigators.htm",
-    employers: ["Banks and credit card companies", "Insurance companies", "Government inspector general offices", "Retail loss prevention"],
+    employers: ["Banks and credit card companies", "Insurance companies", "Government inspector general offices", "Corporate security and compliance teams"],
     strategies: ["Take accounting and white-collar crime courses", "Intern in a bank's fraud or compliance department", "Work toward the Certified Fraud Examiner (CFE) credential"],
     studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }],
     resources: [{ name: "Association of Certified Fraud Examiners (ACFE)", url: "https://www.acfe.com/" }],
@@ -1607,6 +1607,39 @@ export const careers: Career[] = [
     studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }],
     skills: ["Behavioral analysis", "Crime reconstruction", "Critical thinking", "Report writing"],
     trajectory: ["Patrol Officer or Analyst", "Detective / Special Agent", "Behavioral Analyst", "Senior Profiler"],
+  },
+
+  // From the University of Cincinnati Online's "What Can You Do With a
+  // Criminal Justice Degree? 21 Common Jobs". The other jobs it lists already
+  // exist; Conservation Officer (fish and game warden) and Digital Forensics
+  // Analyst carry criminal-justice as an extra majorId.
+  {
+    id: "fire-investigator", title: "Fire Investigator",
+    majorIds: ["criminal-justice"],
+    summary: "Determine how fires started, detect arson, collect evidence, and work with police and prosecutors on suspicious fires.",
+    salary: { low: 46530, median: 75920, high: 118750 },
+    growthPct: 4,
+    blsUrl: "https://www.bls.gov/ooh/protective-service/fire-inspectors-and-investigators.htm",
+    employers: ["Fire departments", "State fire marshal's offices", "Insurance companies", "Federal agencies such as the ATF"],
+    strategies: ["Plan to gain experience as a firefighter or police officer first", "Take fire science and evidence courses", "Expect several months of academy training followed by on-the-job training"],
+    studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }],
+    resources: [{ name: "International Association of Arson Investigators", url: "https://www.firearson.com/" }],
+    skills: ["Evidence collection", "Fire science", "Interviewing", "Report writing"],
+    trajectory: ["Firefighter or Officer", "Fire Investigator", "Senior Investigator", "Fire Marshal"],
+  },
+  {
+    id: "criminal-justice-professor", title: "Criminal Justice Professor",
+    majorIds: ["criminal-justice"],
+    summary: "Teach future criminal justice professionals and research crime, policing, courts, and corrections at the college level (a master's or PhD is required).",
+    salary: { low: 49540, median: 85330, high: 203580 },
+    growthPct: 7,
+    blsUrl: "https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm",
+    employers: ["Universities", "Four-year colleges", "Community colleges", "Police and corrections training academies"],
+    strategies: ["Assist a professor with research", "Apply to the McNair Scholars Program if you're a first-generation, low-income, or underrepresented student", "Gain field experience in policing, courts, or corrections to bring into the classroom", "Plan for a master's to teach at community colleges or a PhD for universities"],
+    studentOrgs: [{ name: "Criminal Justice Ambassadors Club", uri: "criminal-justice-ambassdors-club" }, { name: "National Association of Blacks in Criminal Justice", uri: "national-association-of-blacks-in-criminal-justice-2" }],
+    resources: [{ name: "Academy of Criminal Justice Sciences", url: "https://www.acjs.org/" }],
+    skills: ["Research", "Teaching", "Academic writing", "Mentoring"],
+    trajectory: ["Graduate Researcher", "Adjunct Instructor", "Assistant Professor", "Professor"],
   },
   {
     id: "attorney", title: "Attorney",
@@ -2633,7 +2666,7 @@ export const careers: Career[] = [
   },
   {
     id: "digital-forensics-analyst", title: "Digital Forensics Analyst",
-    majorIds: ["information-technology", "computer-information-sciences"],
+    majorIds: ["information-technology", "computer-information-sciences", "criminal-justice"],
     summary: "Recover and analyze digital evidence to investigate cyberattacks and computer-based crimes.",
     salary: { low: 65000, median: 100000, high: 170000 }, growthPct: 12,
     employers: ["Law enforcement and federal agencies", "Corporate incident-response teams", "Digital forensics consulting firms", "Managed security service providers"],
