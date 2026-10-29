@@ -6,6 +6,7 @@
 // adding more specific `strategies` in careers.ts.
 
 import { HANDSHAKE_URL } from "@/data/bizprep";
+import { simulationsFor } from "@/data/simulations";
 import { Career, Major } from "@/lib/types";
 
 export type StepType = "class" | "project" | "cert" | "experience" | "org" | "milestone";
@@ -403,6 +404,14 @@ export function buildRoadmap(career: Career, major: Major): Roadmap {
   if (resources[0]) {
     y2.push({ type: "org", title: `Join ${resources[0].name}`, detail: "Many professional groups offer student memberships, scholarships, and job boards.", href: resources[0].url });
   }
+
+  // Forage job simulations: a preview of the work before applying for
+  // internships (sophomore year), then another before junior-year interviews.
+  const sims = simulationsFor(career.id);
+  const simDetail = "Free and self-paced on Forage. Sign in with your NCCU email, and add the certificate to your resume and LinkedIn.";
+  sims.slice(0, 2).forEach((s, i) => {
+    (i === 0 ? y2 : y3).push({ type: "project", title: `Complete the ${s.company} ${s.title} job simulation`, detail: simDetail, href: s.url });
+  });
 
   // The career's own strategies, sorted into the right years by type.
   const certYears = [y2, y3, y4];

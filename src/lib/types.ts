@@ -87,6 +87,15 @@ export interface Career {
   trajectory: string[];
 }
 
+// A free, self-paced Forage virtual job simulation, matched to the careers
+// whose work it previews.
+export interface JobSimulation {
+  company: string;
+  title: string;
+  url: string;
+  careerIds: string[];
+}
+
 export interface MajorMatch {
   major: Major;
   score: number;

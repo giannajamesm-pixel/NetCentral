@@ -4,6 +4,7 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import { useState } from "react";
 import { outlookDescription, outlookLabel } from "@/data/careers";
+import { simulationsFor } from "@/data/simulations";
 import { Career } from "@/lib/types";
 
 const ORG_BASE_URL = "https://nccu.presence.io/organization/";
@@ -18,6 +19,7 @@ export default function CareerCard({
   majorId?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const sims = simulationsFor(career.id).slice(0, 4);
   const { salary, growthPct } = career;
   const panelId = `career-${career.id}`;
 
@@ -235,6 +237,32 @@ export default function CareerCard({
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+
+            {sims.length > 0 && (
+              <div className="mt-5 rounded-2xl border border-ink-100 p-4">
+                <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
+                  Try the job
+                </h4>
+                <ul className="mt-2 flex flex-col gap-1">
+                  {sims.map((s) => (
+                    <li key={s.url}>
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-ink-900 hover:text-primary-700 hover:underline"
+                      >
+                        {s.company}: {s.title} ↗
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-xs text-ink-500">
+                  Free, self-paced Forage job simulations. Sign in with your
+                  NCCU email.
+                </p>
               </div>
             )}
 
