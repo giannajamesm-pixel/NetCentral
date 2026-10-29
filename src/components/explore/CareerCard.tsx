@@ -4,7 +4,7 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import { useState } from "react";
 import { outlookDescription, outlookLabel } from "@/data/careers";
-import { simulationsFor } from "@/data/simulations";
+import { FORAGE_URL, simulationsFor } from "@/data/simulations";
 import { Career } from "@/lib/types";
 
 const ORG_BASE_URL = "https://nccu.presence.io/organization/";
@@ -19,7 +19,9 @@ export default function CareerCard({
   majorId?: string;
 }) {
   const [open, setOpen] = useState(false);
-  const sims = simulationsFor(career.id).slice(0, 4);
+  const [showAllSims, setShowAllSims] = useState(false);
+  const allSims = simulationsFor(career.id);
+  const sims = showAllSims ? allSims : allSims.slice(0, 4);
   const { salary, growthPct } = career;
   const panelId = `career-${career.id}`;
 
@@ -259,9 +261,26 @@ export default function CareerCard({
                     </li>
                   ))}
                 </ul>
+                {allSims.length > 4 && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllSims(!showAllSims)}
+                    className="mt-2 text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
+                  >
+                    {showAllSims ? "Show fewer" : `Show all ${allSims.length}`}
+                  </button>
+                )}
                 <p className="mt-2 text-xs text-ink-500">
-                  Free, self-paced Forage job simulations. Sign in with your
-                  NCCU email.
+                  Free, self-paced{" "}
+                  <a
+                    href={FORAGE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold hover:text-primary-700 hover:underline"
+                  >
+                    Forage
+                  </a>{" "}
+                  job simulations. Sign in with your NCCU email.
                 </p>
               </div>
             )}

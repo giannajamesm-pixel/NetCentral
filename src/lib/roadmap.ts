@@ -6,7 +6,7 @@
 // adding more specific `strategies` in careers.ts.
 
 import { HANDSHAKE_URL } from "@/data/bizprep";
-import { simulationsFor } from "@/data/simulations";
+import { careerSkills, simulationsFor } from "@/data/simulations";
 import { Career, Major } from "@/lib/types";
 
 export type StepType = "class" | "project" | "cert" | "experience" | "org" | "milestone";
@@ -412,6 +412,9 @@ export function buildRoadmap(career: Career, major: Major): Roadmap {
   sims.slice(0, 2).forEach((s, i) => {
     (i === 0 ? y2 : y3).push({ type: "project", title: `Complete the ${s.company} ${s.title} job simulation`, detail: simDetail, href: s.url });
   });
+  for (const { year, sim } of careerSkills) {
+    years[year - 1].push({ type: "class", title: `Take ${sim.company}'s ${sim.title} course`, detail: "Free and self-paced on Forage.", href: sim.url });
+  }
 
   // The career's own strategies, sorted into the right years by type.
   const certYears = [y2, y3, y4];

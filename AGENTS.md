@@ -25,7 +25,7 @@ NetCentral is a web app for North Carolina Central University students: a short 
 
 - `src/app/explore/[careerId]/page.tsx` — a career's 4-year roadmap, drawn as a road (`src/components/roadmap/`). Roadmaps are generated, not hand-written: `src/lib/roadmap.ts` picks a track (nursing, teaching, tech, cyber, engineering, analytics, prehealth, research, health, business, creative, social) for the year-by-year skeleton, then slots in the career's own strategies, skills, orgs, resources, and employers. Improve a career's roadmap by editing its `strategies` in `careers.ts`.
 
-- `src/data/simulations.ts` — Forage virtual job simulations, each tagged with the career ids it previews. A career's matches show in a "Try the job" box on its card (up to 4) and as roadmap project steps (first two, in years 2 and 3). Students sign in on Forage themselves; NetCentral only links out.
+- `src/data/simulations.ts` — Forage virtual job simulations, each tagged with the career ids it previews. A career's matches show in a "Try the job" box on its card (4, with a "Show all" toggle) and as roadmap project steps (first two, in years 2 and 3). `careerSkills` holds general Forage courses that go on every roadmap, one per year. Students sign in on Forage themselves; NetCentral only links out.
 
 Only `/`, `/quiz`, `/explore` (plus `/explore/<careerId>`), and `/bizprep` are built. There is no alumni or side-income feature; don't link to routes that don't exist.
 
