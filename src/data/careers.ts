@@ -12,7 +12,7 @@ export const careers: Career[] = [
   // STEM & Technology
   {
     id: "software-developer", title: "Software Developer",
-    majorIds: ["computer-information-sciences", "mathematics"],
+    majorIds: ["computer-information-sciences", "mathematics", "interdisciplinary-studies"],
     summary: "Design, build, and maintain the software behind apps, websites, and systems.",
     salary: { low: 82460, median: 134040, high: 214670 },
     growthPct: 10,
@@ -51,7 +51,7 @@ export const careers: Career[] = [
   },
   {
     id: "cybersecurity-analyst", title: "Cybersecurity Analyst",
-    majorIds: ["information-technology", "computer-information-sciences"],
+    majorIds: ["information-technology", "computer-information-sciences", "interdisciplinary-studies"],
     summary: "Protect networks and data by monitoring for threats and responding to incidents.",
     salary: { low: 75090, median: 129180, high: 199850 },
     growthPct: 21,
@@ -64,7 +64,7 @@ export const careers: Career[] = [
   },
   {
     id: "data-analyst", title: "Data Analyst",
-    majorIds: ["information-technology", "mathematics", "business-administration", "computer-information-sciences"],
+    majorIds: ["information-technology", "mathematics", "business-administration", "computer-information-sciences", "interdisciplinary-studies"],
     summary: "Clean, analyze, and visualize data so teams can make better decisions.",
     salary: { low: 57060, median: 88940, high: 159910 },
     growthPct: 12,
@@ -90,7 +90,7 @@ export const careers: Career[] = [
   },
   {
     id: "actuary", title: "Actuary",
-    majorIds: ["mathematics", "business-administration", "accounting"],
+    majorIds: ["mathematics", "business-administration", "accounting", "interdisciplinary-studies"],
     summary: "Use math and statistics to measure financial risk for insurers and pension plans.",
     salary: { low: 78570, median: 130000, high: 215100 },
     growthPct: 9,
@@ -157,7 +157,7 @@ export const careers: Career[] = [
   },
   {
     id: "forensic-scientist", title: "Forensic Scientist",
-    majorIds: ["chemistry-biochemistry", "biological-biomedical-sciences", "criminal-justice"],
+    majorIds: ["chemistry-biochemistry", "biological-biomedical-sciences", "criminal-justice", "interdisciplinary-studies"],
     summary: "Analyze physical evidence from crime scenes in a lab and support investigations.",
     salary: { low: 48250, median: 72060, high: 117250 },
     growthPct: 13,
@@ -567,7 +567,7 @@ export const careers: Career[] = [
   },
   {
     id: "environmental-consultant", title: "Environmental Consultant",
-    majorIds: ["environmental-earth-geographic-science", "biological-biomedical-sciences"],
+    majorIds: ["environmental-earth-geographic-science", "biological-biomedical-sciences", "interdisciplinary-studies"],
     summary: "Advise businesses and governments on environmental rules, pollution, and ways to shrink their carbon footprint.",
     salary: { low: 52520, median: 82220, high: 140010 },
     growthPct: 6,
@@ -677,7 +677,7 @@ export const careers: Career[] = [
   },
   {
     id: "registered-dietitian", title: "Registered Dietitian",
-    majorIds: ["nutrition-dietetics"],
+    majorIds: ["nutrition-dietetics", "interdisciplinary-studies"],
     summary: "Plan nutrition programs and counsel people on healthy eating to prevent and manage disease (master's degree required for the RD credential).",
     salary: { low: 49090, median: 76400, high: 103720 },
     growthPct: 8,
@@ -1016,7 +1016,7 @@ export const careers: Career[] = [
   },
   {
     id: "community-health-worker", title: "Community Health Worker",
-    majorIds: ["public-health-education", "nutrition-dietetics", "biological-biomedical-sciences"],
+    majorIds: ["public-health-education", "nutrition-dietetics", "biological-biomedical-sciences", "interdisciplinary-studies"],
     summary: "Connect residents to care and resources, acting as a trusted link to the community.",
     salary: { low: 42990, median: 64070, high: 118200 },
     growthPct: 6,
@@ -1088,7 +1088,7 @@ export const careers: Career[] = [
   // updated to current URLs. Pay and growth use current BLS figures.
   {
     id: "exercise-physiologist", title: "Exercise Physiologist",
-    majorIds: ["kinesiology-recreation-administration"],
+    majorIds: ["kinesiology-recreation-administration", "interdisciplinary-studies"],
     summary: "Design exercise programs that help patients recover from heart disease and other chronic conditions and improve their fitness.",
     salary: { low: 42760, median: 59460, high: 80560 },
     growthPct: 13,
@@ -1349,7 +1349,7 @@ export const careers: Career[] = [
   },
   {
     id: "law-enforcement-officer", title: "Law Enforcement Officer",
-    majorIds: ["criminal-justice"],
+    majorIds: ["criminal-justice", "interdisciplinary-studies"],
     summary: "Protect communities, respond to emergencies, and investigate crimes as a city police officer, county deputy sheriff, or state trooper.",
     salary: { low: 48160, median: 77310, high: 121600 },
     growthPct: 3,
@@ -1362,7 +1362,7 @@ export const careers: Career[] = [
   },
   {
     id: "probation-officer", title: "Probation Officer",
-    majorIds: ["criminal-justice", "psychology", "social-work"],
+    majorIds: ["criminal-justice", "psychology", "social-work", "interdisciplinary-studies"],
     summary: "Supervise people on probation or parole and help them reintegrate.",
     salary: { low: 46840, median: 66270, high: 107790 },
     growthPct: 3,
@@ -1702,7 +1702,7 @@ export const careers: Career[] = [
   },
   {
     id: "attorney", title: "Attorney",
-    majorIds: ["political-science", "environmental-earth-geographic-science", "psychology", "criminal-justice"],
+    majorIds: ["political-science", "environmental-earth-geographic-science", "psychology", "criminal-justice", "interdisciplinary-studies"],
     summary: "Advise and represent clients in legal matters after law school and the bar exam, including prosecutors and public defenders in criminal cases.",
     salary: { low: 78360, median: 159670, high: 351600 },
     growthPct: 5,
@@ -1728,7 +1728,7 @@ export const careers: Career[] = [
   },
   {
     id: "legislative-aide", title: "Legislative Aide",
-    majorIds: ["political-science"],
+    majorIds: ["political-science", "interdisciplinary-studies"],
     summary: "Support an elected official by tracking legislation, meeting constituents, and drafting messaging.",
     employers: ["State and federal legislators' offices", "Legislative committees", "Advocacy organizations", "Campaigns"],
     strategies: ["Intern in a legislative office", "Follow current legislation closely", "Build strong writing and constituent-service skills"],
@@ -1766,7 +1766,7 @@ export const careers: Career[] = [
   },
   {
     id: "broadcast-producer", title: "Broadcast Producer",
-    majorIds: ["mass-communication"],
+    majorIds: ["mass-communication", "interdisciplinary-studies"],
     summary: "Plan and coordinate TV, radio, and video productions from concept to air.",
     salary: { low: 45780, median: 90360, high: 198540 },
     growthPct: 4,
@@ -1779,7 +1779,7 @@ export const careers: Career[] = [
   },
   {
     id: "graphic-designer", title: "Graphic Designer",
-    majorIds: ["art-and-design"],
+    majorIds: ["art-and-design", "interdisciplinary-studies"],
     summary: "Create visual concepts for brands, print, web, and packaging.",
     salary: { low: 39520, median: 62960, high: 104910 },
     growthPct: -2,
@@ -1792,7 +1792,7 @@ export const careers: Career[] = [
   },
   {
     id: "art-director", title: "Art Director",
-    majorIds: ["art-and-design"],
+    majorIds: ["art-and-design", "interdisciplinary-studies"],
     summary: "Set the visual style and direct designers for ads, publications, and productions.",
     salary: { low: 64900, median: 114850, high: 213050 },
     growthPct: 4,
@@ -1880,7 +1880,7 @@ export const careers: Career[] = [
   },
   {
     id: "technical-theatre-designer", title: "Technical Theatre Designer",
-    majorIds: ["theatre"],
+    majorIds: ["theatre", "interdisciplinary-studies"],
     summary: "Design sets, lighting, sound, or costumes that shape what an audience sees and hears.",
     salary: { low: 41750, median: 75240, high: 135410 },
     growthPct: 1,
@@ -2091,7 +2091,7 @@ export const careers: Career[] = [
   // Education
   {
     id: "teacher", title: "Elementary School Teacher",
-    majorIds: ["elementary-education", "early-childhood-education"],
+    majorIds: ["elementary-education", "early-childhood-education", "interdisciplinary-studies"],
     summary: "Teach kindergarten through elementary students the reading, math, and life skills they'll build on for years.",
     salary: { low: 47960, median: 63820, high: 104340 },
     growthPct: 0,
@@ -2117,7 +2117,7 @@ export const careers: Career[] = [
   },
   {
     id: "school-administrator", title: "School Administrator",
-    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education"],
+    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education", "interdisciplinary-studies"],
     summary: "Lead a school as principal or assistant principal, managing staff, budgets, and student success.",
     salary: { low: 76280, median: 105870, high: 167770 },
     growthPct: 0,
@@ -4177,7 +4177,7 @@ export const careers: Career[] = [
   // accounting-degree). The rest of its list already exists above.
   {
     id: "investment-advisor", title: "Investment Advisor",
-    majorIds: ["accounting"],
+    majorIds: ["accounting", "interdisciplinary-studies"],
     summary: "Guide clients' investment decisions: assess their goals and risk tolerance, recommend strategies, and monitor and rebalance their portfolios.",
     salary: { low: 50190, median: 105070, high: 357020 },
     growthPct: 1,
@@ -4757,7 +4757,7 @@ export const careers: Career[] = [
   },
   {
     id: "mental-health-counselor", title: "Mental Health Counselor",
-    majorIds: ["psychology", "social-work"],
+    majorIds: ["psychology", "social-work", "interdisciplinary-studies"],
     summary: "Help people work through mental health, substance use, and behavior problems (master's degree and license required).",
     salary: { low: 38940, median: 59350, high: 97590 },
     growthPct: 18,
@@ -5466,6 +5466,93 @@ export const careers: Career[] = [
     studentOrgs: [{ name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }, { name: "Student Government Association", uri: "student-government-association" }],
     skills: ["Persuasive communication", "Coalition building", "Policy research", "Community organizing"],
     trajectory: ["Organizing Fellow or Intern", "Advocacy Specialist", "Advocacy Manager", "Director of Policy and Advocacy"],
+  },
+
+  // From Southern Connecticut State University's Interdisciplinary Studies
+  // careers page and the resources it links to: BLS's interdisciplinary
+  // studies field-of-degree and creative careers pages, and APA's
+  // interdisciplinary careers in aging. Its other careers already exist and
+  // gained Interdisciplinary Studies. The ombudsman entry omits pay because
+  // BLS has no matching occupation; Senior Center Director uses BLS's social
+  // and community service manager figures.
+  {
+    id: "interior-designer", title: "Interior Designer",
+    majorIds: ["art-and-design", "interdisciplinary-studies"],
+    summary: "Plan indoor spaces that are safe, functional, and good-looking, from offices and schools to homes and age-friendly senior housing.",
+    salary: { low: 41420, median: 67190, high: 114140 },
+    growthPct: 3,
+    blsUrl: "https://www.bls.gov/ooh/arts-and-design/interior-designers.htm",
+    employers: ["Interior design and architecture firms", "Furniture and home retailers", "Builders and real estate developers", "Self-employed / freelance"],
+    strategies: ["Learn drafting and design software like AutoCAD, SketchUp, or Revit", "Build a portfolio of room plans, mood boards, and renderings", "Intern with a design firm or furniture showroom", "Check your state's licensing rules; NCIDQ certification usually takes a design degree plus work experience"],
+    studentOrgs: [{ name: "Eagle Fashion Institute", uri: "eagle-fashion-institute" }, { name: "Eagle Pride Amplified Photography Organization (EPAPO)", uri: "eagle-pride-amplified-photography-organization-epapo" }],
+    resources: [{ name: "American Society of Interior Designers (ASID)", url: "https://www.asid.org/" }],
+    skills: ["Space planning", "Design software", "Color and materials", "Client communication"],
+    trajectory: ["Design Assistant", "Interior Designer", "Senior Designer / Project Lead", "Principal or Firm Owner"],
+  },
+  {
+    id: "animator", title: "Animator / Special Effects Artist",
+    majorIds: ["art-and-design", "interdisciplinary-studies", "mass-communication"],
+    summary: "Create 2D and 3D animation and visual effects for films, TV, games, ads, apps, and training videos.",
+    salary: { low: 58600, median: 102030, high: 177110 },
+    growthPct: 0,
+    blsUrl: "https://www.bls.gov/ooh/arts-and-design/multimedia-artists-and-animators.htm",
+    employers: ["Film, TV, and streaming studios", "Video game companies", "Advertising and design agencies", "Corporate and eLearning video teams"],
+    strategies: ["Learn animation software like Blender, Maya, or After Effects", "Take drawing, storytelling, and film courses", "Create a demo reel of your best short animations", "Intern with a studio, agency, or campus media team"],
+    studentOrgs: [{ name: "Eagle Pride Amplified Photography Organization (EPAPO)", uri: "eagle-pride-amplified-photography-organization-epapo" }, { name: "The Campus Echo", uri: "the-campus-echo" }],
+    resources: [{ name: "ACM SIGGRAPH", url: "https://www.siggraph.org/" }],
+    skills: ["Animation", "Storytelling", "3D modeling", "Attention to detail"],
+    trajectory: ["Junior Animator", "Animator / VFX Artist", "Senior or Lead Animator", "Animation Director"],
+  },
+  {
+    id: "web-developer", title: "Web Developer",
+    majorIds: ["computer-information-sciences", "information-technology", "interdisciplinary-studies"],
+    summary: "Build and maintain websites and web apps, from page layout and design to the code that makes them work.",
+    salary: { low: 48100, median: 92650, high: 162290 },
+    growthPct: 4,
+    blsUrl: "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm",
+    employers: ["Tech companies and digital agencies", "Businesses with in-house web teams", "Universities and government agencies", "Self-employed / freelance"],
+    strategies: ["Learn HTML, CSS, and JavaScript", "Build websites for campus groups or local small businesses", "Publish your projects on GitHub", "Intern with a web, digital, or IT team"],
+    studentOrgs: [{ name: "IT Eagles", uri: "it-eagles" }],
+    skills: ["HTML, CSS, and JavaScript", "Responsive design", "Problem solving", "Version control"],
+    trajectory: ["Junior Web Developer", "Web Developer", "Senior / Full-Stack Developer", "Lead Developer or Engineering Manager"],
+  },
+  {
+    id: "sales-engineer", title: "Sales Engineer",
+    majorIds: ["computer-information-sciences", "interdisciplinary-studies", "business-administration"],
+    summary: "Explain and sell complex technical products, like software, equipment, or medical devices, and design solutions that fit each customer's needs.",
+    salary: { low: 73870, median: 124900, high: 195270 },
+    growthPct: 3,
+    blsUrl: "https://www.bls.gov/ooh/sales/sales-engineers.htm",
+    employers: ["Software and cloud companies", "Manufacturers", "Medical device companies", "IT and telecom firms"],
+    strategies: ["Pair technical courses with business and communication courses", "Practice presenting technical topics to non-technical audiences", "Get a sales or customer-facing part-time job", "Intern in presales, solutions engineering, or technical sales"],
+    studentOrgs: [{ name: "IT Eagles", uri: "it-eagles" }, { name: "The Business Eagle Dean's Council", uri: "the-business-eagle-deans-council" }],
+    skills: ["Technical knowledge", "Presenting", "Relationship building", "Problem solving"],
+    trajectory: ["Sales Development Rep or Junior Solutions Engineer", "Sales Engineer", "Senior Sales Engineer", "Director of Sales Engineering"],
+  },
+  {
+    id: "senior-center-director", title: "Senior Center / Aging Services Director",
+    majorIds: ["interdisciplinary-studies", "social-work", "kinesiology-recreation-administration"],
+    summary: "Run programs, activities, and services that keep older adults healthy, connected, and independent at senior centers, assisted living, and aging agencies.",
+    salary: { low: 53150, median: 80390, high: 132260 },
+    growthPct: 7,
+    blsUrl: "https://www.bls.gov/ooh/management/social-and-community-service-managers.htm",
+    employers: ["Senior centers and Area Agencies on Aging", "Assisted living and retirement communities", "Parks and recreation departments", "Aging-focused nonprofits"],
+    strategies: ["Volunteer at a senior center or assisted living community", "Take courses in aging, health, and program planning", "Intern as an activity assistant or program aide", "Look into an Activity Director certification for long-term care"],
+    studentOrgs: [{ name: "Social Work Society", uri: "social-work-society-2" }, { name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }],
+    resources: [{ name: "National Council on Aging", url: "https://www.ncoa.org/" }],
+    skills: ["Program planning", "Working with older adults", "Staff leadership", "Budgeting"],
+    trajectory: ["Activity Assistant", "Activity Director / Program Coordinator", "Senior Center Director", "Aging Services Director"],
+  },
+  {
+    id: "long-term-care-ombudsman", title: "Long-Term Care Ombudsman",
+    majorIds: ["interdisciplinary-studies", "social-work", "political-science"],
+    summary: "Advocate for people living in nursing homes and assisted living: investigate complaints, resolve problems, and teach residents and families about their rights.",
+    employers: ["State and regional ombudsman programs", "Area Agencies on Aging", "Legal aid and elder rights organizations", "Aging advocacy nonprofits"],
+    strategies: ["Volunteer with your local ombudsman program, which trains volunteers", "Take courses in aging, law, and conflict resolution", "Intern with an Area Agency on Aging or elder rights group", "Complete your state's ombudsman certification training"],
+    studentOrgs: [{ name: "Social Work Society", uri: "social-work-society-2" }, { name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }],
+    resources: [{ name: "National Long-Term Care Ombudsman Resource Center", url: "https://ltcombudsman.org/" }],
+    skills: ["Advocacy", "Investigation", "Conflict resolution", "Knowledge of residents' rights"],
+    trajectory: ["Volunteer Ombudsman", "Regional Ombudsman", "Lead Ombudsman", "State Long-Term Care Ombudsman"],
   },
   {
     id: "emergency-management-director", title: "Emergency Management Director",
