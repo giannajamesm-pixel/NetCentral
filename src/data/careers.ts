@@ -671,7 +671,7 @@ export const careers: Career[] = [
     employers: ["Public middle schools", "Junior high schools (grades 7–8)", "Charter and private schools", "Magnet and STEM schools", "Summer and after-school programs"],
     strategies: ["Pick two subject concentrations you're excited to teach", "Take adolescent development courses to understand ages 11 to 14", "Tutor or coach middle schoolers to learn what works for this age", "Complete student teaching and your state licensure exams", "Take a practice Praxis subject test for each concentration you plan to teach", "Consider a master's in your subject (M.Ed.) later for higher pay and leadership roles"],
     studentOrgs: [{ name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }, { name: "TRIO Teacher Preparation Program", uri: "trio-teacher-preparation-program" }, { name: "Education Majors Advisory Council", uri: "education-majors-advisory-council" }],
-    resources: [{ name: "Association for Middle Level Education (AMLE)", url: "https://www.amle.org/" }],
+    resources: [{ name: "Association for Middle Level Education (AMLE)", url: "https://www.amle.org/" }, { name: "NCcareers: NC wages and openings for middle school teachers", url: "https://nccareers.org/occupation-profile/252022/1284" }],
     skills: ["Subject expertise", "Lesson planning", "Classroom management", "Mentoring adolescents", "Patience and adaptability"],
     trajectory: ["Student Teacher", "Middle School Teacher", "Team Lead / Department Chair", "Instructional Coach or Assistant Principal"],
   },
@@ -2272,10 +2272,10 @@ export const careers: Career[] = [
     salary: { low: 49230, median: 67170, high: 105020 },
     growthPct: 0,
     blsUrl: "https://www.bls.gov/ooh/education-training-and-library/special-education-teachers.htm",
-    employers: ["Public school districts", "Charter and private schools", "Early intervention and preschool programs", "Residential and therapeutic schools"],
+    employers: ["Public school districts (resource room and intervention roles)", "Charter and private schools", "Early intervention and preschool programs", "Residential and therapeutic schools"],
     strategies: ["Take courses in disabilities, behavior support, and assistive technology", "Volunteer with Special Olympics or a camp for kids with disabilities", "Learn how IEPs work by shadowing a special education teacher", "Add a special education license area, a high-need field in NC"],
     studentOrgs: [{ name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }, { name: "TRIO Teacher Preparation Program", uri: "trio-teacher-preparation-program" }],
-    resources: [{ name: "Council for Exceptional Children", url: "https://exceptionalchildren.org/" }],
+    resources: [{ name: "Council for Exceptional Children", url: "https://exceptionalchildren.org/" }, { name: "NCcareers: NC wages and openings for elementary special education teachers", url: "https://nccareers.org/occupation-profile/252052/1284" }],
     skills: ["Individualized instruction", "IEP writing", "Behavior support", "Patience"],
     trajectory: ["Student Teacher", "Special Education Teacher", "Lead Teacher / IEP Coordinator", "Exceptional Children Program Director"],
   },
@@ -2291,6 +2291,25 @@ export const careers: Career[] = [
     studentOrgs: [{ name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }, { name: "Early Childhood Education & Child Development Family Relations Group", uri: "early-childhood-education-child-development-family-relations-group" }],
     skills: ["Small-group instruction", "Classroom support", "Patience", "Teamwork"],
     trajectory: ["Teaching Assistant", "Lead Teacher", "Mentor Teacher", "Instructional Coach"],
+  },
+
+  // From NCcareers' Middle School Career/Technical Education Teachers profile
+  // and the NC profiles it links to. Pay stays national (BLS) like the rest of
+  // the file; NCcareers' North Carolina wages and openings are linked as a
+  // resource instead.
+  {
+    id: "cte-teacher", title: "Career and Technical Education (CTE) Teacher",
+    majorIds: ["middle-grades-education", "business-administration", "information-technology"],
+    summary: "Teach middle and high school students hands-on career skills, such as business and computer technology, family and consumer sciences, health science, or technology and engineering, through Career and Technical Education programs.",
+    salary: { low: 47220, median: 65150, high: 103620 },
+    growthPct: 0,
+    blsUrl: "https://www.bls.gov/ooh/education-training-and-library/career-and-technical-education-teachers.htm",
+    employers: ["Public middle and high school CTE programs (e.g., Durham Public Schools)", "Career and early-college high schools", "Community colleges", "Technical and trade schools"],
+    strategies: ["Choose a CTE area, such as business and IT, family and consumer sciences, or technology and engineering", "Get real work experience in that field through a part-time job", "Earn the industry credential your students will work toward, such as Microsoft Office Specialist", "Complete student teaching and the licensure exams for your CTE area"],
+    studentOrgs: [{ name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }, { name: "The Business Eagle Dean's Council", uri: "the-business-eagle-deans-council" }],
+    resources: [{ name: "Association for Career and Technical Education (ACTE)", url: "https://www.acteonline.org/" }, { name: "NCcareers: NC wages and openings for CTE teachers", url: "https://nccareers.org/occupation-profile/252023/1284" }],
+    skills: ["Hands-on instruction", "Tool and lab safety", "Industry credentials", "Classroom management"],
+    trajectory: ["Student Teacher", "CTE Teacher", "CTE Department Chair", "District CTE Director"],
   },
 
   // Mathematics (additional pathways)
