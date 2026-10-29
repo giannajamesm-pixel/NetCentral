@@ -25,7 +25,7 @@ export const careers: Career[] = [
   },
   {
     id: "systems-analyst", title: "Systems Analyst",
-    majorIds: ["computer-information-sciences", "accounting"],
+    majorIds: ["computer-information-sciences", "accounting", "interdisciplinary-studies"],
     summary: "Study an organization's technology and recommend how to make it work better.",
     salary: { low: 67340, median: 105850, high: 167710 },
     growthPct: 8,
@@ -418,7 +418,7 @@ export const careers: Career[] = [
   },
   {
     id: "gis-analyst", title: "GIS Analyst",
-    majorIds: ["environmental-earth-geographic-science"],
+    majorIds: ["environmental-earth-geographic-science", "interdisciplinary-studies"],
     summary: "Map and analyze spatial data to support planning, conservation, and logistics.",
     salary: { low: 53740, median: 81390, high: 126950 },
     growthPct: 7,
@@ -704,7 +704,7 @@ export const careers: Career[] = [
   },
   {
     id: "medical-records-specialist", title: "Medical Records Specialist",
-    majorIds: ["health-administration"],
+    majorIds: ["health-administration", "interdisciplinary-studies"],
     summary: "Organize, code, and protect patient health records so care, billing, and data reporting are accurate.",
     salary: { low: 37000, median: 51140, high: 81150 },
     growthPct: 8,
@@ -1289,7 +1289,7 @@ export const careers: Career[] = [
     growthPct: 6,
     blsUrl: "https://www.bls.gov/ooh/business-and-financial/human-resources-specialists.htm",
     employers: ["Corporations of every size", "Staffing agencies", "Government", "Universities and hospitals"],
-    strategies: ["Seek an HR internship", "Learn employment-law basics", "Consider an HR certification such as SHRM-CP", "Take some business courses and get work experience in an HR department"],
+    strategies: ["Seek an HR internship", "Learn employment-law basics", "Consider an HR certification such as SHRM-CP", "Take a course in diversity, equity, and inclusion or HR analytics", "Take some business courses and get work experience in an HR department"],
     studentOrgs: [{ name: "Society for Human Resource Management", uri: "society-for-human-resource-management" }, { name: "Black Women in Human Resources Association", uri: "black-women-in-human-resources-association" }],
     skills: ["Interviewing", "Employment law basics", "Conflict resolution", "Discretion"],
     trajectory: ["HR Assistant", "HR Specialist", "HR Manager", "HR Director"],
@@ -1721,7 +1721,7 @@ export const careers: Career[] = [
     growthPct: -2,
     blsUrl: "https://www.bls.gov/ooh/life-physical-and-social-science/political-scientists.htm",
     employers: ["Government agencies", "Think tanks", "Nonprofits and advocacy groups", "Consulting firms"],
-    strategies: ["Intern with a public office or agency", "Learn quantitative methods", "Write policy briefs for a portfolio"],
+    strategies: ["Intern with a public office or agency", "Learn quantitative methods", "Write policy briefs for a portfolio", "Learn remote collaboration tools like Zoom, Google Workspace, and Asana, since many policy and program evaluation roles are hybrid"],
     studentOrgs: [{ name: "Pi Sigma Alpha (Tau Epsilon Chapter)", uri: "pi-sigma-alpha-tau-episilon-chapter" }, { name: "Political Science Club", uri: "north-carolina-central-university-political-science-club" }, { name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }],
     skills: ["Research", "Quantitative analysis", "Briefing writing", "Public policy knowledge"],
     trajectory: ["Research Assistant", "Policy Analyst", "Senior Analyst", "Policy Director"],
@@ -1908,7 +1908,7 @@ export const careers: Career[] = [
   },
   {
     id: "archivist", title: "Archivist",
-    majorIds: ["history"],
+    majorIds: ["history", "interdisciplinary-studies"],
     summary: "Preserve, organize, and provide access to valuable records and collections.",
     salary: { low: 37030, median: 60330, high: 101400 },
     growthPct: 4,
@@ -1975,7 +1975,7 @@ export const careers: Career[] = [
   // Business
   {
     id: "marketing-manager", title: "Marketing Manager",
-    majorIds: ["business-administration", "pharmaceutical-sciences"],
+    majorIds: ["business-administration", "pharmaceutical-sciences", "interdisciplinary-studies"],
     summary: "Plan campaigns and strategy to attract and keep customers.",
     salary: { low: 63300, median: 165780, high: 286240 },
     growthPct: 6,
@@ -2139,7 +2139,7 @@ export const careers: Career[] = [
   // occupation, so those entries omit pay.
   {
     id: "instructional-designer", title: "Instructional Designer",
-    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education", "psychology"],
+    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education", "psychology", "interdisciplinary-studies"],
     summary: "Design online courses, eLearning, and training that help adults learn new skills at work, for companies, government agencies, hospitals, and colleges.",
     salary: { low: 38760, median: 69280, high: 123250 },
     growthPct: 11,
@@ -2195,7 +2195,7 @@ export const careers: Career[] = [
   },
   {
     id: "edtech-specialist", title: "EdTech Specialist / Customer Success Manager",
-    majorIds: ["elementary-education", "middle-grades-education", "information-technology"],
+    majorIds: ["elementary-education", "middle-grades-education", "information-technology", "interdisciplinary-studies"],
     summary: "Help schools and companies set up learning software and get results from it, training teachers and staff to use it well.",
     employers: ["Ed-tech companies (learning platforms and LMS vendors)", "School district technology offices", "College online learning teams", "Software companies with customer success teams"],
     strategies: ["Learn the platforms schools use, such as Google Classroom, Canvas, and Seesaw", "Volunteer to help teachers set up classroom technology", "Earn a Google Certified Educator credential", "Intern with an ed-tech company or district technology office"],
@@ -2628,7 +2628,7 @@ export const careers: Career[] = [
     growthPct: 7,
     blsUrl: "https://www.bls.gov/ooh/business-and-financial/project-management-specialists.htm",
     employers: ["Construction and engineering firms", "Tech companies", "Government", "Healthcare organizations"],
-    strategies: ["Consider a certification such as CAPM or PMP", "Lead a student or volunteer project", "Learn scheduling tools", "List projects you've run, like a curriculum rollout or school event, on your resume"],
+    strategies: ["Consider a certification such as CAPM or PMP", "Lead a student or volunteer project", "Learn project tools like Asana, Trello, or Jira, which remote teams run on", "List projects you've run, like a curriculum rollout or school event, on your resume"],
     studentOrgs: [{ name: "Alpha Kappa Psi Professional Business Fraternity", uri: "alpha-kappa-psi-professional-business-fraternity-inc" }, { name: "The Business Eagle Dean's Council", uri: "the-business-eagle-deans-council" }, { name: "Beta Gamma Sigma (business honor society)", url: "https://www.nccu.edu/business/student-professional-development-and-career-management/student-organizations#beta-gamma-sigma" }],
     skills: ["Planning & scheduling", "Budgeting", "Leadership", "Communication"],
     trajectory: ["Project Coordinator", "Project Manager", "Senior Project Manager", "Program / Portfolio Director"],
@@ -3767,7 +3767,7 @@ export const careers: Career[] = [
   },
   {
     id: "compliance-officer", title: "Compliance Officer",
-    majorIds: ["business-administration", "accounting", "pharmaceutical-sciences"],
+    majorIds: ["business-administration", "accounting", "pharmaceutical-sciences", "interdisciplinary-studies"],
     summary: "Make sure a business follows the laws, guidelines, and regulations that apply to its industry.",
     salary: { low: 48220, median: 80730, high: 133720 },
     growthPct: 4,
@@ -5269,7 +5269,7 @@ export const careers: Career[] = [
   // current BLS figures for the closest occupation.
   {
     id: "social-human-service-assistant", title: "Social and Human Service Assistant",
-    majorIds: ["social-work", "behavioral-social-sciences", "psychology"],
+    majorIds: ["social-work", "behavioral-social-sciences", "psychology", "interdisciplinary-studies"],
     summary: "Help people find and apply for the services they need, such as housing, food, and health care, working under social workers and other professionals.",
     salary: { low: 34200, median: 45930, high: 63290 },
     growthPct: 7,
@@ -5437,7 +5437,7 @@ export const careers: Career[] = [
     growthPct: 6,
     blsUrl: "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm",
     employers: ["Tech companies and startups", "Banks, insurers, and health systems", "Digital and design agencies", "Universities and government digital services"],
-    strategies: ["Pair design courses with psychology or computer science courses", "Learn Figma and basic user research methods like interviews and usability tests", "Redesign a campus website or app as a case study", "Build a portfolio website with two or three case studies that show your process", "Intern with a product, UX, or digital team"],
+    strategies: ["Pair design courses with psychology or computer science courses", "Learn Figma and basic user research methods like interviews and usability tests", "Redesign a campus website or app as a case study", "Practice running user interviews and usability tests over video", "Build a portfolio website with two or three case studies that show your process", "Intern with a product, UX, or digital team"],
     studentOrgs: [{ name: "IT Eagles", uri: "it-eagles" }, { name: "Eagle Pride Amplified Photography Organization (EPAPO)", uri: "eagle-pride-amplified-photography-organization-epapo" }],
     resources: [{ name: "Interaction Design Foundation", url: "https://www.interaction-design.org/" }],
     skills: ["User research", "Wireframing and prototyping", "Visual design", "Empathy"],
@@ -5553,6 +5553,23 @@ export const careers: Career[] = [
     resources: [{ name: "National Long-Term Care Ombudsman Resource Center", url: "https://ltcombudsman.org/" }],
     skills: ["Advocacy", "Investigation", "Conflict resolution", "Knowledge of residents' rights"],
     trajectory: ["Volunteer Ombudsman", "Regional Ombudsman", "Lead Ombudsman", "State Long-Term Care Ombudsman"],
+  },
+
+  // From Research.com's "Which Interdisciplinary Studies Degree Careers Are
+  // Most Likely to Be Remote in the Future?" Its other remote-friendly paths
+  // already exist; they gained Interdisciplinary Studies and the article's
+  // remote-readiness advice. BLS has no content strategist occupation, so
+  // that entry omits pay.
+  {
+    id: "digital-content-strategist", title: "Digital Content Strategist",
+    majorIds: ["mass-communication", "interdisciplinary-studies", "business-administration"],
+    summary: "Plan what an organization publishes online, from web pages and newsletters to video and social posts, and use data to see what works. Often a remote or hybrid role.",
+    employers: ["Marketing and digital agencies", "Tech and media companies", "Nonprofits and universities", "Self-employed / freelance"],
+    strategies: ["Take writing, marketing, and analytics courses", "Run the website, newsletter, or social accounts for a campus group", "Learn remote collaboration tools like Google Workspace, Asana, or Trello", "Build a portfolio of content you planned and the results it got", "Intern with a marketing, communications, or digital team"],
+    studentOrgs: [{ name: "Public Relations Student Society of America", uri: "public-relations-student-society-of-america-2" }, { name: "The Campus Echo", uri: "the-campus-echo" }, { name: "Her Campus", uri: "her-campus" }],
+    resources: [{ name: "American Marketing Association", url: "https://www.ama.org/" }],
+    skills: ["Content planning", "Writing and editing", "Analytics", "Project coordination"],
+    trajectory: ["Content Coordinator", "Content Strategist", "Senior Content Strategist", "Head of Content"],
   },
   {
     id: "emergency-management-director", title: "Emergency Management Director",
