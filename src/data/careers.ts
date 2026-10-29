@@ -382,7 +382,7 @@ export const careers: Career[] = [
   },
   {
     id: "technical-writer", title: "Technical Writer",
-    majorIds: ["physics", "biological-biomedical-sciences", "chemistry-biochemistry", "elementary-education", "middle-grades-education"],
+    majorIds: ["physics", "biological-biomedical-sciences", "chemistry-biochemistry", "elementary-education", "middle-grades-education", "interdisciplinary-studies"],
     summary: "Turn complex technical information into manuals, how-to guides, and articles that anyone can follow.",
     salary: { low: 57440, median: 90390, high: 145270 },
     growthPct: 1,
@@ -718,7 +718,7 @@ export const careers: Career[] = [
   },
   {
     id: "social-community-service-manager", title: "Social and Community Service Manager",
-    majorIds: ["behavioral-social-sciences", "psychology", "social-work"],
+    majorIds: ["behavioral-social-sciences", "psychology", "social-work", "interdisciplinary-studies"],
     summary: "Lead programs and organizations that support people and communities, like youth, housing, or family services.",
     salary: { low: 53150, median: 80390, high: 132260 },
     growthPct: 7,
@@ -989,7 +989,7 @@ export const careers: Career[] = [
   },
   {
     id: "healthcare-administrator", title: "Healthcare Administrator",
-    majorIds: ["health-administration", "nursing", "business-administration"],
+    majorIds: ["health-administration", "nursing", "business-administration", "interdisciplinary-studies"],
     summary: "Manage the operations, staff, and budgets of hospitals, practices, or health systems.",
     salary: { low: 73390, median: 123860, high: 224340 },
     growthPct: 24,
@@ -1003,7 +1003,7 @@ export const careers: Career[] = [
   },
   {
     id: "public-health-educator", title: "Public Health Educator",
-    majorIds: ["public-health-education", "nutrition-dietetics", "psychology", "social-work"],
+    majorIds: ["public-health-education", "nutrition-dietetics", "psychology", "social-work", "interdisciplinary-studies"],
     summary: "Teach communities about health topics and design programs that change behavior.",
     salary: { low: 42990, median: 64070, high: 118200 },
     growthPct: 6,
@@ -1283,7 +1283,7 @@ export const careers: Career[] = [
   },
   {
     id: "hr-specialist", title: "HR Specialist",
-    majorIds: ["psychology", "behavioral-social-sciences", "business-administration", "hospitality-tourism-administration"],
+    majorIds: ["psychology", "behavioral-social-sciences", "business-administration", "hospitality-tourism-administration", "interdisciplinary-studies"],
     summary: "Recruit, onboard, and support employees and keep organizations compliant.",
     salary: { low: 47180, median: 75940, high: 128720 },
     growthPct: 6,
@@ -2001,7 +2001,7 @@ export const careers: Career[] = [
   },
   {
     id: "entrepreneur", title: "Entrepreneur",
-    majorIds: ["business-administration"],
+    majorIds: ["business-administration", "interdisciplinary-studies"],
     summary: "Start and run your own business. Income varies enormously and is not tracked as a single occupation.",
     employers: ["Your own company", "Startups and family businesses", "Franchises", "Freelance or consulting practices"],
     strategies: ["Start something small while in school", "Find mentors and a startup community", "Learn basic accounting and sales"],
@@ -2104,7 +2104,7 @@ export const careers: Career[] = [
   },
   {
     id: "curriculum-specialist", title: "Curriculum Specialist",
-    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education"],
+    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education", "interdisciplinary-studies"],
     summary: "Design and evaluate the materials and standards teachers use in the classroom.",
     salary: { low: 47980, median: 77440, high: 121670 },
     growthPct: 2,
@@ -2622,7 +2622,7 @@ export const careers: Career[] = [
   },
   {
     id: "project-manager", title: "Project Manager",
-    majorIds: ["mathematics", "business-administration", "elementary-education", "middle-grades-education"],
+    majorIds: ["mathematics", "business-administration", "elementary-education", "middle-grades-education", "interdisciplinary-studies"],
     summary: "Plan schedules, budgets, and teams to deliver projects on time.",
     salary: { low: 61580, median: 102320, high: 167970 },
     growthPct: 7,
@@ -3753,7 +3753,7 @@ export const careers: Career[] = [
   },
   {
     id: "social-media-specialist", title: "Social Media Specialist",
-    majorIds: ["business-administration"],
+    majorIds: ["business-administration", "interdisciplinary-studies"],
     summary: "Build a brand's online presence, keep up with trends, and use posts and ads to engage people and bring them to the company.",
     salary: { low: 44110, median: 74750, high: 135150 },
     growthPct: 2,
@@ -3854,7 +3854,7 @@ export const careers: Career[] = [
   },
   {
     id: "management-consultant", title: "Management Consultant",
-    majorIds: ["business-administration"],
+    majorIds: ["business-administration", "interdisciplinary-studies"],
     summary: "Get brought in as an expert in one area of business to solve a company's problems and find ways for it to grow.",
     salary: { low: 60640, median: 101860, high: 171640 },
     growthPct: 10,
@@ -4771,7 +4771,7 @@ export const careers: Career[] = [
   },
   {
     id: "school-career-counselor", title: "School and Career Counselor",
-    majorIds: ["psychology", "elementary-education", "middle-grades-education"],
+    majorIds: ["psychology", "elementary-education", "middle-grades-education", "interdisciplinary-studies"],
     summary: "Help students with academics, personal issues, and career choices in schools and colleges (master's degree required).",
     salary: { low: 45020, median: 64330, high: 104770 },
     growthPct: 3,
@@ -4807,7 +4807,7 @@ export const careers: Career[] = [
   },
   {
     id: "student-affairs-professional", title: "College Student Affairs Professional",
-    majorIds: ["psychology"],
+    majorIds: ["psychology", "interdisciplinary-studies"],
     summary: "Support college students outside the classroom in areas like housing, student activities, admissions, and advising.",
     salary: { low: 64560, median: 104590, high: 215620 },
     growthPct: 2,
@@ -4835,7 +4835,7 @@ export const careers: Career[] = [
   },
   {
     id: "survey-researcher", title: "Survey Researcher",
-    majorIds: ["psychology", "social-work"],
+    majorIds: ["psychology", "social-work", "interdisciplinary-studies"],
     summary: "Design surveys and analyze the results to learn what people think, for polls, market research, and policy.",
     salary: { low: 39260, median: 69460, high: 130860 },
     growthPct: -5,
@@ -5422,6 +5422,50 @@ export const careers: Career[] = [
     resources: [{ name: "Grant Professionals Association", url: "https://grantprofessionals.org/" }],
     skills: ["Persuasive writing", "Research", "Budgeting", "Deadline management"],
     trajectory: ["Development Assistant", "Grant Writer", "Grants Manager", "Director of Development"],
+  },
+
+  // From American Public University's "Careers You Can Build With an
+  // Interdisciplinary Studies Degree" and the APU guides it links to. The
+  // article gives no pay figures, so these use BLS where an occupation
+  // matches; its other careers already exist and gained Interdisciplinary
+  // Studies. BLS has no advocacy occupation, so that entry omits pay.
+  {
+    id: "ux-designer", title: "UX Designer",
+    majorIds: ["art-and-design", "interdisciplinary-studies", "computer-information-sciences"],
+    summary: "Research how people use apps and websites, then design screens and flows that are easy and pleasant to use.",
+    salary: { low: 53750, median: 104000, high: 201550 },
+    growthPct: 6,
+    blsUrl: "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm",
+    employers: ["Tech companies and startups", "Banks, insurers, and health systems", "Digital and design agencies", "Universities and government digital services"],
+    strategies: ["Pair design courses with psychology or computer science courses", "Learn Figma and basic user research methods like interviews and usability tests", "Redesign a campus website or app as a case study", "Build a portfolio website with two or three case studies that show your process", "Intern with a product, UX, or digital team"],
+    studentOrgs: [{ name: "IT Eagles", uri: "it-eagles" }, { name: "Eagle Pride Amplified Photography Organization (EPAPO)", uri: "eagle-pride-amplified-photography-organization-epapo" }],
+    resources: [{ name: "Interaction Design Foundation", url: "https://www.interaction-design.org/" }],
+    skills: ["User research", "Wireframing and prototyping", "Visual design", "Empathy"],
+    trajectory: ["UX Intern / Junior Designer", "UX Designer", "Senior UX Designer", "UX Lead or Design Manager"],
+  },
+  {
+    id: "fundraiser", title: "Fundraising / Development Coordinator",
+    majorIds: ["interdisciplinary-studies", "mass-communication", "social-work", "business-administration"],
+    summary: "Plan donor campaigns, events, and outreach that raise money for nonprofits, universities, and community causes.",
+    salary: { low: 46630, median: 72550, high: 115820 },
+    growthPct: 6,
+    blsUrl: "https://www.bls.gov/ooh/business-and-financial/fundraisers.htm",
+    employers: ["Nonprofits and foundations", "Universities (including NCCU's advancement office)", "Hospitals and health foundations", "Museums and arts organizations"],
+    strategies: ["Volunteer to run a fundraiser or giving campaign for a campus group", "Take courses in communication, marketing, and nonprofit management", "Intern in a nonprofit development office or university advancement office", "Learn donor database tools like Salesforce or Raiser's Edge"],
+    studentOrgs: [{ name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }, { name: "Circle K International", uri: "circle-k-international" }],
+    resources: [{ name: "Association of Fundraising Professionals", url: "https://afpglobal.org/" }],
+    skills: ["Relationship building", "Persuasive writing", "Event planning", "Data tracking"],
+    trajectory: ["Development Assistant", "Development Coordinator", "Major Gifts Officer", "Director of Development"],
+  },
+  {
+    id: "advocacy-specialist", title: "Advocacy Specialist",
+    majorIds: ["interdisciplinary-studies", "political-science", "social-work"],
+    summary: "Push for policy and community change on issues like education, health, civil rights, or the environment, through campaigns, coalitions, and outreach to lawmakers.",
+    employers: ["Advocacy nonprofits and civil rights organizations", "Community development groups", "Health and environmental organizations", "Labor unions and coalitions"],
+    strategies: ["Pick a cause and volunteer with an organization working on it", "Take courses on policy, race, gender, and class, and on persuasive writing", "Intern with an advocacy group, legislative office, or campaign", "Make your capstone project a policy brief on your cause"],
+    studentOrgs: [{ name: "Students in Public Service (SIPS)", uri: "students-in-public-service-sips" }, { name: "Student Government Association", uri: "student-government-association" }],
+    skills: ["Persuasive communication", "Coalition building", "Policy research", "Community organizing"],
+    trajectory: ["Organizing Fellow or Intern", "Advocacy Specialist", "Advocacy Manager", "Director of Policy and Advocacy"],
   },
   {
     id: "emergency-management-director", title: "Emergency Management Director",
