@@ -2247,6 +2247,52 @@ export const careers: Career[] = [
     trajectory: ["Peer Tutor", "Private Tutor", "Lead Tutor or Tutoring Business Owner", "Learning Center Director"],
   },
 
+  // From BigFuture's Middle School Education major page and the career pages
+  // it links to. Middle and secondary teaching already exist. BigFuture's
+  // O*NET pay is replaced with BLS figures; Education Professor uses BLS's
+  // median for postsecondary education teachers, which has no published range.
+  {
+    id: "education-professor", title: "Education Professor (Teacher Educator)",
+    majorIds: ["middle-grades-education", "elementary-education", "early-childhood-education"],
+    summary: "Prepare future teachers, counselors, and ESL teachers by teaching college courses in curriculum, instruction, and teacher education, and research how students learn (doctoral degree usually required).",
+    salary: { median: 75350 },
+    growthPct: 7,
+    blsUrl: "https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm",
+    employers: ["University colleges of education", "Four-year colleges", "Community colleges (teacher prep and ESL courses)", "Education research centers"],
+    strategies: ["Assist an education professor with research", "Apply to the McNair Scholars Program if you're a first-generation, low-income, or underrepresented student", "Teach in K-12 classrooms for a few years to bring real experience to future teachers", "Plan for a master's, then an Ed.D. or PhD in education"],
+    studentOrgs: [{ name: "Education Majors Advisory Council", uri: "education-majors-advisory-council" }, { name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }],
+    resources: [{ name: "American Educational Research Association", url: "https://www.aera.net/" }, { name: "American Association of Colleges for Teacher Education", url: "https://aacte.org/" }],
+    skills: ["Teacher preparation", "Research", "Academic writing", "Mentoring"],
+    trajectory: ["K-12 Teacher", "Graduate Assistant / Adjunct Instructor", "Assistant Professor of Education", "Professor or Dean of Education"],
+  },
+  {
+    id: "special-education-teacher", title: "Special Education Teacher",
+    majorIds: ["elementary-education", "middle-grades-education", "early-childhood-education"],
+    summary: "Adapt lessons for students with learning, emotional, or physical disabilities, write individualized education programs (IEPs), and work with families and specialists.",
+    salary: { low: 49230, median: 67170, high: 105020 },
+    growthPct: 0,
+    blsUrl: "https://www.bls.gov/ooh/education-training-and-library/special-education-teachers.htm",
+    employers: ["Public school districts", "Charter and private schools", "Early intervention and preschool programs", "Residential and therapeutic schools"],
+    strategies: ["Take courses in disabilities, behavior support, and assistive technology", "Volunteer with Special Olympics or a camp for kids with disabilities", "Learn how IEPs work by shadowing a special education teacher", "Add a special education license area, a high-need field in NC"],
+    studentOrgs: [{ name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }, { name: "TRIO Teacher Preparation Program", uri: "trio-teacher-preparation-program" }],
+    resources: [{ name: "Council for Exceptional Children", url: "https://exceptionalchildren.org/" }],
+    skills: ["Individualized instruction", "IEP writing", "Behavior support", "Patience"],
+    trajectory: ["Student Teacher", "Special Education Teacher", "Lead Teacher / IEP Coordinator", "Exceptional Children Program Director"],
+  },
+  {
+    id: "teaching-assistant", title: "Teaching Assistant",
+    majorIds: ["elementary-education", "early-childhood-education", "middle-grades-education"],
+    summary: "Support a lead teacher by working with small groups and individual students, reinforcing lessons, and helping run the classroom. It's a common first school job while you finish your degree.",
+    salary: { low: 27150, median: 36780, high: 50040 },
+    growthPct: 0,
+    blsUrl: "https://www.bls.gov/ooh/education-training-and-library/teacher-assistants.htm",
+    employers: ["Public elementary and middle schools", "Special education programs", "Preschools and Head Start", "After-school programs"],
+    strategies: ["Work part time as a teaching assistant or tutor during college", "Work as a substitute teacher to see many classrooms (requirements vary by district)", "Get CPR and first aid certified", "Finish your licensure while you work to move into a lead teacher role"],
+    studentOrgs: [{ name: "The Future Educators of Tomorrow", uri: "the-future-educators-of-tomorrow" }, { name: "Early Childhood Education & Child Development Family Relations Group", uri: "early-childhood-education-child-development-family-relations-group" }],
+    skills: ["Small-group instruction", "Classroom support", "Patience", "Teamwork"],
+    trajectory: ["Teaching Assistant", "Lead Teacher", "Mentor Teacher", "Instructional Coach"],
+  },
+
   // Mathematics (additional pathways)
   {
     id: "quantitative-analyst", title: "Quantitative Analyst",
