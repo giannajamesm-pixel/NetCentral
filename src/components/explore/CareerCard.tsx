@@ -194,97 +194,6 @@ export default function CareerCard({
               ))}
             </ul>
 
-            {career.studentOrgs && career.studentOrgs.length > 0 && (
-              <div className="mt-5 rounded-2xl bg-primary-50 p-4">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-primary-700">
-                  Get involved at NCCU
-                </h4>
-                <ul className="mt-2 flex flex-col gap-1">
-                  {career.studentOrgs.map((org) => (
-                    <li key={org.name}>
-                      <a
-                        href={org.url ?? `${ORG_BASE_URL}${org.uri}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
-                      >
-                        {org.name} ↗
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-2 text-xs text-ink-500">
-                  NCCU student organizations (Eagle Link and the School of
-                  Business)
-                </p>
-              </div>
-            )}
-
-            {career.resources && career.resources.length > 0 && (
-              <div className="mt-5 rounded-2xl border border-ink-100 p-4">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
-                  Professional organizations
-                </h4>
-                <ul className="mt-2 flex flex-col gap-1">
-                  {career.resources.map((r) => (
-                    <li key={r.url}>
-                      <a
-                        href={r.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-semibold text-ink-900 hover:text-primary-700 hover:underline"
-                      >
-                        {r.name} ↗
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {sims.length > 0 && (
-              <div className="mt-5 rounded-2xl border border-ink-100 p-4">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
-                  Try the job
-                </h4>
-                <ul className="mt-2 flex flex-col gap-1">
-                  {sims.map((s) => (
-                    <li key={s.url}>
-                      <a
-                        href={s.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-semibold text-ink-900 hover:text-primary-700 hover:underline"
-                      >
-                        {s.company}: {s.title} ↗
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                {allSims.length > 4 && (
-                  <button
-                    type="button"
-                    onClick={() => setShowAllSims(!showAllSims)}
-                    className="mt-2 text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
-                  >
-                    {showAllSims ? "Show fewer" : `Show all ${allSims.length}`}
-                  </button>
-                )}
-                <p className="mt-2 text-xs text-ink-500">
-                  Free, self-paced{" "}
-                  <a
-                    href={FORAGE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold hover:text-primary-700 hover:underline"
-                  >
-                    Forage
-                  </a>{" "}
-                  job simulations. Sign in with your NCCU email.
-                </p>
-              </div>
-            )}
-
             {career.blsUrl && (
               <a
                 href={career.blsUrl}
@@ -296,6 +205,101 @@ export default function CareerCard({
               </a>
             )}
           </section>
+
+          {(career.studentOrgs?.length || career.resources?.length || sims.length > 0) && (
+            <div className="grid gap-4 sm:col-span-2 sm:grid-cols-[repeat(auto-fit,minmax(15rem,1fr))]">
+              {career.studentOrgs && career.studentOrgs.length > 0 && (
+                <div className="rounded-2xl bg-primary-50 p-4">
+                  <h4 className="text-xs font-bold uppercase tracking-wide text-primary-700">
+                    Get involved at NCCU
+                  </h4>
+                  <ul className="mt-2 flex flex-col gap-1">
+                    {career.studentOrgs.map((org) => (
+                      <li key={org.name}>
+                        <a
+                          href={org.url ?? `${ORG_BASE_URL}${org.uri}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
+                        >
+                          {org.name} ↗
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-2 text-xs text-ink-500">
+                    NCCU student organizations (Eagle Link and the School of
+                    Business)
+                  </p>
+                </div>
+              )}
+
+              {career.resources && career.resources.length > 0 && (
+                <div className="rounded-2xl border border-ink-100 p-4">
+                  <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
+                    Professional organizations
+                  </h4>
+                  <ul className="mt-2 flex flex-col gap-1">
+                    {career.resources.map((r) => (
+                      <li key={r.url}>
+                        <a
+                          href={r.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-ink-900 hover:text-primary-700 hover:underline"
+                        >
+                          {r.name} ↗
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {sims.length > 0 && (
+                <div className="rounded-2xl border border-ink-100 p-4">
+                  <h4 className="text-xs font-bold uppercase tracking-wide text-ink-500">
+                    Try the job
+                  </h4>
+                  <ul className="mt-2 flex flex-col gap-1">
+                    {sims.map((s) => (
+                      <li key={s.url}>
+                        <a
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-ink-900 hover:text-primary-700 hover:underline"
+                        >
+                          {s.company}: {s.title} ↗
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  {allSims.length > 4 && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllSims(!showAllSims)}
+                      className="mt-2 text-sm font-semibold text-primary-700 hover:text-primary-600 hover:underline"
+                    >
+                      {showAllSims ? "Show fewer" : `Show all ${allSims.length}`}
+                    </button>
+                  )}
+                  <p className="mt-2 text-xs text-ink-500">
+                    Free, self-paced{" "}
+                    <a
+                      href={FORAGE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold hover:text-primary-700 hover:underline"
+                    >
+                      Forage
+                    </a>{" "}
+                    job simulations. Sign in with your NCCU email.
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
 
           <div className="flex flex-col items-start gap-3 border-t border-ink-100 pt-5 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-ink-500">
