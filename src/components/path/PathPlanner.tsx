@@ -80,7 +80,7 @@ export default function PathPlanner({ careerId, careerTitle, majorId, majorName,
             return <li key={id} className="flex gap-3 py-4">
               <input id={`priority-${id}`} type="checkbox" checked={completed.includes(id)} onChange={() => toggle(id)} className="mt-1 h-5 w-5 shrink-0 accent-primary-700" />
               <div>
-                <label htmlFor={`priority-${id}`} className="cursor-pointer text-sm font-semibold text-ink-900">{step.title}</label>
+                <label htmlFor={`priority-${id}`} className="block cursor-pointer text-sm font-semibold text-ink-900">{step.title}</label>
                 {step.detail && <p className="mt-1 text-sm leading-relaxed text-ink-500">{step.detail}</p>}
                 {step.href && (step.href.startsWith("/") ?
                   <Link href={prep} className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-primary-700 hover:underline">Open preparation tools →</Link> :
