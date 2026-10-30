@@ -15,7 +15,12 @@ export default function ExploreClient({
   );
   const [query, setQuery] = useState("");
   const [careerQuery, setCareerQuery] = useState("");
+  const [isChoosingMajor, setIsChoosingMajor] = useState(
+    !majors.some((m) => m.id === initialMajorId)
+  );
   const careersRef = useRef<HTMLDivElement>(null);
+  const careersHeadingRef = useRef<HTMLHeadingElement>(null);
+  const focusCareersAfterPick = useRef(false);
   const careerSearchRef = useRef<HTMLInputElement>(null);
 
   // Deep links (e.g. from quiz results) jump straight to the careers.
@@ -24,6 +29,13 @@ export default function ExploreClient({
       careersRef.current?.scrollIntoView({ block: "start" });
     }
   }, [initialMajorId]);
+
+  useEffect(() => {
+    if (!focusCareersAfterPick.current || isChoosingMajor) return;
+    focusCareersAfterPick.current = false;
+    careersHeadingRef.current?.focus({ preventScroll: true });
+    careersRef.current?.scrollIntoView({ block: "start" });
+  }, [majorId, isChoosingMajor]);
 
   const selected = majors.find((m) => m.id === majorId);
   const careers = useMemo(
@@ -54,8 +66,11 @@ export default function ExploreClient({
   }, [query]);
 
   function pick(id: string) {
+    focusCareersAfterPick.current = true;
     setMajorId(id);
     setCareerQuery("");
+    setQuery("");
+    setIsChoosingMajor(false);
     window.history.replaceState(null, "", `/explore?major=${id}`);
   }
 
@@ -79,7 +94,26 @@ export default function ExploreClient({
         </p>
       </div>
 
-      <div className="review-panel mt-8 p-5 sm:p-6">
+      {selected && (
+        <div className="review-panel mt-8 flex flex-wrap items-center justify-between gap-4 p-5 sm:p-6">
+          <div className="min-w-0">
+            <p className="review-eyebrow">Your selected major</p>
+            <p className="font-display mt-1 font-bold text-ink-900">{selected.name}</p>
+            <p className="mt-1 text-sm text-ink-500">Choose a career below to see its four-year roadmap.</p>
+          </div>
+          <button
+            type="button"
+            aria-expanded={isChoosingMajor}
+            aria-controls="major-picker"
+            onClick={() => setIsChoosingMajor((open) => !open)}
+            className="min-h-11 shrink-0 rounded-lg border border-primary-100 px-4 py-2.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+          >
+            {isChoosingMajor ? "Keep this major" : "Change major"}
+          </button>
+        </div>
+      )}
+
+      <div id="major-picker" hidden={!isChoosingMajor} className="review-panel mt-8 p-5 sm:p-6">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-display text-lg font-bold text-ink-900">
             Choose your major
@@ -131,7 +165,7 @@ export default function ExploreClient({
         </div>
       </div>
 
-      <div ref={careersRef} className="mt-10 scroll-mt-24">
+      <div id="careers" ref={careersRef} className="mt-10 scroll-mt-24">
         {!selected && (
           <p className="rounded-xl border border-dashed border-ink-100 px-5 py-6 text-center text-sm text-ink-500">
             Choose a major above to see its career paths.
@@ -145,7 +179,7 @@ export default function ExploreClient({
                 <span className="review-eyebrow">
                   {selected.category}
                 </span>
-                <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-ink-900">
+                <h2 ref={careersHeadingRef} tabIndex={-1} className="font-display mt-2 text-2xl font-bold tracking-tight text-ink-900 focus:outline-none">
                   Careers for {selected.name}
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-700">{selected.description}</p>

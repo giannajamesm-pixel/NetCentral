@@ -42,7 +42,7 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
 
   return (
     <>
-      <Navbar />
+      <Navbar activePage="roadmap" majorId={major.id} careerId={career.id} />
       <main className="bg-campus flex-1">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
           <Link
@@ -136,6 +136,20 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
               </ol>
             </section>
           )}
+
+          <section className="review-panel mt-10 flex flex-col items-start justify-between gap-5 p-6 sm:flex-row sm:items-center sm:p-8">
+            <div>
+              <p className="review-eyebrow">Put your plan into action</p>
+              <h2 className="font-display mt-2 text-xl font-bold text-ink-900">Prepare for your next opportunity</h2>
+              <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-500">Take your {career.title} plan into BizPrep for resume tools, recruiting resources, and practical experience.</p>
+            </div>
+            <Link
+              href={`/bizprep?major=${encodeURIComponent(major.id)}&career=${encodeURIComponent(career.id)}`}
+              className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-primary-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+            >
+              Continue to BizPrep →
+            </Link>
+          </section>
 
           <p className="mx-auto mt-12 max-w-2xl text-center text-xs text-ink-500">
             This roadmap is a general guide built from this career&apos;s
