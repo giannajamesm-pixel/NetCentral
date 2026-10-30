@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- This CommonJS harness loads TypeScript through Node's require hooks. */
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -68,7 +69,13 @@ test("API is off by default and makes no provider call; enabled requests need co
     assert.equal((await POST(request({...input,consent:true},"https://other.example"))).status,403);
     assert.equal((await POST(request({...input,consent:true,padding:"x".repeat(2100)}))).status,413);
     assert.equal(calls,0);
-  } finally { global.fetch=original.fetch; for(const [name,value] of [["NETCENTRAL_AI_ENABLED",original.enabled],["OPENAI_API_KEY",original.key],["NETCENTRAL_AI_MODEL",original.model]]) value===undefined?delete process.env[name]:process.env[name]=value; }
+  } finally {
+    global.fetch=original.fetch;
+    for(const [name,value] of [["NETCENTRAL_AI_ENABLED",original.enabled],["OPENAI_API_KEY",original.key],["NETCENTRAL_AI_MODEL",original.model]]) {
+      if(value===undefined) delete process.env[name];
+      else process.env[name]=value;
+    }
+  }
 });
 
 test("provider receives only curated context and a completed result is validated", async () => {
@@ -82,5 +89,11 @@ test("provider receives only curated context and a completed result is validated
     const body=await response.json();assert.equal(body.plan.weeks.length,4);
     assert.equal(payload.store,false);assert.equal(payload.model,"test-model");assert.ok(payload.max_output_tokens<=1800);
     assert.ok(!JSON.stringify(payload).includes("PRIVATE_RESUME_SHOULD_NOT_BE_SENT"));
-  } finally {global.fetch=original.fetch;for(const [name,value] of [["NETCENTRAL_AI_ENABLED",original.enabled],["OPENAI_API_KEY",original.key],["NETCENTRAL_AI_MODEL",original.model]]) value===undefined?delete process.env[name]:process.env[name]=value;}
+  } finally {
+    global.fetch=original.fetch;
+    for(const [name,value] of [["NETCENTRAL_AI_ENABLED",original.enabled],["OPENAI_API_KEY",original.key],["NETCENTRAL_AI_MODEL",original.model]]) {
+      if(value===undefined) delete process.env[name];
+      else process.env[name]=value;
+    }
+  }
 });
