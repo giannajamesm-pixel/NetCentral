@@ -1,16 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CollegeYear } from "@/lib/studentPath";
 
 type NavbarProps = {
   activePage?: "quiz" | "explore" | "roadmap" | "bizprep";
   majorId?: string;
   careerId?: string;
+  year?: CollegeYear;
 };
 
-export default function Navbar({ activePage, majorId, careerId }: NavbarProps) {
+export default function Navbar({ activePage, majorId, careerId, year }: NavbarProps) {
   const context = new URLSearchParams();
   if (majorId) context.set("major", majorId);
   if (careerId) context.set("career", careerId);
+  if (year) context.set("year", String(year));
   const contextQuery = context.toString();
   const majorQuery = majorId ? `?major=${encodeURIComponent(majorId)}` : "";
   const links = [

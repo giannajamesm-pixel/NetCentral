@@ -18,11 +18,11 @@ const STATUS_STYLES: Record<ReviewItem["status"], { label: string; icon: string;
 const inputClass =
   "w-full rounded-2xl border-2 border-ink-100 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500";
 
-export default function ResumeReview() {
+export default function ResumeReview({ careerTitle }: { careerTitle?: string }) {
   const [fileName, setFileName] = useState<string | null>(null);
   const [text, setText] = useState("");
   const [pasteMode, setPasteMode] = useState(false);
-  const [position, setPosition] = useState("");
+  const [position, setPosition] = useState(careerTitle ?? "");
   const [company, setCompany] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [error, setError] = useState<string | null>(null);

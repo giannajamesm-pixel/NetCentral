@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ResumePanel from "@/components/bizprep/ResumePanel";
+import GuidedDrafts from "@/components/bizprep/GuidedDrafts";
 
 type Tool = "resume" | "cover-letter" | "portfolio";
 
@@ -11,7 +12,7 @@ const TOOLS: { id: Tool; label: string; description: string }[] = [
   { id: "portfolio", label: "Portfolio", description: "Show off your best work" },
 ];
 
-export default function BizPrepClient() {
+export default function BizPrepClient({ careerTitle }: { careerTitle?: string }) {
   const [tool, setTool] = useState<Tool>("resume");
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -117,14 +118,9 @@ export default function BizPrepClient() {
 
       <div className="mt-6 border-t border-ink-100 pt-6">
         {tool === "resume" ? (
-          <ResumePanel />
+          <ResumePanel careerTitle={careerTitle} />
         ) : (
-          <div className="rounded-2xl border border-ink-100 bg-surface-soft px-5 py-10 text-center">
-            <p className="font-display text-lg font-bold text-ink-900">
-              {current.label} tools are coming soon
-            </p>
-            <p className="mt-1 text-sm text-ink-500">{current.description}. Check back soon.</p>
-          </div>
+          <GuidedDrafts key={tool} kind={tool} careerTitle={careerTitle} />
         )}
       </div>
     </section>

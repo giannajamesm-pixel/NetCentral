@@ -4,6 +4,7 @@ import BizPrepClient from "@/components/bizprep/BizPrepClient";
 import EventsSection from "@/components/bizprep/EventsSection";
 import { careers } from "@/data/careers";
 import { majors } from "@/data/majors";
+import { collegeYear, roadmapHref } from "@/lib/studentPath";
 
 export const metadata = {
   title: "BizPrep — NetCentral",
@@ -16,18 +17,19 @@ export default async function BizPrepPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { career: careerParam, major: majorParam } = await searchParams;
+  const { career: careerParam, major: majorParam, year: yearParam } = await searchParams;
+  const year = collegeYear(yearParam);
   const career = typeof careerParam === "string" ? careers.find((c) => c.id === careerParam) : undefined;
   const majorId = career
     ? typeof majorParam === "string" && career.majorIds.includes(majorParam)
       ? majorParam
       : career.majorIds[0]
-    : undefined;
+    : typeof majorParam === "string" && majors.some((m) => m.id === majorParam) ? majorParam : undefined;
   const major = majors.find((m) => m.id === majorId);
 
   return (
     <>
-      <Navbar activePage="bizprep" majorId={major?.id} careerId={career?.id} />
+      <Navbar activePage="bizprep" majorId={major?.id} careerId={career?.id} year={year} />
       <main className="bg-campus flex-1">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
           <header className="review-panel overflow-hidden">
@@ -60,7 +62,7 @@ export default async function BizPrepPage({
                   <p className="mt-1 text-sm text-ink-500">Use these resources alongside your {major.name} roadmap.</p>
                 </div>
                 <Link
-                  href={`/explore/${career.id}?major=${major.id}`}
+                  href={roadmapHref(major.id, career.id, year)}
                   className="inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
                 >
                   ← Return to your roadmap
@@ -68,7 +70,7 @@ export default async function BizPrepPage({
               </section>
             )}
             <EventsSection />
-            <BizPrepClient />
+            <BizPrepClient key={career?.id ?? "general"} careerTitle={career?.title} />
 
             <section
               aria-labelledby="forage-heading"
