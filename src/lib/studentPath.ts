@@ -19,14 +19,15 @@ export function parseStudentPath(raw: string | null): StudentPath | null {
   if (!raw || raw.length > 8000) return null;
   try {
     const v = JSON.parse(raw);
+    const year = collegeYear(v?.year);
     const slug = (s: unknown) => typeof s === "string" && /^[a-z0-9-]{1,100}$/.test(s);
     const name = (s: unknown) => typeof s === "string" && s.length > 0 && s.length <= 160;
     if (v?.version !== 1 || !slug(v.careerId) || !slug(v.majorId) ||
-        !name(v.careerTitle) || !name(v.majorName) || !collegeYear(v.year) ||
+        !name(v.careerTitle) || !name(v.majorName) || !year ||
         !Array.isArray(v.completed) || v.completed.length > 40 ||
         !v.completed.every((id: unknown) => typeof id === "string" && /^[1-4]:\d{1,2}$/.test(id))) return null;
     return { version: 1, careerId: v.careerId, careerTitle: v.careerTitle,
-      majorId: v.majorId, majorName: v.majorName, year: v.year, completed: [...new Set<string>(v.completed)] };
+      majorId: v.majorId, majorName: v.majorName, year, completed: [...new Set<string>(v.completed)] };
   } catch { return null; }
 }
 

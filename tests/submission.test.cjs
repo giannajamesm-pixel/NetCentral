@@ -30,6 +30,13 @@ test("saved progress restores the selected year and stays on internal routes", (
   assert.equal(preparationHref("music", input.careerId, 2), "/bizprep?major=music&career=sound-engineering-technician&year=2");
 });
 
+test("saved year strings restore as numbers before the roadmap reads them", () => {
+  const restored = parseStudentPath(JSON.stringify({...saved, year:"2"}));
+  assert.equal(restored.year, 2);
+  assert.equal(typeof restored.year, "number");
+  assert.deepEqual(restored.completed, ["2:0"]);
+});
+
 test("corrupt browser data cannot create external links or invalid year state", () => {
   for (const value of [null, "{bad", JSON.stringify({...saved, careerId:"https://example.com"}), JSON.stringify({...saved, year:0}), JSON.stringify({...saved, completed:["malformed"]}), "x".repeat(8001)]) assert.equal(parseStudentPath(value), null);
   assert.equal(collegeYear("2"),2);
