@@ -1,8 +1,11 @@
 // BizPrep content: campus career events, career fair employers, and resume
-// templates. Fair names and the recruiting window come from NCCU's Career &
-// Professional Development Center (nccu.edu/dsa/student-support). Exact
-// dates and employer lists are published in Handshake, which requires an NCCU
-// login, so they are added here by hand as they are announced.
+// templates. Reviewed October 29, 2026 against NCCU's official student and
+// employer recruiting pages:
+// https://www.nccu.edu/dsa/student-support/students
+// https://www.nccu.edu/dsa/student-support/employers
+// All-majors fairs recur in fall and spring. Exact upcoming dates and employer
+// lists must be verified in Handshake before adding a dated event here; a
+// recruiting window or a past fair announcement is not an upcoming fair.
 
 export const HANDSHAKE_URL = "https://nccu.joinhandshake.com/";
 export const CAREER_CENTER_URL = "https://www.nccu.edu/dsa/student-support/students";
@@ -26,33 +29,13 @@ export interface CampusEvent {
 
 export const campusEvents: CampusEvent[] = [
   {
-    id: "business-it-fair",
-    title: "Business & IT Career Fair",
-    kind: "Career Fair",
-    timing: "Fall semester",
-    description:
-      "Meet organizations hiring for business administration, marketing, sales, hospitality, communications, finance, accounting, and IT roles. Dress business professional and bring printed copies of your resume.",
-    audience: "Business, communications & IT majors",
-    url: HANDSHAKE_URL,
-  },
-  {
     id: "all-majors-fair",
     title: "All Majors Career Fair",
     kind: "Career Fair",
-    timing: "Fall & spring semesters",
+    timing: "Check Handshake for upcoming dates",
     description:
-      "Employers from every industry recruit NCCU students for internships and full-time roles. A good first fair if you're still figuring out where you fit.",
+      "NCCU holds all-majors fairs in fall and spring for internship and full-time opportunities. Sign in to Handshake for the current schedule and participating employers. Prepare by uploading your resume and reviewing the employers and roles that interest you.",
     audience: "All majors",
-    url: HANDSHAKE_URL,
-  },
-  {
-    id: "brite-expo",
-    title: "BRITE Career Expo",
-    kind: "Career Fair",
-    timing: "Check Handshake for date",
-    description:
-      "Connect with employers offering internships and full-time roles in pharmaceuticals and STEM research.",
-    audience: "STEM & pharmaceutical science majors",
     url: HANDSHAKE_URL,
   },
 ];
@@ -67,7 +50,7 @@ export interface FairCompany {
 }
 
 // Add employers here once the Career Center posts the attendee list, e.g.
-// { name: "Example Co.", fairId: "business-it-fair", industry: "Finance", hiringFor: ["Internships"] }
+// { name: "Example Co.", fairId: "all-majors-fair", industry: "Finance", hiringFor: ["Internships"] }
 export const fairCompanies: FairCompany[] = [];
 
 export interface ResumeTemplate {

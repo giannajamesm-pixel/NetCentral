@@ -101,7 +101,7 @@ export default function QuizPage() {
   if (showResults) {
     return (
       <>
-        <Navbar />
+        <Navbar activePage="quiz" />
         <main className="bg-mesh flex-1">
           <ResultsView
             matches={matches}
@@ -117,7 +117,7 @@ export default function QuizPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar activePage="quiz" />
       <main className="bg-mesh flex-1">
         <div className="mx-auto max-w-2xl px-6 py-14">
           <ProgressBar

@@ -16,9 +16,10 @@ export default async function ExplorePage({
 
   return (
     <>
-      <Navbar />
-      <main className="bg-mesh flex-1">
+      <Navbar activePage="explore" />
+      <main className="bg-campus flex-1">
         <ExploreClient
+          key={typeof major === "string" ? major : "all-majors"}
           initialMajorId={typeof major === "string" ? major : undefined}
         />
       </main>

@@ -39,18 +39,15 @@ export default function RoadmapRoad({
 }) {
   return (
     <div className="relative">
-      {/* The road: asphalt strip with a dashed center line. Left edge on
-          phones, centered on wider screens. */}
+      {/* A quiet path connects the year markers without competing with the plan. */}
       <div
         aria-hidden
-        className="absolute inset-y-0 left-4 w-10 rounded-full bg-ink-900 shadow-inner md:left-1/2 md:-translate-x-1/2"
-      >
-        <div className="absolute inset-y-6 left-1/2 -translate-x-1/2 border-l-4 border-dashed border-white/80" />
-      </div>
+        className="absolute inset-y-0 left-5 w-px bg-primary-100 md:left-1/2"
+      />
 
       {/* Start sign */}
-      <div className="relative flex justify-start pl-1 md:justify-center md:pl-0">
-        <span className="rounded-full border-4 border-surface bg-primary-600 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-md">
+      <div className="relative flex justify-start md:justify-center">
+        <span className="rounded-lg bg-primary-700 px-4 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white">
           Start · First day at NCCU
         </span>
       </div>
@@ -59,38 +56,38 @@ export default function RoadmapRoad({
         {roadmap.years.map((y, i) => {
           const right = i % 2 === 1;
           return (
-            <li key={y.year} className="relative">
+            <li key={y.year} id={`year-${y.year}`} className="relative scroll-mt-28">
               {/* Mile marker on the road */}
               <span
                 aria-hidden
-                className="absolute top-5 left-4 z-10 grid h-10 w-10 place-items-center rounded-full border-4 border-surface bg-primary-600 font-display text-sm font-bold text-white shadow md:left-1/2 md:-translate-x-1/2"
+                className="absolute top-5 left-0 z-10 grid h-10 w-10 place-items-center rounded-full border-4 border-background bg-primary-700 font-display text-sm font-bold text-white md:left-1/2 md:-translate-x-1/2"
               >
                 {y.year}
               </span>
               {/* Exit ramp from the road to the signpost card */}
               <span
                 aria-hidden
-                className={`absolute top-9 hidden h-1 w-10 bg-ink-300 md:block ${
+                className={`absolute top-10 hidden h-px w-10 bg-primary-100 md:block ${
                   right ? "left-1/2 ml-5" : "right-1/2 mr-5"
                 }`}
               />
 
               <section
                 aria-label={`Year ${y.year}: ${y.label}`}
-                className={`ml-20 rounded-3xl border border-ink-100 bg-surface p-5 shadow-sm md:ml-0 md:w-[calc(50%-3.75rem)] ${
+                className={`review-panel ml-14 p-5 sm:p-6 md:ml-0 md:w-[calc(50%-3.75rem)] ${
                   right ? "md:ml-auto" : ""
                 }`}
               >
-                <p className="text-xs font-bold uppercase tracking-wide text-primary-600">
+                <p className="review-eyebrow">
                   Year {y.year} · {y.label}
                 </p>
-                <h3 className="font-display mt-1 text-xl font-bold text-ink-900">{y.theme}</h3>
+                <h2 className="font-display mt-2 text-xl font-bold leading-snug text-ink-900">{y.theme}</h2>
 
-                <ul className="mt-4 flex flex-col gap-3">
+                <ul className="mt-5 flex flex-col divide-y divide-ink-100">
                   {y.steps.map((step) => {
                     const s = STEP_STYLES[step.type];
                     return (
-                      <li key={`${step.type}-${step.title}`} className="flex gap-3">
+                      <li key={`${step.type}-${step.title}`} className="flex gap-3 py-4 first:pt-0 last:pb-0">
                         <span
                           aria-hidden
                           className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${s.badge}`}
@@ -103,7 +100,7 @@ export default function RoadmapRoad({
                           </p>
                           <p className="text-sm font-semibold text-ink-900">{step.title}</p>
                           {step.detail && (
-                            <p className="mt-0.5 text-sm text-ink-700">{step.detail}</p>
+                            <p className="mt-1 text-sm leading-relaxed text-ink-500">{step.detail}</p>
                           )}
                           <StepLink step={step} />
                         </div>
@@ -119,7 +116,7 @@ export default function RoadmapRoad({
 
       {/* Destination */}
       <div className="relative mt-10 flex justify-start md:justify-center">
-        <div className="ml-20 w-full max-w-md rounded-3xl border-2 border-primary-500 bg-surface p-6 text-center shadow-lg md:ml-0">
+        <div className="review-panel ml-14 w-full max-w-md border-t-4 border-t-primary-700 p-6 text-center md:ml-0">
           <span
             aria-hidden
             className="mx-auto grid h-11 w-11 place-items-center rounded-full bg-primary-600 text-white"

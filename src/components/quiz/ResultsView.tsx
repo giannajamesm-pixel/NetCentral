@@ -57,9 +57,6 @@ export default function ResultsView({
 
       <div className="mt-12 flex flex-col gap-5">
         {matches.map((m, i) => {
-          const maxScore = matches[0]?.score || 1;
-          const matchPct = Math.round(60 + (m.score / maxScore) * 36);
-
           return (
           <Link
             key={m.major.id}
@@ -76,7 +73,7 @@ export default function ResultsView({
                 </h2>
               </div>
               <span className="rounded-full bg-sun-100 px-3 py-1 text-xs font-bold text-sun-500">
-                {matchPct}% match
+                {i === 0 ? "Top suggestion" : "Another option"}
               </span>
             </div>
 
