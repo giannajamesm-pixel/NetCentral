@@ -14,7 +14,9 @@ export default function ExploreClient({
     majors.some((m) => m.id === initialMajorId) ? initialMajorId : undefined
   );
   const [query, setQuery] = useState("");
+  const [careerQuery, setCareerQuery] = useState("");
   const careersRef = useRef<HTMLDivElement>(null);
+  const careerSearchRef = useRef<HTMLInputElement>(null);
 
   // Deep links (e.g. from quiz results) jump straight to the careers.
   useEffect(() => {
@@ -28,6 +30,13 @@ export default function ExploreClient({
     () => (majorId ? careersForMajor(majorId) : []),
     [majorId]
   );
+  const filteredCareers = useMemo(() => {
+    const terms = careerQuery.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    return careers.filter((career) => {
+      const searchable = [career.title, career.summary, ...career.skills].join(" ").toLowerCase();
+      return terms.every((term) => searchable.includes(term));
+    });
+  }, [careers, careerQuery]);
 
   const grouped = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -46,26 +55,40 @@ export default function ExploreClient({
 
   function pick(id: string) {
     setMajorId(id);
+    setCareerQuery("");
     window.history.replaceState(null, "", `/explore?major=${id}`);
   }
 
+  function clearCareerSearch() {
+    setCareerQuery("");
+    careerSearchRef.current?.focus();
+  }
+
   return (
-    <div className="mx-auto max-w-4xl px-6 py-14">
-      <div className="text-center">
-        <span className="rounded-full bg-primary-50 px-4 py-1.5 text-sm font-semibold text-primary-700">
+    <div className="mx-auto max-w-4xl px-5 py-10 sm:px-6 sm:py-14">
+      <div className="max-w-2xl">
+        <span className="review-eyebrow">
           Career Path Explorer
         </span>
-        <h1 className="font-display mt-5 text-4xl font-bold tracking-tight sm:text-5xl">
-          See where your major <span className="text-gradient">can go</span>.
+        <h1 className="font-display mt-4 text-4xl font-bold leading-tight tracking-tight text-ink-900 sm:text-5xl">
+          See where your major <span className="text-primary-700">can go</span>.
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-ink-500">
+        <p className="mt-4 max-w-xl leading-relaxed text-ink-700">
           Pick a field to explore real careers — what they pay, how fast they
           are growing, the skills they use, and how people move up.
         </p>
       </div>
 
-      <div className="mt-10 rounded-3xl border border-ink-100 bg-surface p-6 shadow-sm">
-        <label htmlFor="major-search" className="sr-only">
+      <div className="review-panel mt-8 p-5 sm:p-6">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="font-display text-lg font-bold text-ink-900">
+            Choose your major
+          </h2>
+          <span className="text-xs font-medium text-ink-500">
+            {majors.length} NCCU majors
+          </span>
+        </div>
+        <label htmlFor="major-search" className="mb-2 block text-sm font-semibold text-ink-700">
           Search majors
         </label>
         <input
@@ -74,29 +97,29 @@ export default function ExploreClient({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search majors (e.g. nursing, business, STEM)"
-          className="w-full rounded-full border-2 border-ink-100 bg-white px-5 py-3 text-sm outline-none transition focus:border-primary-500"
+          className="min-h-12 w-full rounded-xl border border-ink-100 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
         />
 
-        <div className="mt-5 flex flex-col gap-4">
+        <div className="mt-6 flex flex-col gap-5">
           {grouped.length === 0 && (
             <p className="text-sm text-ink-500">No majors match that search.</p>
           )}
           {grouped.map(([category, list]) => (
             <div key={category}>
-              <h2 className="text-xs font-bold uppercase tracking-wide text-ink-500">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-ink-500">
                 {category}
-              </h2>
-              <div className="mt-2 flex flex-wrap gap-2">
+              </h3>
+              <div className="mt-2.5 flex flex-wrap gap-2">
                 {list.map((m) => (
                   <button
                     key={m.id}
                     type="button"
                     onClick={() => pick(m.id)}
                     aria-pressed={m.id === majorId}
-                    className={`rounded-full border-2 px-4 py-2 text-sm font-medium transition ${
+                    className={`min-h-11 rounded-lg border px-3.5 py-2.5 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 ${
                       m.id === majorId
-                        ? "border-primary-500 bg-primary-50 text-primary-700"
-                        : "border-ink-100 bg-white text-ink-700 hover:border-primary-300 hover:bg-primary-50/40"
+                        ? "border-primary-700 bg-primary-700 text-white"
+                        : "border-ink-100 bg-white text-ink-700 hover:border-primary-300 hover:bg-primary-50/50"
                     }`}
                   >
                     {m.name}
@@ -108,30 +131,85 @@ export default function ExploreClient({
         </div>
       </div>
 
-      <div ref={careersRef} className="mt-10 scroll-mt-24" aria-live="polite">
+      <div ref={careersRef} className="mt-10 scroll-mt-24">
         {!selected && (
-          <p className="text-center text-ink-500">
+          <p className="rounded-xl border border-dashed border-ink-100 px-5 py-6 text-center text-sm text-ink-500">
             Choose a major above to see its career paths.
           </p>
         )}
 
         {selected && (
           <>
-            <div className="mb-5">
-              <span className="text-xs font-bold uppercase tracking-wide text-primary-600">
-                {selected.category}
+            <div className="mb-5 flex flex-col gap-4 border-b border-ink-100 pb-6 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <span className="review-eyebrow">
+                  {selected.category}
+                </span>
+                <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-ink-900">
+                  Careers for {selected.name}
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-700">{selected.description}</p>
+              </div>
+              <span className="inline-flex shrink-0 self-start rounded-lg border border-ink-100 bg-white px-3 py-2 text-sm font-semibold text-ink-700">
+                {careers.length} career {careers.length === 1 ? "path" : "paths"}
               </span>
-              <h2 className="font-display mt-1 text-2xl font-bold">
-                Careers for {selected.name}
-              </h2>
-              <p className="mt-1 text-ink-500">{selected.description}</p>
             </div>
 
-            <div className="flex flex-col gap-4">
-              {careers.map((c) => (
-                <CareerCard key={c.id} career={c} majorId={majorId} />
-              ))}
+            <div className="review-panel mb-5 p-5 sm:p-6">
+              <label htmlFor="career-search" className="block text-sm font-semibold text-ink-900">
+                Search these careers
+              </label>
+              <p id="career-search-help" className="mt-1 text-sm text-ink-500">
+                Find a role or skill within {selected.name}.
+              </p>
+              <div className="mt-3 flex items-center gap-3">
+                <input
+                  ref={careerSearchRef}
+                  id="career-search"
+                  type="search"
+                  value={careerQuery}
+                  onChange={(e) => setCareerQuery(e.target.value)}
+                  aria-describedby="career-search-help career-search-status"
+                  placeholder="Search roles or skills, e.g. analyst or Excel"
+                  className="min-h-12 min-w-0 flex-1 rounded-xl border border-ink-100 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                />
+                {careerQuery && (
+                  <button
+                    type="button"
+                    onClick={clearCareerSearch}
+                    className="min-h-11 shrink-0 rounded-lg px-3 py-2 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+              <p id="career-search-status" role="status" className="mt-3 text-xs font-medium text-ink-500">
+                Showing {filteredCareers.length} of {careers.length} career {careers.length === 1 ? "path" : "paths"}
+                <span className="sr-only"> for {selected.name}</span>.
+              </p>
             </div>
+
+            {filteredCareers.length > 0 ? (
+              <div className="flex flex-col gap-4">
+                {filteredCareers.map((c) => (
+                  <CareerCard key={c.id} career={c} majorId={majorId} />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-xl border border-dashed border-ink-100 bg-surface p-6 text-center">
+                <h3 className="font-display text-lg font-bold text-ink-900">No careers match this search</h3>
+                <p className="mt-2 text-sm text-ink-500">
+                  Try a different job title or skill, or view all career paths for {selected.name}.
+                </p>
+                <button
+                  type="button"
+                  onClick={clearCareerSearch}
+                  className="mt-4 min-h-11 rounded-xl bg-primary-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                >
+                  Show all careers
+                </button>
+              </div>
+            )}
 
             <p className="mt-6 text-xs text-ink-500">
               Pay is the U.S. median with a 10th–90th percentile range, and

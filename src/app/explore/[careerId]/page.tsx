@@ -43,24 +43,26 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
   return (
     <>
       <Navbar />
-      <main className="bg-mesh flex-1">
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+      <main className="bg-campus flex-1">
+        <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
           <Link
             href={`/explore?major=${major.id}`}
-            className="text-sm font-semibold text-primary-600 hover:text-primary-700"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-ink-500 transition hover:text-primary-700"
           >
             ← Back to {major.name} careers
           </Link>
 
-          <header className="mt-6 text-center">
-            <span className="rounded-full bg-primary-50 px-4 py-1.5 text-sm font-semibold text-primary-700">
-              4-year roadmap · {major.name}
-            </span>
-            <h1 className="font-display mt-5 text-4xl font-bold tracking-tight sm:text-5xl">
-              Your road to <span className="text-gradient">{career.title}</span>
+          <header className="mt-7 border-l-4 border-primary-700 pl-5 sm:pl-7">
+            <p className="review-eyebrow">{major.name} · Career roadmap</p>
+            <h1 className="font-display mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+              Your road to<br className="hidden sm:block" /> <span className="text-primary-700">{career.title}</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-ink-500">{career.summary}</p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-700 sm:text-base">{career.summary}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-ink-100 bg-surface px-3 py-1.5 text-xs font-semibold text-ink-700">
+                <Icon name="route" className="h-3.5 w-3.5 text-primary-700" />
+                4 years · Your college-to-career guide
+              </span>
               {career.salary && (
                 <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary-700">
                   Median ~{formatK(career.salary.median)}
@@ -79,14 +81,30 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
             </div>
           </header>
 
+          <nav aria-label="Jump to a roadmap year" className="review-panel mt-8 grid grid-cols-2 overflow-hidden sm:grid-cols-4">
+            {roadmap.years.map((year) => (
+              <a
+                key={year.year}
+                href={`#year-${year.year}`}
+                className="group flex items-center gap-3 border-ink-100 px-4 py-4 transition hover:bg-primary-50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary-600 sm:border-r sm:last:border-r-0"
+              >
+                <span className="font-display text-2xl font-bold text-primary-300 group-hover:text-primary-700">0{year.year}</span>
+                <span>
+                  <span className="block text-[10px] font-bold uppercase tracking-widest text-ink-500">Year {year.year}</span>
+                  <span className="mt-0.5 block text-xs font-semibold text-ink-900">{year.label.replace(" year", "")}</span>
+                </span>
+              </a>
+            ))}
+          </nav>
+
           <ul
             aria-label="Legend"
-            className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2"
+            className="mt-5 flex flex-wrap gap-x-5 gap-y-2"
           >
             {Object.values(STEP_STYLES).map((s) => (
               <li
                 key={s.label}
-                className="flex items-center gap-1.5 rounded-full border border-ink-100 bg-surface px-3 py-1 text-xs font-semibold text-ink-700"
+                className="flex items-center gap-1.5 text-[11px] font-medium text-ink-500"
               >
                 <Icon name={s.icon} className="h-3.5 w-3.5 text-primary-700" />
                 {s.label}
@@ -94,13 +112,14 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
             ))}
           </ul>
 
-          <div className="mt-10">
+          <div className="mt-10 border-t border-ink-100 pt-8">
             <RoadmapRoad roadmap={roadmap} careerTitle={career.title} />
           </div>
 
           {career.trajectory.length > 1 && (
-            <section className="mx-auto mt-12 max-w-3xl text-center">
-              <h2 className="font-display text-xl font-bold">Keep driving: where it can lead</h2>
+            <section className="review-panel mx-auto mt-12 max-w-3xl p-6 text-center">
+              <p className="review-eyebrow">Beyond graduation</p>
+              <h2 className="font-display mt-2 text-xl font-bold">Where your career can lead</h2>
               <ol className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">
                 {career.trajectory.map((step, i) => (
                   <li key={step} className="flex items-center gap-2">

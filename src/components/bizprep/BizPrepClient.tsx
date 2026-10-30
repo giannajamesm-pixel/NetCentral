@@ -46,16 +46,22 @@ export default function BizPrepClient() {
   return (
     <section
       aria-labelledby="toolkit-heading"
-      className="rounded-3xl border border-ink-100 bg-surface p-6 shadow-sm sm:p-8"
+      className="review-panel p-6 sm:p-8"
     >
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h2 id="toolkit-heading" className="font-display text-2xl font-bold">
-            Application toolkit
-          </h2>
-          <p className="mt-1 text-sm text-ink-500">
-            Pick what you&apos;re working on.
-          </p>
+      <div className="flex flex-wrap items-center justify-between gap-5">
+        <div className="flex items-start gap-4">
+          <span aria-hidden className="font-display flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-sm font-bold text-primary-700">
+            02
+          </span>
+          <div>
+            <p className="review-eyebrow">Application preparation</p>
+            <h2 id="toolkit-heading" className="font-display mt-1 text-2xl font-bold tracking-tight text-ink-900">
+              Application toolkit
+            </h2>
+            <p className="mt-2 text-sm text-ink-500">
+              Pick what you&apos;re working on.
+            </p>
+          </div>
         </div>
 
         <div ref={menuRef} className="relative w-full sm:w-72">
@@ -66,12 +72,12 @@ export default function BizPrepClient() {
             aria-haspopup="listbox"
             aria-expanded={open}
             aria-controls="toolkit-menu"
-            className="flex w-full items-center justify-between gap-3 rounded-full border-2 border-ink-900 bg-white px-5 py-3 text-left text-sm font-semibold text-ink-900 transition hover:bg-surface-soft"
+            className="flex w-full items-center justify-between gap-3 rounded-xl border border-ink-100 bg-surface px-5 py-3 text-left text-sm font-semibold text-ink-900 transition hover:border-primary-300 hover:bg-surface-soft"
           >
             {current.label}
             <span
               aria-hidden
-              className={`text-ink-500 transition ${open ? "rotate-180" : ""}`}
+              className={`text-primary-700 transition ${open ? "rotate-180" : ""}`}
             >
               ▾
             </span>
@@ -113,7 +119,7 @@ export default function BizPrepClient() {
         {tool === "resume" ? (
           <ResumePanel />
         ) : (
-          <div className="rounded-2xl border-2 border-dashed border-ink-100 p-10 text-center">
+          <div className="rounded-2xl border border-ink-100 bg-surface-soft px-5 py-10 text-center">
             <p className="font-display text-lg font-bold text-ink-900">
               {current.label} tools are coming soon
             </p>
