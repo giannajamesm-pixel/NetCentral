@@ -63,7 +63,7 @@ export default function PathPlanner({ careerId, careerTitle, majorId, majorName,
             const next = Number(e.target.value) as CollegeYear;
             setMessage("");
             startYearChange(() => router.replace(roadmapHref(majorId, careerId, next), { scroll: false }));
-          }} className="mt-2 block min-h-11 w-full rounded-lg border border-ink-100 bg-white px-4 py-2 text-sm sm:w-48">
+          }} className="review-select mt-2 block min-h-11 w-full rounded-lg border border-ink-100 bg-white px-4 py-2 text-sm sm:w-48">
             <option value={1}>Freshman / Year 1</option><option value={2}>Sophomore / Year 2</option>
             <option value={3}>Junior / Year 3</option><option value={4}>Senior / Year 4</option>
           </select>

@@ -44,7 +44,7 @@ export default function BizPrepClient({ careerTitle }: { careerTitle?: string })
             value={tool}
             onChange={(event) => setTool(event.target.value as Tool)}
             aria-describedby="toolkit-description"
-            className="mt-2 block min-h-11 w-full rounded-xl border border-ink-100 bg-surface px-4 py-3 text-sm font-semibold text-ink-900 focus:outline-2 focus:outline-primary-600"
+            className="review-select mt-2 block min-h-11 w-full rounded-xl border border-ink-100 bg-surface px-4 py-3 text-sm font-semibold text-ink-900 focus:outline-2 focus:outline-primary-600"
           >
             {TOOLS.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
           </select>
