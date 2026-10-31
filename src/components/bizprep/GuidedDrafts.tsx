@@ -11,6 +11,7 @@ export default function GuidedDrafts({ kind, careerTitle }: Props) {
   const [example, setExample] = useState("");
   const [interest, setInterest] = useState("");
   const [draft, setDraft] = useState("");
+  const [hasDraft, setHasDraft] = useState(false);
   const [message, setMessage] = useState("");
   const isLetter = kind === "cover-letter";
 
@@ -18,11 +19,12 @@ export default function GuidedDrafts({ kind, careerTitle }: Props) {
     e.preventDefault();
     if (!role.trim() || !example.trim() || (isLetter && !company.trim())) return;
     setDraft(isLetter ? ["Dear Hiring Team,", `I am applying for the ${role.trim()} position at ${company.trim()}. ${interest.trim()}`.trim(),
-      `My relevant experience includes ${example.trim()}`, `I would welcome the opportunity to discuss how I could contribute as a ${role.trim()}. Thank you for your consideration.`, "Sincerely,", "[Add your name]"].join("\n\n") :
+      example.trim(), `I would welcome the opportunity to discuss how I could contribute as a ${role.trim()}. Thank you for your consideration.`, "Sincerely,", "[Add your name]"].join("\n\n") :
       [`Portfolio: ${role.trim()}`, "About me\n[Write two sentences about your interests and the work you want to do.]",
         `Featured work\n${example.trim()}`, "For each project\nThe problem\nYour own contribution\nTools and skills\nOutcome or what you learned\nLink or image you have permission to share",
         interest.trim() ? `What I want to develop next\n${interest.trim()}` : "What I want to develop next\n[Choose one skill or project to work on next.]",
         "Contact\n[Choose which professional contact details to share.]"].join("\n\n"));
+    setHasDraft(true);
     setMessage("Your editable draft is ready below.");
   }
   async function copy() {
@@ -45,7 +47,7 @@ export default function GuidedDrafts({ kind, careerTitle }: Props) {
         <label className="text-sm font-semibold sm:col-span-2">{isLetter ? "Why this company or role interests you" : "A skill or type of work you want to develop next"} <span className="font-normal text-ink-500">(optional)</span><textarea maxLength={800} rows={2} value={interest} onChange={(e) => setInterest(e.target.value)} className={input} /></label>
         <div className="sm:col-span-2"><button className="min-h-11 rounded-xl bg-primary-700 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-600">{isLetter ? "Create my draft" : "Create my outline"}</button></div>
       </form>
-      {draft && <div className="mt-6 border-t border-ink-100 pt-6">
+      {hasDraft && <div className="mt-6 border-t border-ink-100 pt-6">
         <label className="text-sm font-semibold">Edit your {isLetter ? "cover letter" : "outline"}<textarea rows={14} value={draft} onChange={(e) => setDraft(e.target.value)} className={input} /></label>
         <p className="mt-2 text-xs text-ink-500">Check every statement and replace bracketed prompts before sharing. This is a guided template, not AI-generated advice.</p>
         <div className="mt-3 flex flex-wrap gap-3"><button onClick={copy} className="min-h-11 rounded-lg border border-primary-100 px-4 py-2 text-sm font-semibold text-primary-700">Copy draft</button><button onClick={download} className="min-h-11 rounded-lg border border-primary-100 px-4 py-2 text-sm font-semibold text-primary-700">Download text</button></div>

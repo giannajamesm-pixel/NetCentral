@@ -55,11 +55,11 @@ export default function ResumePanel({ careerTitle }: { careerTitle?: string }) {
         ))}
       </div>
 
-      {mode === "upload" && (
+      <div hidden={mode !== "upload"}>
         <div className="mt-6">
           <ResumeReview careerTitle={careerTitle} />
         </div>
-      )}
+      </div>
 
       {mode === "create" && (
         <div className="mt-6">
