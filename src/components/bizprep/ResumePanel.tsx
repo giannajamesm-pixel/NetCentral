@@ -21,7 +21,7 @@ const MODES: { id: Mode; title: string; description: string; icon: string }[] = 
   },
 ];
 
-export default function ResumePanel() {
+export default function ResumePanel({ careerTitle }: { careerTitle?: string }) {
   const [mode, setMode] = useState<Mode | null>(null);
 
   return (
@@ -55,11 +55,11 @@ export default function ResumePanel() {
         ))}
       </div>
 
-      {mode === "upload" && (
+      <div hidden={mode !== "upload"}>
         <div className="mt-6">
-          <ResumeReview />
+          <ResumeReview careerTitle={careerTitle} />
         </div>
-      )}
+      </div>
 
       {mode === "create" && (
         <div className="mt-6">

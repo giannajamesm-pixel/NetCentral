@@ -14,13 +14,13 @@ export const STEP_STYLES: Record<StepType, { icon: IconName; label: string; badg
   milestone: { icon: "flag", label: "Milestone", badge: "bg-primary-600 text-white" },
 };
 
-function StepLink({ step }: { step: RoadmapStep }) {
+function StepLink({ step, preparationUrl }: { step: RoadmapStep; preparationUrl?: string }) {
   if (!step.href) return null;
   const internal = step.href.startsWith("/");
   const className =
     "mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-700";
   return internal ? (
-    <Link href={step.href} className={className}>
+    <Link href={step.href === "/bizprep" && preparationUrl ? preparationUrl : step.href} className={className}>
       Open in NetCentral <Icon name="arrowRight" className="h-3 w-3" />
     </Link>
   ) : (
@@ -33,9 +33,11 @@ function StepLink({ step }: { step: RoadmapStep }) {
 export default function RoadmapRoad({
   roadmap,
   careerTitle,
+  preparationUrl,
 }: {
   roadmap: Roadmap;
   careerTitle: string;
+  preparationUrl?: string;
 }) {
   return (
     <div className="relative">
@@ -102,7 +104,7 @@ export default function RoadmapRoad({
                           {step.detail && (
                             <p className="mt-1 text-sm leading-relaxed text-ink-500">{step.detail}</p>
                           )}
-                          <StepLink step={step} />
+                          <StepLink step={step} preparationUrl={preparationUrl} />
                         </div>
                       </li>
                     );

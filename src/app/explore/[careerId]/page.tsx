@@ -7,6 +7,8 @@ import { careers, outlookLabel } from "@/data/careers";
 import { majors } from "@/data/majors";
 import { buildRoadmap } from "@/lib/roadmap";
 import { CAREER_CENTER_URL } from "@/data/bizprep";
+import PathPlanner from "@/components/path/PathPlanner";
+import { collegeYear, preparationHref } from "@/lib/studentPath";
 
 type Props = {
   params: Promise<{ careerId: string }>;
@@ -27,7 +29,8 @@ const formatK = (n: number) => `$${Math.round(n / 1000)}k`;
 
 export default async function CareerRoadmapPage({ params, searchParams }: Props) {
   const { careerId } = await params;
-  const { major: majorParam } = await searchParams;
+  const { major: majorParam, year: yearParam } = await searchParams;
+  const year = collegeYear(yearParam);
   const career = careers.find((c) => c.id === careerId);
   if (!career) notFound();
 
@@ -39,10 +42,12 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
       : career.majorIds[0];
   const major = majors.find((m) => m.id === majorId) ?? majors[0];
   const roadmap = buildRoadmap(career, major);
+  const preparationUrl = preparationHref(major.id, career.id, year);
+  const aiEnabled = process.env.NETCENTRAL_AI_ENABLED === "true" && Boolean(process.env.OPENAI_API_KEY && process.env.NETCENTRAL_AI_MODEL);
 
   return (
     <>
-      <Navbar activePage="roadmap" majorId={major.id} careerId={career.id} />
+      <Navbar activePage="roadmap" majorId={major.id} careerId={career.id} year={year} />
       <main className="bg-campus flex-1">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
           <Link
@@ -81,6 +86,9 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
             </div>
           </header>
 
+          <PathPlanner key={`${career.id}-${major.id}`} careerId={career.id} careerTitle={career.title}
+            majorId={major.id} majorName={major.name} years={roadmap.years} initialYear={year} aiEnabled={aiEnabled} />
+
           <nav aria-label="Jump to a roadmap year" className="review-panel mt-8 grid grid-cols-2 overflow-hidden sm:grid-cols-4">
             {roadmap.years.map((year) => (
               <a
@@ -113,7 +121,7 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
           </ul>
 
           <div className="mt-10 border-t border-ink-100 pt-8">
-            <RoadmapRoad roadmap={roadmap} careerTitle={career.title} />
+            <RoadmapRoad roadmap={roadmap} careerTitle={career.title} preparationUrl={preparationUrl} />
           </div>
 
           {career.trajectory.length > 1 && (
@@ -144,7 +152,7 @@ export default async function CareerRoadmapPage({ params, searchParams }: Props)
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-500">Take your {career.title} plan into BizPrep for resume tools, recruiting resources, and practical experience.</p>
             </div>
             <Link
-              href={`/bizprep?major=${encodeURIComponent(major.id)}&career=${encodeURIComponent(career.id)}`}
+              href={preparationUrl}
               className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-primary-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
             >
               Continue to BizPrep →
